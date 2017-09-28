@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
@@ -12,7 +12,7 @@ import JobDetails from 'containers/JobDetails';
 import Jobs from 'containers/Jobs';
 import Profile from 'containers/Profile';
 import SignUp from 'containers/SignUp';
-import Admin from 'container/Admin';
+import Admin from 'containers/Admin';
 
 ReactDOM.render((
   <BrowserRouter>
