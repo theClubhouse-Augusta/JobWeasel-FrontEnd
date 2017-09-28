@@ -6,13 +6,14 @@ import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 
 import Home from 'containers/Home';
+import Profile from 'containers/Profile';
 import NotFound from 'containers/NotFound';
 
 ReactDOM.render((
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={Home}/>
-
+      <Route exact path='/Profile' component={Profile}/>
       <Route path='*' component={NotFound}/>
     </Switch>
   </BrowserRouter>
