@@ -15,8 +15,11 @@ export default class SignUp extends React.PureComponent {
     return (
       <div className="container">
         <Helmet title="SignUp" meta={[ { name: 'description', content: 'Description of SignUp' }]}/>
-
-        //Remove this line and you can start writing your code here.
+          <div className="sign-up-container">
+             <div className="sign-up-info"
+              <input type="text" className="username" value={this.state.username} onChange={this.handleUsername}/>
+             </div>
+          </div>
       </div>
     );
   }

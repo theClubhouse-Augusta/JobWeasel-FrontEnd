@@ -7,6 +7,7 @@ import '!file-loader?name=[name].[ext]!./manifest.json';
 
 import Home from 'containers/Home';
 import NotFound from 'containers/NotFound';
+import SignUp from 'containers/SignUp';
 
 ReactDOM.render((
   <BrowserRouter>
