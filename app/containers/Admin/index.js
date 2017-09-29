@@ -15,8 +15,23 @@ export default class Admin extends React.PureComponent {
     return (
       <div className="container">
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
+        <div className="recruiterReview">
+          <header>Recruiters to Review:</header>
+        </div>
 
-        //Remove this line and you can start writing your code here.
+        <div className="profileReview">
+          <header>Profiles to Review:</header>
+        </div>
+
+        <div className="changeRecruitersStatus">
+          <header>Accepted Recruiters:</header>
+          (Click the recruiter to change the review approved status)
+        </div>
+
+        <div className="changeProfileStatus">
+          <header>Accepted Profiles:</header>
+          (Click the profile to change review approved status)
+        </div>
       </div>
     );
   }
