@@ -15,8 +15,17 @@ export default class Home extends React.PureComponent {
     return (
       <div className="container">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-        Hi
-        //Remove this line and you can start writing your code here.
+          <div className="welcome-text">
+            <div className="sign-in-button"><input type="submit" className="sign-in" value="Sign-in"/></div>
+              <h1>Welcome to Job Weasel</h1>
+                <h3>A place to find your next job or your next employee.</h3>
+                  <div className="sign-up-button"><input type="submit" className="sign-up" value="Sign-up"/></div>
+
+
+          </div>
+
+
+
       </div>
     );
   }
