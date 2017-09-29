@@ -6,14 +6,13 @@ import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 
 import Home from 'containers/Home';
+import Profile from 'containers/Profile';
 import NotFound from 'containers/NotFound';
 import AddJob from 'containers/AddJob';
 import JobDetails from 'containers/JobDetails';
 import Jobs from 'containers/Jobs';
-import Profile from 'containers/Profile';
 import SignUp from 'containers/SignUp';
 import Admin from 'containers/Admin';
-
 
 ReactDOM.render((
   <BrowserRouter>
