@@ -10,13 +10,15 @@ import Helmet from 'react-helmet';
 import './style.css';
 import './styleM.css';
 
+import UserProfile from "components/UserProfile";
+
 export default class Profile extends React.PureComponent {
   render() {
     return (
       <div className="container">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
 
-        //Remove this line and you can start writing your code here.
+        <UserProfile/>
       </div>
     );
   }
