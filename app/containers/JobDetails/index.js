@@ -20,7 +20,7 @@ export default class JobDetails extends React.PureComponent {
           </div>
           <div className="jobDesc">
           </div>
-          <div className="workers"
+          <div className="workers">
           </div>
           <div className="budget">
           </div>
