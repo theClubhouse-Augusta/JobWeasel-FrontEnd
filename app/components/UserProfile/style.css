@@ -1,0 +1,14 @@
+/* UserProfile Styles */
+
+.profileBox {
+  background-position: center;
+}
+
+.userImage {
+  max-width: 25px;
+  max-height: 25px;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  margin: 50px;
+}

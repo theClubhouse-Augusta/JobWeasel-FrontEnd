@@ -21,7 +21,8 @@ export default class SignUp extends React.PureComponent {
       email:"",
       password:"",
       passwordValidation:"",
-      companyName:""
+      companyName:"",
+      activeTab: 1
     }
   }
 
@@ -40,7 +41,54 @@ export default class SignUp extends React.PureComponent {
       email:event.target.value
     })
   }
+  handlePassword = (event) => {
+    this.setState({
+      password:event.target.value
+    })
+  }
+  handlePasswordValidation = (event) => {
+    this.setState({
+      passwordValidation:event.target.value
+    })
+  }
+  handleCompanyName = (event) => {
+    this.setState({
+      companyName:event.target.value
+    })
+  }
 
+ changeTab = (tab) => {
+   this.setState({
+     activeTab:tab
+   })
+ }
+
+ renderTab = () => {
+   if (this.state.activeTab === 1) {
+     return(
+       <div className="sign-up-seeker">
+
+         <input type="text" className="first-name" value={this.state.firstName} onChange={this.handleFirstName} placeholder="First-Name" />
+         <input type="text" className="last-name" value={this.state.lastName} onChange={this.handleLastName} placeholder="Last-Name" />
+         <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Password"/>
+         <input type="password" className="password" value={this.state.password} onChange={this.handlePassword}  placeholder="Password"/>
+         <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
+       </div>
+     )
+
+   }
+   else if (this.state.activeTab === 2) {
+     return (
+       <div className="sign-up-employer">
+
+        <input type="text" className="companyName" value={this.state.companyName} onChange={this.handleCompanyName} placeholder="Company-Name"/>
+        <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
+        <input type="password" className="password" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
+        <input type="password" className="password-validation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Validate"/>
+      </div>
+     )
+   }
+ }
 
   render() {
     return (
@@ -50,25 +98,11 @@ export default class SignUp extends React.PureComponent {
             <div className="hello-div"><h1>Sign up for Job Weasel!</h1></div>
 
               <div className="button-div">
-                <input type="button" className="choose-seeker" value="Job-Sekker"/>
-                <input type="button" className="choose-employer" value="Employer"/>
+                <input type="button" className="choose-seeker" value="Job-Seeker" onClick={()=> this.changeTab(1)}/>
+                <input type="button" className="choose-employer" value="Employer" onClick={()=> this.changeTab(2)}/>
               </div>
-                <div className="sign-up-seeker">
+                {this.renderTab()}
 
-                  <input type="text" className="first-name" value={this.state.firstName} onChange={this.handleFirstName} placeholder="First-Name" />
-                  <input type="text" className="last-name" value="Last-name" />
-                  <input type="text" className="email" value="email"/>
-                  <input type="password" className="password" value="Password"/>
-                  <input type="password" className="passwordValidation" value="Validate"/>
-                </div>
-
-              <div className="sign-up-employer">
-
-               <input type="text" className="companyName" value="Company name" />
-               <input type="text" className="email" value="email"/>
-               <input type="password" className="password" value="Password"/>
-               <input type="password" className="password-validation" value="Validate"/>
-             </div>
           </div>
       </div>
     );
