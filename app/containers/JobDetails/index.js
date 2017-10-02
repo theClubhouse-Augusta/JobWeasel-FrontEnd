@@ -15,8 +15,26 @@ export default class JobDetails extends React.PureComponent {
     return (
       <div className="container">
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
-
-        //Remove this line and you can start writing your code here.
+        <div className="detailContainer">
+          <div className="jobTitle">
+          </div>
+          <div className="jobDesc">
+          </div>
+          <div className="workers"
+          </div>
+          <div className="budget">
+          </div>
+          <div className="startDate">
+          </div>
+          <div className="timeFrame">
+          </div>
+          <div className="jobStatus">
+          </div>
+          <div className="detailsCreated">
+          </div>
+          <div className="detailsUpdated">
+          </div>
+        </div>
       </div>
     );
   }
