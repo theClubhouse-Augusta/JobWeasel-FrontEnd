@@ -4,13 +4,16 @@
   display:flex;
   flex-direction:column;
   min-height:100vh;
-  background-color: #CEDADA;
+  background: url('../../images/computer_1.jpg');
   font-family:'Source Sans Pro', sans-serif;
+  background-size: cover;
 }
 .welcome-text {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
-  margin-top: 25px;
 
 }
 .sign-in {
