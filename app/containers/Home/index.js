@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import SignIn from 'components/SignIn';
 
 import './style.css';
 import './styleM.css';
@@ -23,6 +24,7 @@ export default class Home extends React.PureComponent {
           <h3>A place to find your next job or your next employee.</h3>
           <div className="sign-up-button">
             <input type="submit" className="sign-up" value="Sign-up"/>
+              <SignIn/>
           </div>
         </div>
       </div>

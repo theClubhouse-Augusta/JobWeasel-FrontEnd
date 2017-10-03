@@ -23,7 +23,6 @@ export default class Jobs extends React.PureComponent {
   componentWillMount() {
     this.getJobs();
   }
-
   getJobs = () => {
     fetch('http://localhost:8000/api/getJobs', {
       method:'Get'
@@ -38,14 +37,11 @@ export default class Jobs extends React.PureComponent {
       });
     }.bind(this))
   };
-
   render() {
     return (
       <div className="container">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
         <div className="jobsList">
-
-
           <div className="jobDisplay">
             {this.state.jobs.map((t, i) => (
            <div key={i}> Job Listings: {t.name}

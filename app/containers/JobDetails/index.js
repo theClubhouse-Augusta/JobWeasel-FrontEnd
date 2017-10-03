@@ -16,6 +16,7 @@ export default class JobDetails extends React.PureComponent {
       <div className="container">
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
         <div className="detailContainer">
+      
         <div className="jobTitle">
         </div>
         <div className="jobDesc">
@@ -35,6 +36,7 @@ export default class JobDetails extends React.PureComponent {
         <div className="detailsUpdated">
         </div>
           <input type="text" className="search-field" placeholder="Search" value="search" />
+
         </div>
       </div>
     );
