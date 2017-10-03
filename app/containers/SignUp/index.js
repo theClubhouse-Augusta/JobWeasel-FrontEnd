@@ -152,7 +152,7 @@ export default class SignUp extends React.PureComponent {
        <div className="sign-up-seeker">
 
          <input type="text" className="name" value={this.state.name} onChange={this.handleName} placeholder="Full-Name" />
-         <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
+         <input type="text" className="name" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
          <input type="password" className="password" value={this.state.password} onChange={this.handlePassword}  placeholder="Password"/>
          <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
          <input type="submit" className="submitButton" onClick={this.signUp}/>
@@ -168,7 +168,7 @@ export default class SignUp extends React.PureComponent {
        <div className="sign-up-employer">
 
         <input type="text" className="name" value={this.state.Name} onChange={this.handleName} placeholder="Company-Name"/>
-        <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
+        <input type="text" className="name" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
         <input type="password" className="password" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
         <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
         <input type="submit" className="submitButton" onClick={this.signUp}/>
