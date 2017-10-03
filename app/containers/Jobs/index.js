@@ -15,26 +15,44 @@ export default class Jobs extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      search:""
+      search:"",
+      jobs:[]
     }
   }
 
-  handleSearch = (event) => {
-    this.setState({
-      search:event.target.value
-    })
+  componentWillMount() {
+    this.getJobs();
   }
+
+  getJobs = () => {
+    fetch('http://localhost:8000/api/getJobs', {
+      method:'Get'
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      this.setState({
+        jobs:json.jobs.data
+      }, function() {
+      });
+    }.bind(this))
+  };
+
   render() {
     return (
       <div className="container">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
         <div className="jobsList">
-          <input type="text" className="searchBar" placeholder="Search" value={this.state.search} onChange={handleSearch}/>
 
-            <div className="jobDisplay">
 
-            </div>
-
+          <div className="jobDisplay">
+            {this.state.jobs.map((t, i) => (
+           <div key={i}> Job Listings: {t.name}
+             <p>{t.description}</p>
+             <p>{t.budget}</p>
+           </div>))};
+          </div>
         </div>
       </div>
     );
