@@ -16,63 +16,149 @@ export default class SignUp extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      firstName:"",
-      lastName:"",
+      name:"",
       email:"",
       password:"",
       passwordValidation:"",
       companyName:"",
+      passMatch:"",
+      notification:"",
+      NotificationTwo:"",
       activeTab: 1
     }
   }
 
-  handleFirstName =(event) => {
-    this.setState({
-      firstName:event.target.value
+  signUp = () => {
+    let data = new FormData;
+    let _this = this;
+    data.append('email', this.state.email);
+    data.append('name', this.state.name);
+    data.append('password', this.state.password);
+    data.append('role_id', this.state.activeTab);
+
+    fetch('http://localhost:8000/api/signUp', {
+      method:'Post',
+      body:data
     })
-  }
-  handleLastName = (event) => {
-    this.setState({
-      lastName:event.target.value
+    .then(function(response) {
+      return response.json();
     })
+    .then(function(json) {
+      if(json.error) {
+        _this.setState({
+          notification:json.error
+        })
+      }
+      else if(json.success) {
+        _this.setState({
+          notification:json.success
+        })
+        _this.signIn();
+      }
+    })
+      this.forceUpdate();
+  };
+
+  signIn =() => {
+    let data = new FormData;
+    let _this = this;
+    data.append('email', this.state.email);
+    data.append('password', this.state.password);
+
+  fetch('http://localhost:8000/api/signIn', {
+    method:'Post',
+    body:data
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.error) {
+        _this.setState({
+          notificationTwo:json.error
+        })
+      }
+      else {
+        _this.setState({
+          notificationTwo: json.success
+        })
+        sessionStorage.setItem('token', json.token);
+        setTimeout(function(){
+          _this.context.router.history.push("/Profile");
+        }, 3000)
+      }
+    }.bind(this))
   }
+
+  handleName =(event) => {
+    this.setState({
+      name:event.target.value
+    })
+  };
+
   handleEmail = (event) => {
     this.setState({
       email:event.target.value
     })
-  }
+  };
+
   handlePassword = (event) => {
     this.setState({
       password:event.target.value
+    }, function() {
+      if(this.state.password != this.state.passwordValidation)
+      {
+        this.setState({
+          passMatch:"passwords must match"
+        });
+      }
+      else
+      {
+        this.setState({
+          passMatch:"passwords match"
+        })
+      }
     })
-  }
+  };
+
   handlePasswordValidation = (event) => {
     this.setState({
       passwordValidation:event.target.value
+    }, function() {
+      if(this.state.password != this.state.passwordValidation)
+      {
+        this.setState({
+          passMatch:"passwords must match"
+        });
+      }
+      else
+      {
+        this.setState({
+          passMatch:"passwords match"
+        })
+      }
     })
-  }
-  handleCompanyName = (event) => {
-    this.setState({
-      companyName:event.target.value
-    })
-  }
+  };
 
  changeTab = (tab) => {
    this.setState({
      activeTab:tab
    })
- }
+ };
 
  renderTab = () => {
    if (this.state.activeTab === 1) {
      return(
        <div className="sign-up-seeker">
 
-         <input type="text" className="first-name" value={this.state.firstName} onChange={this.handleFirstName} placeholder="First-Name" />
-         <input type="text" className="last-name" value={this.state.lastName} onChange={this.handleLastName} placeholder="Last-Name" />
-         <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Password"/>
+         <input type="text" className="name" value={this.state.name} onChange={this.handleName} placeholder="Full-Name" />
+         <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
          <input type="password" className="password" value={this.state.password} onChange={this.handlePassword}  placeholder="Password"/>
          <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
+         <input type="submit" className="submitButton" onClick={this.signUp}/>
+         <p className="passValidation">{this.state.passMatch}</p>
+         <p className="submitNote">{this.state.notification}</p>
+          <p className="submitNote">{this.state.notificationTwo}</p>
        </div>
      )
 
@@ -81,10 +167,14 @@ export default class SignUp extends React.PureComponent {
      return (
        <div className="sign-up-employer">
 
-        <input type="text" className="companyName" value={this.state.companyName} onChange={this.handleCompanyName} placeholder="Company-Name"/>
+        <input type="text" className="name" value={this.state.Name} onChange={this.handleName} placeholder="Company-Name"/>
         <input type="text" className="email" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
         <input type="password" className="password" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
-        <input type="password" className="password-validation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Validate"/>
+        <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
+        <input type="submit" className="submitButton" onClick={this.signUp}/>
+        <p className="passValidation">{this.state.passMatch}</p>
+        <p className="submitNote">{this.state.notification}</p>
+        <p className="submitNote">{this.state.notificationTwo}</p>
       </div>
      )
    }
