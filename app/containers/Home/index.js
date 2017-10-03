@@ -33,12 +33,9 @@ export default class Home extends React.PureComponent {
     }
   }
 
-
-
-
   render() {
     return (
-      <div className="container">
+      <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <input type="submit" className="sign-in" value="Sign-in" onClick={this.handleSignIn}/>
           {this.renderSignIn()}
