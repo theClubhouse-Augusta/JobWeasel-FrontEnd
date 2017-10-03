@@ -2,13 +2,134 @@
 
 .profileBox {
   background-position: center;
+  flex-direction: column;
+  display: flex;
+  margin: 200px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.userImage {
-  max-width: 25px;
-  max-height: 25px;
-  display:flex;
-  flex-direction:column;
+.profileImage {
+  max-width: 150px;
+  max-height: 150px;
   flex-wrap:wrap;
-  margin: 50px;
+  margin: 40px;
+}
+
+.user h2 {
+  background-color: #8DB580;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100px;
+  height:auto;
+  outline: none;
+  text-align: center;
+}
+
+.title {
+  background-color: #8DB580;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  font-variant:normal;
+  font-style: normal;
+  width: 100px;
+  height:auto;
+  outline: none;
+  text-align: center;
+}
+
+.email {
+  background-color: #8DB580;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100px;
+  height:auto;
+  outline: none;
+  text-align: center;
+}
+
+.location {
+  background-color: #8DB580;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100px;
+  height:auto;
+  outline: none;
+  text-align: center;
+}
+
+.status {
+  background-color: #8DB580;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  font-style: normal;
+  width: 100px;
+  height:auto;
+  outline: none;
+  text-align: center;
+}
+
+
+.userBio {
+  background-color: #8DB580;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100px;
+  outline: none;
+  text-align: center;
+
+}
+
+.linksBox {
+  width: 500px;
+  height: 300px;
+  margin: 100px;
+  align-items: center;
+  align-content: space-around;
+}
+
+.linksBox a {
+  background-color: #8DB580;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: auto;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+
+  line-height: 20px;
+  width: auto;
+  margin: 40px;
+}
+
+
+
+.submitButton {
+  background-color: #8DB580;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.5em;
+  width: 100px;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+
 }
