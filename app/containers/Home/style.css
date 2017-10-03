@@ -26,6 +26,8 @@
   width: 80px;
   padding: 10px;
   outline: none;
+  margin-left: 1100px;
+  margin-top: 20px;
 }
 .sign-up {
   background-color: #8DB580;
@@ -38,4 +40,9 @@
   padding: 10px;
   outline: none;
   text-align: center;
+}
+.sign-in-button {
+  display: flex;
+  flex-direction: column;
+
 }

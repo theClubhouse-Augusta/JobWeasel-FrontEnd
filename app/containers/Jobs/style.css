@@ -6,22 +6,17 @@
   min-height:100vh;
 }
 
-.jobsList {
-
-}
-
-.jobTitle {
-
-}
-
-.jobDesc {
-
-}
-
-.jobBudget {
-
-}
-
-.timeFrame {
-  
+.jobsDisplay {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  height: auto;
+  width: auto;
+  background: #f49716;
+  color: black;
+  padding: 15px;
+  box-shadow: 5px 5px 5px #000000;
+  border-radius: 5px;
+  font-variant:small-caps;
+  align-items: center;
 }
