@@ -20,7 +20,7 @@ export default class SignIn extends React.PureComponent {
 
   handleEmail = (event) => {
     this.setState({
-      emailSignIn:event.target.value
+      email:event.target.value
     })
   }
   handlePassword = (event) => {
@@ -34,8 +34,11 @@ export default class SignIn extends React.PureComponent {
     return (
       <div>
         <div className="signInContainer">
-          <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
-          <input type="text" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Passwprd"/>
+          <div className="signInInput">
+            <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
+            <input type="password" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Passwprd"/>
+            <input type="submit" className="signInButton" placeholder="Sign-In"/>
+          </div>
 
         </div>
       </div>
