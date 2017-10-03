@@ -37,15 +37,11 @@
   display: flex;
   justify-content: center;
 }
-.first-name {
+.name {
   padding: 5px;
   border-radius: 3px;
 }
-.last-name {
-  padding: 5px;
-  margin-top: 10px;
-  border-radius: 3px;
-}
+
 .email {
   padding: 5px;
   margin-top: 10px;
@@ -61,16 +57,21 @@
   margin-top: 10px;
   border-radius: 3px;
 }
-.companyName {
+
+.passValidation {
+
+}
+
+.submitButton {
   padding: 5px;
   margin-top: 10px;
   border-radius: 3px;
 }
-.password-validation {
-  padding: 5px;
-  margin-top: 10px;
-  border-radius: 3px;
+
+.submitButton:hover {
+  
 }
+
 .choose-seeker {
   border-radius: 3px;
   outline: none;
