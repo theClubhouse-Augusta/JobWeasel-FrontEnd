@@ -39,7 +39,7 @@ export default class Jobs extends React.PureComponent {
   };
   render() {
     return (
-      <div className="container">
+      <div className="jobsContainer">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
         <div className="jobsList">
           <div className="jobDisplay">

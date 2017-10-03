@@ -15,7 +15,7 @@ import UserProfile from "components/UserProfile";
 export default class Profile extends React.PureComponent {
   render() {
     return (
-      <div className="container">
+      <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
 
         <UserProfile/>

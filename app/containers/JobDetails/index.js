@@ -13,10 +13,10 @@ import './styleM.css';
 export default class JobDetails extends React.PureComponent {
   render() {
     return (
-      <div className="container">
+      <div className="jobDetailsContainer">
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
         <div className="detailContainer">
-      
+
         <div className="jobTitle">
         </div>
         <div className="jobDesc">
