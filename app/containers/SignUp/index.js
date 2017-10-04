@@ -83,9 +83,10 @@ export default class SignUp extends React.PureComponent {
           notificationTwo: json.success
         })
         sessionStorage.setItem('token', json.token);
+        sessionStorage.setItem('user', JSON.stringify(json.user));
         setTimeout(function(){
           _this.context.router.history.push("/Profile");
-        }, 3000)
+        }, 1000)
       }
     }.bind(this))
   }
@@ -158,7 +159,7 @@ export default class SignUp extends React.PureComponent {
          <input type="submit" className="submitButton" onClick={this.signUp}/>
          <p className="passValidation">{this.state.passMatch}</p>
          <p className="submitNote">{this.state.notification}</p>
-          <p className="submitNote">{this.state.notificationTwo}</p>
+         <p className="submitNote">{this.state.notificationTwo}</p>
        </div>
      )
 
