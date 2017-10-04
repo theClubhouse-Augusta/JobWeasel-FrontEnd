@@ -19,37 +19,37 @@ export default class UserProfile extends React.PureComponent {
       <div className="profileBox">
 
 
-        <div className="user">
-          <h2> User Name
+        <div className="profileUser">
+          <h2> Profile Name
             <p><input type="text" /></p>
           </h2>
         </div>
 
-        <div className="userImage">User Image
+        <div className="profileImage">Profile Image
           <p><input type="text" placeholder="User Image"/></p>
           <img src={require("../../images/businessWeasel.jpg")} className="profileImage"/>
         </div>
 
 
-        <div className="title">Title
+        <div className="profileTitle">Title
           <p><input type="text" placeholder="title"/></p>
         </div>
 
-        <div className="email">Email
+        <div className="profileEmail">Email
           <p><input type="text" placeholder="email"/></p>
         </div>
 
-        <div className="location">Location
+        <div className="profileLocation">Location
           <p><input type="text" placeholder="location" /></p>
         </div>
 
-        <div className="status">Status
+        <div className="profileStatus">Status
           <p><input type="text" placeholder="status"/></p>
         </div>
 
         <article>
-          <div className="userBio">User Bio
-          <p><input type="textarea" placeholder="User Bio"/></p>
+          <div className="profileBio">Profile Bio
+          <p><input type="text" placeholder="Profile Bio"/></p>
           </div>
         </article>
 
@@ -62,7 +62,7 @@ export default class UserProfile extends React.PureComponent {
 
 
         <button className ="submitButton">
-          <input type="submit" value="submit"  />
+          <input type="button" value="submit"  />
         </button>
 
       </div>
