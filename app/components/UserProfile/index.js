@@ -25,10 +25,15 @@ export default class UserProfile extends React.PureComponent {
           </h2>
         </div>
 
-        <div className="profileImage">Profile Image
-          <p><input type="text" placeholder="User Image"/></p>
-          <img src={require("../../images/businessWeasel.jpg")} className="profileImage"/>
+
+        <div className="profileImage">
+          <img src={require("../../images/businessWeasel.jpg")} />
         </div>
+
+        <div className="profileImageUpload">Profile Image
+          <p><input type="text" placeholder="User Image"/></p>
+        </div>
+
 
 
         <div className="profileTitle">Title
@@ -47,23 +52,24 @@ export default class UserProfile extends React.PureComponent {
           <p><input type="text" placeholder="status"/></p>
         </div>
 
-        <article>
-          <div className="profileBio">Profile Bio
-          <p><input type="text" placeholder="Profile Bio"/></p>
-          </div>
+        <article className="profileBio">Profile Bio
+          <p><textarea rows="20" cols="45" wrap="hard"
+          placeholder="Profile Bio"/></p>
         </article>
 
-        <section className="linksBox">
-          <p><a href="https://www.resume.com">My Resume</a></p>
-          <p><a href="https://www.portfolio.com">My Portfolio or Website</a></p>
-          <p><a href="https://www.linkedin.com">My LinkedIn or Social Media</a></p>
-          <p><a href="https://www.github.com">My Github</a></p>
-        </section>
+        <footer>
+          <section className="linksBox">
+            <p><a href="https://www.resume.com">My Resume</a></p>
+            <p><a href="https://www.portfolio.com">My Portfolio or Website</a></p>
+            <p><a href="https://www.linkedin.com">My LinkedIn or Social Media</a></p>
+            <p><a href="https://www.github.com">My Github</a></p>
+          </section>
 
+          <div className ="submitButton">
+            <b><input type="button" value="submit"  /></b>
+          </div>
 
-        <button className ="submitButton">
-          <input type="button" value="submit"  />
-        </button>
+        </footer>
 
       </div>
     );

@@ -2,7 +2,6 @@
 
 .profileContainer {
   display:flex;
-  flex-direction:column;
   min-height:100vh;
   background-color: #b3b3b3;
 }

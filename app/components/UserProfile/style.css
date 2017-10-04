@@ -1,17 +1,13 @@
 /* UserProfile Styles */
 
 .profileBox {
-  background-position: center;
-  flex-direction: column;
-  display: flex;
+  flex-direction: row;
+  display:inline-flex;
   margin: 100px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  float: none;
+  justify-content: space-between;
+  flex-wrap:wrap;
   line-height: 50px;
-  text-align: center;
+  align-content: stretch;
 }
 
 .profileImage img {
@@ -19,10 +15,11 @@
   max-height: 150px;
   flex-wrap:wrap;
   margin: 50px;
-  float: left;
+  float:inherit;
+  align-items: center;
 }
 
-.profileImage {
+.profileImageUpload {
   color: white;
   text-decoration: none;
   border: none;
@@ -30,7 +27,6 @@
   width: auto;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 .profileUser h2 {
@@ -41,19 +37,17 @@
   width: auto;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 .profileTitle {
   color: white;
   border: none;
   font-size: 1.5em;
-  font-variant:normal;
   font-style: normal;
   width: auto;
   height:auto;
   outline: none;
-  text-align: center;
+  text-decoration: none;
 }
 
 .profileEmail {
@@ -64,7 +58,6 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 .profileLocation {
@@ -75,7 +68,6 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 .profileStatus {
@@ -86,7 +78,6 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 
@@ -98,19 +89,9 @@
   width: auto;
   height: auto;
   outline: none;
-  text-align: center;
-  margin: 50px;
 
 }
 
-.linksBox {
-  width: 500px;
-  height: 300px;
-  align-items: center;
-  align-content: space-around;
-  line-height: 50px;
-
-}
 
 .linksBox a {
   background-color: #8DB580;
@@ -118,31 +99,26 @@
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1em;
   width: auto;
   padding: 10px;
   outline: none;
   text-align: center;
-  line-height: 50px;
-  width: auto;
-  margin: 40px;
-
+  align-items:center;
 }
 
 
-.submitButton {
+.submitButton b {
   background-color: #8DB580;
   border-radius: 25px;
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1em;
   width: auto;
   padding: 10px;
   outline: none;
   text-align: center;
+  align-items:center;
   line-height: 50px;
-  width: auto;
-  margin: 40px;
-
 }
