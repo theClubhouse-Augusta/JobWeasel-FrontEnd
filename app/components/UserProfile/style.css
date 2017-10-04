@@ -38,45 +38,33 @@
   max-width: 150px;
   max-height: 150px;
   flex-wrap:wrap;
-  margin: 50px;
-  float: left;
+  margin: 30px;
 }
 
-.profileImage {
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.5em;
-  width: auto;
-  height:auto;
-  outline: none;
-  text-align: center;
-}
 
 .profileUser h2 {
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 2em;
+  font-size: 1.6em;
   width: auto;
   height:auto;
   outline: none;
-  text-align: center;
+  font-kerning: 5em;
 }
 
-.profileTitle {
+.profileTitle  {
   color: white;
   border: none;
   font-size: 1.5em;
-  font-variant:normal;
   font-style: normal;
   width: auto;
   height:auto;
   outline: none;
-  text-align: center;
+  text-decoration: none;
 }
 
-.profileEmail {
+.profileEmail  {
   color: white;
   text-decoration: none;
   border: none;
@@ -84,10 +72,9 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
-.profileLocation {
+.profileLocation  {
   color: white;
   text-decoration: none;
   border: none;
@@ -95,10 +82,9 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
-.profileStatus {
+.profileStatus  {
   color: white;
   text-decoration: none;
   border: none;
@@ -106,7 +92,6 @@
   width: 100px;
   height:auto;
   outline: none;
-  text-align: center;
 }
 
 
@@ -118,19 +103,10 @@
   width: auto;
   height: auto;
   outline: none;
-  text-align: center;
-  margin: 50px;
+  margin-left: 50px;
 
 }
 
-.linksBox {
-  width: 500px;
-  height: 300px;
-  align-items: center;
-  align-content: space-around;
-  line-height: 50px;
-
-}
 
 .linksBox a {
   background-color: #8DB580;
@@ -138,31 +114,27 @@
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1em;
   width: auto;
   padding: 10px;
   outline: none;
   text-align: center;
-  line-height: 50px;
-  width: auto;
-  margin: 40px;
-
+  align-items:center;
+  line-height: 45px;
 }
 
 
-.submitButton {
+.submitButton b {
   background-color: #8DB580;
   border-radius: 25px;
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1em;
   width: auto;
   padding: 10px;
   outline: none;
   text-align: center;
-  line-height: 50px;
-  width: auto;
-  margin: 40px;
+  align-items:center;
 
 }

@@ -1,0 +1,10 @@
+/* PhotoUpload Styles */
+.profileImageUpload {
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1em;
+  width: auto;
+  height:auto;
+  outline: none;
+}
