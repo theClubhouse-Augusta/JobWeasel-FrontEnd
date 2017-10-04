@@ -5,3 +5,19 @@
   min-height:100vh;
   background-color: #b3b3b3;
 }
+
+
+.updateProfileButton {
+  background-color: #8DB580;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1em;
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+  align-items:center;
+}

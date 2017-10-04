@@ -43,7 +43,7 @@ export default class Home extends React.PureComponent {
           <div className="welcome-text">
             <h1>Welcome to Job Weasel</h1>
             <h3>A place to find your next job or your next employee.</h3>
-            <div className="sign-up-button">
+            <div className="sign-up">
               <Link to="/SignUp">Sign Up</Link>
             </div>
           </div>

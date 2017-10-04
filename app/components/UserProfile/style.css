@@ -1,45 +1,59 @@
 /* UserProfile Styles */
 
+.fullOverlay {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  bottom: 0;
+  z-index: 79;
+  left:0;
+  background:rgba(0, 0, 0, 0.3);
+}
+
 .profileBox {
-  flex-direction: row;
-  display:inline-flex;
-  margin: 100px;
-  justify-content: space-between;
-  flex-wrap:wrap;
-  line-height: 50px;
-  align-content: stretch;
+  position:fixed;
+  top:0;
+  left:0;
+  animation: fadeIn 500ms;
+  z-index:89;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color: black;
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100%  { opacity: 1;  }
+}
+
+.dialogOverlayHidden {
+    display:none;
 }
 
 .profileImage img {
   max-width: 150px;
   max-height: 150px;
   flex-wrap:wrap;
-  margin: 50px;
-  float:inherit;
-  align-items: center;
+  margin: 30px;
 }
 
-.profileImageUpload {
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.5em;
-  width: auto;
-  height:auto;
-  outline: none;
-}
 
 .profileUser h2 {
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 2em;
+  font-size: 1.6em;
   width: auto;
   height:auto;
   outline: none;
+  font-kerning: 5em;
 }
 
-.profileTitle {
+.profileTitle  {
   color: white;
   border: none;
   font-size: 1.5em;
@@ -50,7 +64,7 @@
   text-decoration: none;
 }
 
-.profileEmail {
+.profileEmail  {
   color: white;
   text-decoration: none;
   border: none;
@@ -60,7 +74,7 @@
   outline: none;
 }
 
-.profileLocation {
+.profileLocation  {
   color: white;
   text-decoration: none;
   border: none;
@@ -70,7 +84,7 @@
   outline: none;
 }
 
-.profileStatus {
+.profileStatus  {
   color: white;
   text-decoration: none;
   border: none;
@@ -89,6 +103,7 @@
   width: auto;
   height: auto;
   outline: none;
+  margin-left: 50px;
 
 }
 
@@ -105,6 +120,7 @@
   outline: none;
   text-align: center;
   align-items:center;
+  line-height: 45px;
 }
 
 
@@ -120,5 +136,5 @@
   outline: none;
   text-align: center;
   align-items:center;
-  line-height: 50px;
+
 }
