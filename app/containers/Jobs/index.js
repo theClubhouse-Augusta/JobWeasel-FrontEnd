@@ -37,6 +37,7 @@ export default class Jobs extends React.PureComponent {
       });
     }.bind(this))
   };
+
   render() {
     return (
       <div className="jobsContainer">
@@ -44,10 +45,10 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.jobs.map((t, i) => (
-           <div key={i}> Job Listings: {t.name}
+           <Link key={i} to={'/JobDetails/'+t.id}> Job Listings: {t.name}
              <p>{t.description}</p>
              <p>{t.budget}</p>
-           </div>))};
+           </Link>))};
           </div>
         </div>
       </div>

@@ -29,13 +29,6 @@ export default class JobDetails extends React.PureComponent {
         </div>
         <div className="timeFrame">
         </div>
-        <div className="jobStatus">
-        </div>
-        <div className="detailsCreated">
-        </div>
-        <div className="detailsUpdated">
-        </div>
-          <input type="text" className="search-field" placeholder="Search" value="search" />
 
         </div>
       </div>

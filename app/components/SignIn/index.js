@@ -68,7 +68,7 @@ export default class SignIn extends React.PureComponent {
         <div className="signInContainer">
           <div className="signInInput">
             <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
-            <input type="password" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Passwprd"/>
+            <input type="password" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
             <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn}/>
             <p className="submitNote">{this.state.notificationTwo}</p>
           </div>
