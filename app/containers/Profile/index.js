@@ -28,7 +28,6 @@ export default class Profile extends React.PureComponent {
 
 
       }
-
     }
   };
 
@@ -39,7 +38,7 @@ export default class Profile extends React.PureComponent {
     }
 
   render() {
-
+    console.log(this.state.user.id);
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
@@ -47,7 +46,16 @@ export default class Profile extends React.PureComponent {
 
           <header>Update Profile
           </header>
-
+          <p>Email:{this.state.user.email}
+          </p>
+          <p>Name:{this.state.user.name}
+          </p>
+          <p>Description:{this.state.user.bio}
+          </p>
+          <p>Created:{this.state.user.created_at}
+          </p>
+          <p>Updated:{this.state.user.updated_at}
+          </p>
         </div>
 
         <section className="profileDisplay">

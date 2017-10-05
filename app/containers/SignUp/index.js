@@ -148,7 +148,7 @@ export default class SignUp extends React.PureComponent {
  };
 
  renderTab = () => {
-   if (this.state.activeTab === 1) {
+   if (this.state.activeTab === 2) {
      return(
        <div className="sign-up-seeker">
 
@@ -164,7 +164,7 @@ export default class SignUp extends React.PureComponent {
      )
 
    }
-   else if (this.state.activeTab === 2) {
+   else if (this.state.activeTab === 1) {
      return (
        <div className="sign-up-employer">
 
@@ -189,8 +189,8 @@ export default class SignUp extends React.PureComponent {
             <div className="hello-div"><h1>Sign up for Job Weasel!</h1></div>
 
               <div className="button-div">
-                <input type="button" className="choose-seeker" value="Job-Seeker" onClick={()=> this.changeTab(1)}/>
-                <input type="button" className="choose-employer" value="Employer" onClick={()=> this.changeTab(2)}/>
+                <input type="button" className="choose-seeker" value="Job-Seeker" onClick={()=> this.changeTab(2)}/>
+                <input type="button" className="choose-employer" value="Employer" onClick={()=> this.changeTab(1)}/>
               </div>
                 {this.renderTab()}
 
