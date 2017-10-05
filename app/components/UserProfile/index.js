@@ -33,11 +33,11 @@ export default class UserProfile extends React.PureComponent {
       return (
         <div>
           <div className="fullOverlay" onClick={this.props.onClose}>
-        </div>
-        <div className="profileBox">
+          </div>
+        <div className="updateBox">
 
 
-          <div className="profileImage">
+          <div className="updateImage">
             <img src={require("../../images/businessWeasel.jpg")} />
           </div>
 
@@ -47,52 +47,48 @@ export default class UserProfile extends React.PureComponent {
 
 
           <header>
-            <div className="profileUser">
-                <h2> Profile Name
+            <div className="updateUser">
+                <h2>Profile Name
                   <p><input type="text" placeholder="Name" /></p>
                 </h2>
             </div>
           </header>
 
           <section>
-            <div className="profileTitle">Title
+            <div className="updateTitle">Title
               <p><input type="text" placeholder="Title"/></p>
             </div>
 
-            <div className="profileStatus"> Availability
+            <div className="updateStatus">Availability
               <p><input type="text" placeholder="Availability"/></p>
             </div>
 
-            <div className="profileLocation">Location
+            <div className="updateLocation">Location
               <p><input type="text" placeholder="Location" /></p>
             </div>
 
-            <div className="profileEmail">Email
+            <div className="updateEmail">Email
               <p><input type="text" placeholder="Email address"/></p>
             </div>
           </section>
 
-
-          <article className="profileBio">Profile Bio
-            <p><textarea rows="10" cols="45" wrap="hard"
-            placeholder="Profile Bio"/></p>
-          </article>
-
           <footer>
-            <section className="linksBox">
-              <p><a href="https://www.resume.com">My Resume</a></p>
-              <p><a href="https://www.portfolio.com">My Portfolio or Website</a></p>
-              <p><a href="https://www.linkedin.com">My LinkedIn or Social Media</a></p>
-              <p><a href="https://www.github.com">My Github</a></p>
+            <section className="bioBox">
+              <article className="updateBio">Profile Bio
+                <p><textarea rows="10" cols="45" wrap="hard"
+                placeholder="Profile Bio"/></p>
+              </article>
+
+
+              <div className ="updateButton">
+                <b><input type="button" value="Update"  /></b>
+              </div>
+
             </section>
-
-            <div className ="submitButton">
-              <b><input type="button" value="submit"  /></b>
-            </div>
-
           </footer>
 
         </div>
+
       </div>
       );
     }
