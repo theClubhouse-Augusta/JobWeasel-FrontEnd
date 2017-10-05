@@ -4,6 +4,9 @@
   display:flex;
   min-height:100vh;
   background-color: #b3b3b3;
+  text-align: center;
+  font-family: sans-serif;
+
 }
 
 
@@ -15,9 +18,66 @@
   border: none;
   font-size: 1em;
   width: auto;
-  height: 20px;
+  height: 30px;
+  font-size: 1.5em;
   padding: 10px;
   outline: none;
-  text-align: center;
-  align-items:center;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+.profileDisplay  {
+  background-color: white;
+  max-width:700px;
+  height:900px;
+  padding-left: 50px;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+  font-size: 1.5em;
+  border-radius: 25px;
+}
+
+.profileEmail {
+  font-weight: bold;
+  margin: 20px;
+}
+
+.profileName h1 {
+  font-weight: bold;
+  color: #8DB580;
+  font-size: 1.6em;
+}
+
+.profileLocation {
+  font-weight: bold;
+  margin: 15px;
+}
+
+.profileBio {
+  line-height: 35px;
+  text-align: justify;
+  font-kerning: 3em;
+}
+
+
+
+.linksBox {
+  margin-top: 50px;
+}
+
+.linksBox a {
+  background-color: #8DB580;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1.1em;
+  width: auto;
+  padding: 10px;
+  outline: none;
+  line-height: 45px;
+  margin-left: 40px;
+  margin-top: 45px;
 }
