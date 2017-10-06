@@ -5,9 +5,11 @@
   flex-direction:column;
   min-height:100vh;
   background: url('../../images/computer_1.jpg');
-  font-family:'Source Sans Pro', sans-serif;
+  font-family:'Play', sans-serif;
   background-size: cover;
+  background-attachment:fixed;
 }
+
 .welcome-text {
   display: flex;
   flex-direction: column;

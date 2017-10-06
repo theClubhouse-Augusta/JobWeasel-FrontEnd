@@ -1,7 +1,13 @@
 /* AddJob Styles */
 
-.container {
+.addJobContainer {
   display:flex;
-  flex-direction:column;
   min-height:100vh;
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  background-image: url("../../IMAGES/1.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 }
