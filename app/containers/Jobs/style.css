@@ -3,36 +3,65 @@
 .jobsContainer {
   display:flex;
   min-height:100vh;
-  text-align: center;
-  font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/computer_2.jpg");
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  z-index: 0;
-}
 
-.jobsFullOverlay {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(24, 29, 38, 0.3);
-  z-index: 1;
+  font-family: 'Karla', sans-serif;
+  background-color: #DBDBDB;
 }
-
+.jobsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .jobDisplay {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:10px;
+  width: 75%;
+  padding: 10px;
+
+}
+.resultBox {
+  min-height: 100px;
+  width: 20%;
+  background-color: #0B3954;
+  margin:15px;
+  padding: 20px;
+  display: flex;
   flex-direction: column;
-  font-size: 1.5em;
-  height: auto;
-  width: auto;
-  background: #f49716;
-  color: black;
-  padding: 15px;
-  box-shadow: 5px 5px 5px #000000;
-  border-radius: 5px;
-  font-variant:small-caps;
-  align-items: center;
-  z-index: 2;
+  border-radius: 10px;
+  color: white;
+
+}
+.companyDiv {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+
+}
+.jobSearch {
+  width: 250px;
+}
+.searchHolder {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 5%;
+}
+.jobSearch {
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  height: 20px;
+}
+.nextIcon {
+  font-size: 1.8em;
+  margin: 5px;
+  padding: 10px;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
