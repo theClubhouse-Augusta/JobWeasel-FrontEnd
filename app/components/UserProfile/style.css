@@ -35,7 +35,8 @@
   border-radius: 25px;
   font-kerning: 10em;
   font-family: 'Play', sans-serif;
-
+  cursor: auto;
+  flex-wrap: wrap;
 
 }
 

@@ -33,8 +33,38 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+}
+@media (max-width: 425px) {
+  .profileContainer {
+    flex-direction:auto;
+    flex-wrap:auto;
+    display: flex;
+  }
 
+  .updateProfileButton {
+    width:auto;
+    margin:auto;
+    margin-top: auto;
+    height: auto;
+    padding: auto;
 
+  }
 
+  .profileDisplay {
+    width: auto;
+    margin: auto;
+    padding: inherit;
+    height: auto;
+  }
 
+  .profileEmail {
+    font-weight: bold;
+    font-size: 90%;
+    width: auto;
+  }
+
+  .linksBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
