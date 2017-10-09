@@ -17,22 +17,32 @@ export default class JobDetails extends React.PureComponent {
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
         <div className="jobDetailFullOverlay">
         </div>
+
         <div className="detailContainer">
 
-        <div className="jobTitle">
-        </div>
-        <div className="jobDesc">
-        </div>
-        <div className="workers">
-        </div>
-        <div className="budget">
-        </div>
-        <div className="startDate">
-        </div>
-        <div className="timeFrame">
-        </div>
+          <div className="jobTitle">
+          </div>
+          <div className="jobDesc">
+          </div>
+          <div className="companyName">
+          </div>
+          <div className="companyWebsite">
+          </div>
+          <div className="jobLocation">
+          </div>
+          <div className="workers">
+          </div>
+          <div className="budget">
+          </div>
+          <div className="startDate">
+          </div>
+          <div className="timeFrame">
+          </div>
+          <div className="timeStamp">
+          </div>
 
         </div>
+
       </div>
     );
   }
