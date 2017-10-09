@@ -15,6 +15,8 @@ export default class Admin extends React.PureComponent {
     return (
       <div className="container">
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
+        <div className="adminFullOverlay">
+        </div>
         <div className="recruiterReview">
           <header>Recruiters to Review:</header>
         </div>

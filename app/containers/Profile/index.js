@@ -45,6 +45,8 @@ export default class Profile extends React.PureComponent {
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
+        <div className= "profileFullOverlay">
+        </div>
         <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
 
           <header>Update Profile

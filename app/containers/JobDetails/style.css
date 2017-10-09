@@ -12,7 +12,12 @@
   background-attachment:fixed;
 }
 
-
+.jobDetailFullOverlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 29, 38, 0.3)
+}
 
 .detailContainer {
 

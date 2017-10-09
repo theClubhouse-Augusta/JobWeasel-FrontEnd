@@ -185,6 +185,8 @@ export default class SignUp extends React.PureComponent {
     return (
       <div className="signUpContainer">
         <Helmet title="SignUp" meta={[ { name: 'description', content: 'Description of SignUp' }]}/>
+          <div className="singUpFullOverlay">
+          </div>
           <div className="sign-up-container">
             <div className="hello-div"><h1>Sign up for Job Weasel!</h1></div>
 

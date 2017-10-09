@@ -42,6 +42,8 @@ export default class Jobs extends React.PureComponent {
     return (
       <div className="jobsContainer">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
+        <div className="jobsFullOverlay">
+        </div>
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.jobs.map((t, i) => (

@@ -6,16 +6,26 @@
   min-height:100vh;
   font-family: 'Play', sans-serif;
 }
+
+.signUpFullOverlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 29, 38, 0.3)
+}
+
 .sign-up-container {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
   font-family: 'Play', sans-serif;
 }
+
 .hello-div {
   display: flex;
   justify-content: center;
 }
+
 .sign-up-seeker {
   background-color: white;
   height: 300px;
@@ -28,17 +38,19 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0px 23px 83px 1px rgba(105,104,105,0.64);
-
 }
+
 .sign-up-employer {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
 }
+
 .button-div {
   display: flex;
   justify-content: center;
 }
+
 .name {
   margin-top: 10px;
   padding: 5px;
@@ -50,6 +62,7 @@
   margin-top: 10px;
   border-radius: 3px;
 }
+
 .passwordValidation {
   padding: 5px;
   margin-top: 10px;
@@ -77,9 +90,8 @@
   background-color: white;
   width: 100px;
   margin-right: 30px;
-
-
 }
+
 .choose-employer {
   border-radius: 3px;
   outline: none;
@@ -87,6 +99,7 @@
   background-color: white;
   width: 100px;
 }
+
 .sign-up-employer{
   background-color: white;
   height: 300px;
@@ -99,5 +112,4 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0px 23px 83px 1px rgba(105,104,105,0.64);
-
 }
