@@ -40,21 +40,23 @@ export default class Profile extends React.PureComponent {
       })
     }
 
-    render() {
-      console.log(this.state.user.id);
-      return (
-        <div className="profileContainer">
-          <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
-          <div className= "profileFullOverlay">
-          </div>
+
+  render() {
+    console.log(this.state.user.id);
+    return (
+      <div className="profileContainer">
+        <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
+        <div className= "profileFullOverlay">
+        </div>
+
           <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
 
             <header>Update Profile
             </header>
 
           </div>
+        <section className="profileDisplay">
 
-          <section className="profileDisplay">
 
             <div className="profileImage">
               <img src={require("../../images/businessWeasel.jpg")} />

@@ -139,37 +139,40 @@
 
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .updateBox {
     animation: fadeIn 500ms;
     z-index:89;
-    padding: auto;
+    padding: 12px;
     width: auto;
-    height:auto;
-    margin-top: 20px;
+    max-height:80vh;
+    overflow:auto;
     background-color: #009999;
     border-radius: 25px;
     font-family: 'Play', sans-serif;
     display: flex;
     flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+    z-index: 89;
+  }
+
+  .profileFullOverlay {
+    padding: 12px;
   }
 
   .updateImage img {
-    width:35%;
-    height: 35%;
-    margin: auto;
+    width: 40vw;
     border-radius: 25px;
   }
 
   .profileHeader {
     color: white;
     text-decoration: none;
-    width: auto;
+    width: 100%;
     height:auto;
     outline: none;
-    font-kerning: 5em;
-    margin:0 auto;
-
+    margin-top: 50px;
   }
 
   .updateUser h2 {
@@ -179,7 +182,7 @@
     width: auto;
     height:auto;
     outline: none;
-    margin: auto;
+    margin: 0 auto;
     flex-wrap: wrap;
   }
 
@@ -190,7 +193,6 @@
     width: auto;
     height:auto;
     outline: none;
-    flex-wrap: wrap;
   }
 
   .updateEmail  {
@@ -200,7 +202,7 @@
     height:auto;
     outline: none;
     margin-top: 10px;
-    flex-wrap: wrap;
+    margin: 0 auto;
   }
 
   .updateLocation  {
@@ -210,7 +212,7 @@
     height:auto;
     outline: none;
     margin-top: 10px;
-    flex-wrap: wrap;
+    margin: 0 auto;
   }
 
   .updateStatus  {
@@ -220,7 +222,11 @@
     height:auto;
     outline: none;
     margin-top: 10px;
-    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .updateInfoBox {
+    margin: 0 auto;
   }
 
   .bioBox {
@@ -232,7 +238,7 @@
     line-height: auto;
     margin-top: auto;
     width: auto;
-    flex-wrap: wrap;
+    margin: 0 auto;
   }
 
 
@@ -241,7 +247,7 @@
     font-size: 1em;
     width: auto;
     height: auto;
-
+    margin: 0 auto;
   }
 
 

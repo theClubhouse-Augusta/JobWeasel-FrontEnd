@@ -1,8 +1,9 @@
 /* Profile Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .profileContainer {
     flex-direction:column;
     flex-wrap:wrap;
+    align-items: center;
   }
 
   .updateProfileButton {
@@ -11,7 +12,6 @@
     margin-top: 40px;
     height: auto;
     padding: auto;
-
   }
 
   .profileDisplay {
@@ -34,6 +34,7 @@
     margin-bottom: 20px;
   }
 }
+
 @media (max-width: 425px) {
   .profileContainer {
     flex-direction:auto;
@@ -41,13 +42,17 @@
     display: flex;
   }
 
+  .profileImage {
+    margin-top: 10px;
+  }
+
   .updateProfileButton {
     width:auto;
     margin:auto;
-    margin-top: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: auto;
     padding: auto;
-
   }
 
   .profileDisplay {
