@@ -35,6 +35,7 @@
   outline: none;
   margin-left: 50px;
   margin-right: 40px;
+  margin-top: 30px;
   align-self:flex-start;
   justify-content: center;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
