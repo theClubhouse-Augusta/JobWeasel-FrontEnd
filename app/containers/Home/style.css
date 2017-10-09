@@ -8,13 +8,15 @@
   font-family:'Play', sans-serif;
   background-size: cover;
   background-attachment:fixed;
+  z-index: 0;
 }
 
 .homeFullOverlay {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: rgba(24, 29, 38, 0.3)
+  background-color: rgba(24, 29, 38, 0.3);
+  z-index: 1;
 }
 
 .welcome-text {
@@ -23,6 +25,7 @@
   height: 80vh;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .entranceButtons {
@@ -32,6 +35,7 @@
   width: 80%;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .sign-in {
@@ -45,6 +49,7 @@
   height: 5vh;
   outline: none;
   text-align: center;
+  z-index: 2;
 }
 
 .sign-up {
@@ -58,4 +63,5 @@
   height: 5vh;
   outline: none;
   text-align: center;
+  z-index: 2;
 }
