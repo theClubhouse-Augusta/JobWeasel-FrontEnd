@@ -5,44 +5,68 @@
   flex-direction:column;
   min-height:100vh;
   background: url('../../images/computer_1.jpg');
-  font-family:'Source Sans Pro', sans-serif;
+  font-family:'Play', sans-serif;
   background-size: cover;
+  background-attachment:fixed;
+  z-index: 0;
 }
+
+.homeFullOverlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 29, 38, 0.3);
+  z-index: 1;
+}
+
 .welcome-text {
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-
+  z-index: 2;
 }
+
+.entranceButtons {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
 .sign-in {
   background-color: #8DB580;
   border-radius: 25px;
-  color: white;
   text-decoration: none;
+  color: white;
   border: none;
-  font-size: 15px;
-  width: 80px;
-  padding: 10px;
+  font-size: 1.2em;
+  width: 90px;
+  height: 45px;
   outline: none;
-  margin-left: 1100px;
-  margin-top: 20px;
+  text-align: center;
+  z-index: 2;
 }
+
 .sign-up {
   background-color: #8DB580;
   border-radius: 25px;
   text-decoration: none;
   color: white;
   border: none;
-  font-size: 15px;
-  width: 80px;
-  padding: 10px;
+  font-size: 1.2em;
+  width: 90px;
+  height: 45px;
   outline: none;
   text-align: center;
-}
-.sign-in-button {
-  display: flex;
-  flex-direction: column;
-
+  z-index: 2;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
 }

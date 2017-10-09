@@ -1,0 +1,34 @@
+/* PhotoUpload Mobile Styles */
+@media (max-width: 768px) {
+
+  .profileImageUpload {
+    color: #009999;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 1em;
+    width: 70%;
+    margin:auto;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    padding:auto;
+    cursor:default;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+  .profileImageUpload {
+    color: #009999;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 1em;
+    width: 30%;
+    margin:auto;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    padding:auto;
+    cursor:default;
+  }
+
+}

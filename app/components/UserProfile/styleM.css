@@ -1,1 +1,270 @@
 /* UserProfile Mobile Styles */
+@media (max-width: 768px) {
+  .updateBox {
+    animation: fadeIn 500ms;
+    z-index:89;
+    padding: 12px;
+    padding-top: 15px;
+    width: 90%;
+    height:75%;
+    margin-top: 20px;
+    background-color: #009999;
+    border-radius: 25px;
+    font-family: 'Play', sans-serif;
+    line-height: normal;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .updateImage img {
+    width:50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 25px;
+  }
+
+  .profileHeader {
+    color: white;
+    text-decoration: none;
+    width: auto;
+    height:auto;
+    outline: none;
+    font-kerning: 5em;
+    margin:0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .updateUser h2 {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+
+  .updateTitle  {
+    color: white;
+    font-size: 1em;
+    font-style: normal;
+    width: auto;
+    height:auto;
+    outline: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .updateEmail  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .updateLocation  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .updateStatus  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .bioBox {
+    flex-direction:row;
+    color: black;
+    left:0;
+    right:0;
+    top:0;
+    margin:0 auto;
+    line-height: 30px;
+    margin-top: 20px;
+    width: auto;
+  }
+
+
+  .updateBio {
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    outline: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+
+  .updateButton a {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    color: #009999;
+    text-decoration: none;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    width: auto;
+    padding: 10px;
+    margin-top: 25px;
+    outline: none;
+    text-align: center;
+    align-self: center;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .updateBox {
+    animation: fadeIn 500ms;
+    z-index:89;
+    padding: 12px;
+    width: auto;
+    max-height:80vh;
+    overflow:auto;
+    background-color: #009999;
+    border-radius: 25px;
+    font-family: 'Play', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+    z-index: 89;
+  }
+
+  .profileFullOverlay {
+    padding: 12px;
+  }
+
+  .updateImage img {
+    width: 40vw;
+    border-radius: 25px;
+  }
+
+  .profileHeader {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height:auto;
+    outline: none;
+    margin-top: 50px;
+  }
+
+  .updateUser h2 {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .updateTitle  {
+    color: white;
+    font-size: 1em;
+    font-style: normal;
+    width: auto;
+    height:auto;
+    outline: none;
+  }
+
+  .updateEmail  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    margin: 0 auto;
+  }
+
+  .updateLocation  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    margin: 0 auto;
+  }
+
+  .updateStatus  {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height:auto;
+    outline: none;
+    margin-top: 10px;
+    margin: 0 auto;
+  }
+
+  .updateInfoBox {
+    margin: 0 auto;
+  }
+
+  .bioBox {
+    color: black;
+    left:0;
+    right:0;
+    top:0;
+    margin:0 auto;
+    line-height: auto;
+    margin-top: auto;
+    width: auto;
+    margin: 0 auto;
+  }
+
+
+  .updateBio {
+    color: white;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+
+
+  .updateButton a {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    color: #009999;
+    text-decoration: none;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    width: auto;
+    padding: 10px;
+    margin-top: auto;
+    outline: none;
+    text-align: center;
+    align-self: center;
+  }
+
+}

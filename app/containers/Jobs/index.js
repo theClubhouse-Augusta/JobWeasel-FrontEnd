@@ -70,16 +70,16 @@ export default class Jobs extends React.PureComponent {
     return (
       <div className="jobsContainer">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
-          <div className="searchHolder">
-            <input type="text" className="jobSearch" value={this.state.search} onChange={this.handleSearch} placeholder="Search"/>
-            <LeftIcon className="nextIcon"/>
-              <RightIcon className="nextIcon"/>
-          </div>
+
+        <div className="jobsFullOverlay">
+        </div>
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.jobs.map((t, i) => (
-              this.renderRow(t, i)
-            ))}
+           <Link key={i} to={'/JobDetails/'+t.id}> Job Listings: {t.name}
+             <p>{t.description}</p>
+             <p>{t.budget}</p>
+           </Link>))};
           </div>
         </div>
 
