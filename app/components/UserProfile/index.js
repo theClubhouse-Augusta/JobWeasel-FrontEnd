@@ -76,7 +76,7 @@ export default class UserProfile extends React.PureComponent {
           <footer>
             <section className="bioBox">
               <article className="updateBio">Profile Bio
-                <p><textarea rows="10" cols="45" wrap="hard"
+                <p><textarea rows="10" cols="30" wrap="hard"
                 placeholder="Profile Bio"/></p>
               </article>
 
