@@ -19,7 +19,7 @@
   display:flex;
   flex-direction:row;
   align-content:center;
-  padding: 40px;
+  padding: 50px;
   color: black;
   left:0;
   right:0;
@@ -31,8 +31,12 @@
   margin:0 auto;
   line-height: 35px;
   margin-top: 40px;
-  background-color: #8DB580;
+  background-color: #009999;
   border-radius: 25px;
+  font-kerning: 10em;
+  font-family: 'Play', sans-serif;
+
+
 }
 
 @keyframes fadeIn {
@@ -45,23 +49,34 @@
 }
 
 .updateImage img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 250px;
+  max-height: 250px;
   flex-wrap:wrap;
-  margin: 20px;
+  margin: 0 auto;
+  border-radius: 25px;
 }
 
-
-.updateUser h2 {
+.profileHeader {
   color: white;
   text-decoration: none;
-  font-size: 1.7em;
   width: auto;
   height:auto;
   outline: none;
   font-kerning: 5em;
   margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+.updateUser {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  width: auto;
+  height:auto;
+  outline: none;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .updateTitle  {
@@ -123,20 +138,41 @@
   height: auto;
   outline: none;
   margin-left: 40px;
+  margin-right: 40px;
   text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 
-.updateButton b {
-  background-color: #8DB580;
+.updateButton a {
+  background-color: #FFFFFF;
   border-radius: 25px;
-  color: white;
+  color: #009999;
   text-decoration: none;
   border: none;
   font-size: 1.2em;
-  width: auto;
+  font-weight: bold;
+  width: 50%;
   padding: 10px;
+  margin-top: 25px;
   outline: none;
   text-align: center;
-  align-items:center;
+  align-self: center;
+}
+
+.updateButton a:hover {
+  background-color: #009999;
+  border-radius: 25px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 50%;
+  padding: 10px;
+  margin-top: 25px;
+  outline: none;
+  text-align: center;
+  align-self: center;
 }

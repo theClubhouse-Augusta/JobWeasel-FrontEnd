@@ -21,10 +21,13 @@ export default class Profile extends React.PureComponent {
       // user:JSON.parse(sessionStorage.getItem('user'))
 
       user:{
-        name:" Business Weasel",
+        name:" Business Weasel, Esq.",
+        title:"Head Weasel at Job Weasel",
         email:" businessWeasel@JobWeasel.com",
-        location:" None, YA",
-        bio:" All I do is business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business... Is this working??",
+        location:" None,YA  ",
+        availability:"Maybe",
+        bio:" All I do is business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business... Is this working??"
+
 
 
       }
@@ -46,47 +49,48 @@ export default class Profile extends React.PureComponent {
 
           <header>Update Profile
           </header>
-          <p>Email:{this.state.user.email}
-          </p>
-          <p>Name:{this.state.user.name}
-          </p>
-          <p>Description:{this.state.user.bio}
-          </p>
-          <p>Created:{this.state.user.created_at}
-          </p>
-          <p>Updated:{this.state.user.updated_at}
-          </p>
+
         </div>
 
         <section className="profileDisplay">
 
+          <div className="profileImage">
+            <img src={require("../../images/businessWeasel.jpg")} />
+          </div>
+
           <div className="profileName">
-            <p>Name:</p>
+            <p><b>Name:</b></p>
             <h1>{this.state.user.name}
             </h1>
           </div>
 
+          <div className="profileTitle">
+            <p><b>Title: </b>{this.state.user.title}
+            </p>
+          </div>
+
           <div className="profileEmail">
-            <p>Email:{this.state.user.email}
+            <p><b>Email: </b>{this.state.user.email}
             </p>
           </div>
 
           <div className="profileLocation">
-            <p>Location:{this.state.user.location}
-            </p>
+            <b>Location:</b>{this.state.user.location}
+            <b>Availability: </b>{this.state.user.availability}
           </div>
 
           <div className="profileBio">
-            <p>Description:{this.state.user.bio}
+            <p><b>Its All About Me: </b>{this.state.user.bio}
             </p>
           </div>
+
 
         </section>
 
         <section className="linksBox">
           <p><a href="https://www.resume.com">My Resume</a></p>
-          <p><a href="https://www.portfolio.com">My Portfolio or Website</a></p>
-          <p><a href="https://www.linkedin.com">My LinkedIn or Social Media</a></p>
+          <p><a href="https://www.portfolio.com">My Portfolio</a></p>
+          <p><a href="https://www.linkedin.com">My LinkedIn</a></p>
           <p><a href="https://www.github.com">My Github</a></p>
         </section>
 

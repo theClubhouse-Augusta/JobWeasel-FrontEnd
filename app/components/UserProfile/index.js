@@ -46,18 +46,19 @@ export default class UserProfile extends React.PureComponent {
           </PhotoUpload>
 
 
-          <header>
+          <header className="profileHeader">
             <div className="updateUser">
-                <h2>Profile Name
-                  <p><input type="text" placeholder="Name" /></p>
-                </h2>
+                Profile Name
+                <p><input type="text" placeholder="Name" /></p>
             </div>
-          </header>
 
-          <section>
             <div className="updateTitle">Title
               <p><input type="text" placeholder="Title"/></p>
             </div>
+
+          </header>
+
+          <section>
 
             <div className="updateStatus">Availability
               <p><input type="text" placeholder="Availability"/></p>
@@ -81,7 +82,7 @@ export default class UserProfile extends React.PureComponent {
 
 
               <div className ="updateButton">
-                <b><input type="button" value="Update"  /></b>
+                <a href="#">Update</a>
               </div>
 
             </section>

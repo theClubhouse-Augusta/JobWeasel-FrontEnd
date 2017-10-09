@@ -1,12 +1,14 @@
 /* PhotoUpload Styles */
 .profileImageUpload {
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.2em;
-  width: auto;
-  height:auto;
-  outline: none;
+  color: #009999;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 1em;
+  width: 175px;
+  height:85px;
   line-height: 30px;
-  margin-top: 60px;
+  margin:20px;;
+  background-color: #FFFFFF;
+  padding:10px;
+  padding-top: 8px;
 }

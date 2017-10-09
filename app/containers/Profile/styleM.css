@@ -1,1 +1,40 @@
 /* Profile Mobile Styles */
+@media (max-width: 768px) {
+  .profileContainer {
+    flex-direction:column;
+    flex-wrap:wrap;
+  }
+
+  .updateProfileButton {
+    width:auto;
+    margin:auto;
+    margin-top: 40px;
+    height: auto;
+    padding: auto;
+
+  }
+
+  .profileDisplay {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px;
+    margin-top:20px;
+    height: auto;
+  }
+
+  .profileEmail {
+    font-weight: bold;
+    font-size: 80%;
+    width: auto;
+  }
+
+  .linksBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+
+
+}

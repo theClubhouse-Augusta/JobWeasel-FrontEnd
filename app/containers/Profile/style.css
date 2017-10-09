@@ -3,62 +3,90 @@
 .profileContainer {
   display:flex;
   min-height:100vh;
-  background-color: #b3b3b3;
   text-align: center;
-  font-family: sans-serif;
-
+  font-family: 'Play', sans-serif;
+  background-image: url("../../IMAGES/1.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 40px;
 }
 
 
 .updateProfileButton {
-  background-color: #8DB580;
+  background-color: #009999;
   border-radius: 25px;
   color: white;
   text-decoration: none;
   border: none;
-  font-size: 1em;
+  font-size: .75em;
   width: auto;
   height: 30px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   padding: 10px;
   outline: none;
-  margin-top: 50px;
   margin-left: 50px;
   margin-right: 40px;
+  align-self:flex-start;
+  justify-content: center;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+
+}
+
+.updateProfileButton:hover {
+  background-color: #FFFFFF;
+  color: #009999;
+
 }
 
 .profileDisplay  {
   background-color: white;
-  max-width:700px;
-  height:900px;
-  padding-left: 50px;
-  margin-top: 40px;
-  padding-top: 40px;
+  max-width:750px;
+  height:700px;
+  padding-left: 40px;
+  margin-top: 30px;
+  padding-top: 30px;
   padding-right: 40px;
+  padding-bottom: 40px;
   font-size: 1.5em;
   border-radius: 25px;
 }
 
 .profileEmail {
-  font-weight: bold;
-  margin: 20px;
+  margin-top: 15px;
 }
 
 .profileName h1 {
   font-weight: bold;
-  color: #8DB580;
+  color: #009999;
   font-size: 1.6em;
 }
 
+.profileImage img {
+  max-width: 200px;
+  max-height: 200px;
+  flex-wrap:wrap;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.profileTitle {
+  margin-top: 10px;
+}
+
 .profileLocation {
-  font-weight: bold;
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  word-spacing: .4em;
 }
 
 .profileBio {
   line-height: 35px;
   text-align: justify;
-  font-kerning: 3em;
+  font-kerning: 2.5em;
 }
 
 
@@ -68,7 +96,7 @@
 }
 
 .linksBox a {
-  background-color: #8DB580;
+  background-color: #009999;
   border-radius: 25px;
   color: white;
   text-decoration: none;
@@ -80,4 +108,11 @@
   line-height: 45px;
   margin-left: 40px;
   margin-top: 45px;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+
+}
+
+.linksBox a:hover {
+  background-color: #FFFFFF;
+  color: #009999;
 }
