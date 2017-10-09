@@ -17,7 +17,8 @@ export default class JobDetails extends React.PureComponent {
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
         <div className="detailContainer">
 
-        
+
+      </div>
       </div>
     );
   }
