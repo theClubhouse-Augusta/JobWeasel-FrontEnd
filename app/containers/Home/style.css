@@ -10,41 +10,52 @@
   background-attachment:fixed;
 }
 
+.homeFullOverlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 29, 38, 0.3)
+}
+
 .welcome-text {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 80vh;
   justify-content: center;
   align-items: center;
-
 }
+
+.entranceButtons {
+  display: flex;
+  flex-direction: row;
+  height: 20vh;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
 .sign-in {
   background-color: #8DB580;
   border-radius: 25px;
-  color: white;
   text-decoration: none;
+  color: white;
   border: none;
-  font-size: 15px;
-  width: 80px;
-  padding: 10px;
+  font-size: 1.2em;
+  width: 10%;
+  height: 5vh;
   outline: none;
-  margin-left: 1100px;
-  margin-top: 20px;
+  text-align: center;
 }
+
 .sign-up {
   background-color: #8DB580;
   border-radius: 25px;
   text-decoration: none;
   color: white;
   border: none;
-  font-size: 15px;
-  width: 80px;
-  padding: 10px;
+  font-size: 1.2em;
+  width: 10%;
+  height: 5vh;
   outline: none;
   text-align: center;
-}
-.sign-in-button {
-  display: flex;
-  flex-direction: column;
-
 }

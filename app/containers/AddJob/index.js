@@ -15,7 +15,8 @@ export default class AddJob extends React.PureComponent {
     return (
       <div className="addJobContainer">
         <Helmet title="AddJob" meta={[ { name: 'description', content: 'Description of AddJob' }]}/>
-
+        <div className="addJobFullOverlay">
+        </div>
 
       </div>
     );
