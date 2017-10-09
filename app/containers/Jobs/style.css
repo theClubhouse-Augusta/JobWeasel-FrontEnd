@@ -4,19 +4,64 @@
   display:flex;
   flex-direction:column;
   min-height:100vh;
+  font-family: 'Karla', sans-serif;
+  background-color: #DBDBDB;
 }
+.jobsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.jobDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:10px;
+  width: 75%;
+  padding: 10px;
 
-.jobsDisplay {
+}
+.resultBox {
+  min-height: 100px;
+  width: 20%;
+  background-color: #0B3954;
+  margin:15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  font-size: 1.5em;
-  height: auto;
-  width: auto;
-  background: #f49716;
-  color: black;
-  padding: 15px;
-  box-shadow: 5px 5px 5px #000000;
-  border-radius: 5px;
-  font-variant:small-caps;
-  align-items: center;
+  border-radius: 10px;
+  color: white;
+
+}
+.companyDiv {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+
+}
+.jobSearch {
+  width: 250px;
+}
+.searchHolder {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 5%;
+}
+.jobSearch {
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  height: 20px;
+}
+.nextIcon {
+  font-size: 1.8em;
+  margin: 5px;
+  padding: 10px;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
