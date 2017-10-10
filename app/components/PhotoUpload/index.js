@@ -43,9 +43,9 @@ export default class PhotoUpload extends React.PureComponent {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="profileImageUpload">Upload Profile Image
-          <p><input type="file" onChange={this.handlePhoto} /></p>
-          <p><input type="submit" value="Submit"  /></p>
-          <p><img src={this.state.preview}/></p>
+          <input type="file" onChange={this.handlePhoto} />
+          <input type="submit" value="Submit"  />
+          <img src={this.state.preview}/>
         </div>
       </form>
     );

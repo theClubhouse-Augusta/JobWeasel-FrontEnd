@@ -3,8 +3,10 @@
 .jobsContainer {
   display:flex;
   min-height:100vh;
-
-  font-family: 'Karla', sans-serif;
+  background: url('../../images/technology.jpg');
+  font-family:'Play', sans-serif;
+  background-size: cover;
+  background-attachment:fixed;
   background-color: #DBDBDB;
 }
 .jobsList {
