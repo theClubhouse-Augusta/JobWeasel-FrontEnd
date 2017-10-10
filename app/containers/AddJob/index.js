@@ -13,6 +13,8 @@ import './styleM.css';
 
 export default class AddJob extends React.PureComponent {
 
+<<<<<<< HEAD
+=======
 
   constructor(){
     super();
@@ -34,6 +36,7 @@ export default class AddJob extends React.PureComponent {
     })
   }
 
+>>>>>>> 77d9047950b3ab46e4d42305db568a6e1e0a24bd
   render() {
 
     return (
