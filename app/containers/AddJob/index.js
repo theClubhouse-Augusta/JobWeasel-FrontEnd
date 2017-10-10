@@ -14,8 +14,25 @@ import './styleM.css';
 export default class AddJob extends React.PureComponent {
 
 
+  constructor(){
+    super();
+    this.state = {
+      jobTitle: "",
+      jobDescription:""
+    }
+  }
 
+  handleJobTitle = (event) => {
+    this.setState({
+      jobTitle:event.target.value
+    })
+  }
 
+  handleJobDescription = (event) => {
+    this.setStae({
+      jobDescription:event.target.value
+    })
+  }
 
   render() {
 
@@ -93,6 +110,7 @@ export default class AddJob extends React.PureComponent {
 
 
         </div>
+
 
       </div>
     );
