@@ -11,7 +11,15 @@
   background-repeat:no-repeat;
   background-attachment:fixed;
   z-index: 0;
-  padding: 50px;
+}
+
+.addJobFullOverlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 29, 38, 0.3);
+  z-index: 1;
+  padding: 15px;
 }
 
 .jobDetailContainer {
@@ -27,6 +35,9 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  z-index: 2;
 }
 
 .jobTitle {
@@ -104,41 +115,6 @@
   text-align: center;
   align-self: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .timestamp {
 
