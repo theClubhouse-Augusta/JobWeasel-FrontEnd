@@ -6,10 +6,11 @@
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  margin-left: 1000px;
   position: absolute;
-  margin-top: 15px;
+  margin-top: 10vh;
+  margin-left: 35vw;
   font-family: 'Play', sans-serif;
+  z-index: 11;
 
 }
 .signInInput {

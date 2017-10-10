@@ -7,11 +7,13 @@
   font-family: 'Karla', sans-serif;
   background-color: #DBDBDB;
 }
+
 .jobsList {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+
 .jobDisplay {
   display: flex;
   flex-direction: row;
@@ -20,7 +22,7 @@
   margin:10px;
   width: 75%;
   padding: 10px;
-
+}
 
 .jobsFullOverlay {
   position: fixed;
@@ -28,8 +30,8 @@
   width: 100vw;
   background-color: rgba(24, 29, 38, 0.3);
   z-index: 1;
-
 }
+
 .resultBox {
   min-height: 100px;
   width: 20%;
