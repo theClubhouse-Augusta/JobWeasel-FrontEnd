@@ -1,5 +1,6 @@
 /* UserProfile Styles */
 
+
 .fullOverlay {
   position: fixed;
   display: flex;
@@ -22,11 +23,9 @@
   100%  { opacity: 1;  }
 }
 
-.dialogOverlayHidden {
-    display:none;
+.profileFullOverlay {
+  padding: 12px;
 }
-
-
 
 .updateBox {
   position: fixed;
@@ -69,14 +68,17 @@
 
 .updateStatus {
   padding: 10px;
+
 }
 
 .updateEmail {
   padding: 10px;
 }
 
+
 .updateLocation {
   padding: 10px;
+
 }
 
 
@@ -109,4 +111,5 @@
 .updateBio {
   padding: 10px;
   line-height: 40px;
+
 }

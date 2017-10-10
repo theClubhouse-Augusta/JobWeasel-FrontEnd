@@ -6,6 +6,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
@@ -18,6 +19,10 @@ export default class Jobs extends React.PureComponent {
     super();
     this.state = {
       search:"",
+      searchResults:[],
+      nextPage: 1,
+      currentPage: 0,
+      lastPage:1,
       jobs:[]
     }
   }
@@ -26,19 +31,43 @@ export default class Jobs extends React.PureComponent {
     this.getJobs();
   }
   getJobs = () => {
-    fetch('http://localhost:8000/api/getJobs', {
-      method:'Get'
-    })
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(json) {
-      this.setState({
-        jobs:json.jobs.data
-      }, function() {
-      });
-    }.bind(this))
-  };
+    let nextPage = this.state.nextPage;
+    let searchResults = this.state.searchResults;
+    if(this.state.currentPage != this.state.lastPage)
+    {
+      fetch('http://localhost:8000/api/getJobs', {
+        method: 'GET'
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        if(json.error)
+         {
+          console.log(json.error);
+        }
+        else
+        {
+          console.log(JSON.stringify(json.jobs));
+          if(json.current_page != json.last_page)
+          {
+            nextPage = nextPage + 1;
+          }
+          for(var i = 0; i < json.jobs.data.length; i++)
+          {
+            searchResults.push(json.jobs.data[i]);
+          }
+          this.setState({
+            nextPage: nextPage,
+            lastPage: json.last_page,
+            currentPage: json.current_page,
+            searchResults: searchResults
+          })
+        }
+      }.bind(this));
+    }
+  }
+
 
   handleSearch = (event) => {
     this.setState({
@@ -66,6 +95,7 @@ export default class Jobs extends React.PureComponent {
       )
     }
   }
+
   render() {
     return (
       <div className="jobsContainer">
@@ -75,11 +105,11 @@ export default class Jobs extends React.PureComponent {
         </div>
         <div className="jobsList">
           <div className="jobDisplay">
-            {this.state.jobs.map((t, i) => (
-           <Link key={i} to={'/JobDetails/'+t.id}> Job Listings: {t.name}
-             <p>{t.description}</p>
+            {this.state.searchResults.map((t, i) => (
+           <Link key={i} to={`/JobDetails/${t.id}`}> Job Listings: {t.name}
+             <p>{t.location}</p>
              <p>{t.budget}</p>
-           </Link>))};
+           </Link>))}
           </div>
         </div>
 
