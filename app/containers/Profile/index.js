@@ -18,7 +18,8 @@ export default class Profile extends React.PureComponent {
     super(props);
     this.state = {
       openUserProfile:false,
-      user:JSON.parse(sessionStorage.getItem('user'))
+      user:JSON.parse(sessionStorage.getItem('user')),
+      token:sessionStorage.getItem('token')
     }
   };
 
@@ -67,7 +68,7 @@ export default class Profile extends React.PureComponent {
             </div>
 
             <div className="profileLocation">
-              <b>Location:</b>{this.state.user.location}
+              <p><b>Location:</b>{this.state.user.location}</p>
               <b>Availability: </b>{this.state.user.availability}
             </div>
 
