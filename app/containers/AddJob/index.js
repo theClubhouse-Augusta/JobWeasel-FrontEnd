@@ -13,10 +13,6 @@ import './styleM.css';
 
 export default class AddJob extends React.PureComponent {
 
-
-
-
-
   render() {
 
     return (

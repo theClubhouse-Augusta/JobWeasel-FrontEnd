@@ -66,47 +66,6 @@ export default class Jobs extends React.PureComponent {
     }
   }
 
-    // if (this.state.currentPage !== this.state.lastPage)
-    // {
-    //   fetch('http://localhost:8000/api/getJobs',
-    //   {
-    //     method:'Get'
-    //   })
-    //   .then(function(response)
-    //     {
-    //       return response.json();
-    //     })
-    //   .then(function(json)
-    //     {
-    //     this.setState({
-    //       jobs:json.jobs.data
-    //     }, function() {
-    //     });
-    //   .then (function(json) {
-    //     if (json.error) {
-    //       console.log(json.error)
-    //     }
-    //   })
-    //   else {
-    //     if(json.current_page !== json.last_page)
-    //     {
-    //       nextPage = nextPage + 1;
-    //     }
-    //       for(var i = 0; i < json.data.length; i++)
-    //     {
-    //       searchResults.push(json.data[i]);
-    //     }
-    //     this.setState({
-    //       nextPage: nextPage,
-    //       lastPage: json.last_page,
-    //       currentPage: json.current_page,
-    //       searchResults: searchResults
-    //         })
-    //       }
-    //     }.bind(this))
-    //   }
-    // };
-
   render() {
     return (
       <div className="jobsContainer">
@@ -116,8 +75,8 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.searchResults.map((t, i) => (
-           <Link key={i} to={'/JobDetails/'+t.id}> Job Listings: {t.name}
-             <p>{t.description}</p>
+           <Link key={i} to={`/JobDetails/${t.id}`}> Job Listings: {t.name}
+             <p>{t.location}</p>
              <p>{t.budget}</p>
            </Link>))}
           </div>
