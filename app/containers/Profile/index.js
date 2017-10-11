@@ -47,6 +47,7 @@ export default class Profile extends React.PureComponent {
           </div>
 
           <Link to="/AddJob" className="addJobButton">Add Job</Link>
+          <Link to="/Jobs" className="viewJobsButton">View Jobs</Link>
 
         <section className="profileDisplay">
 

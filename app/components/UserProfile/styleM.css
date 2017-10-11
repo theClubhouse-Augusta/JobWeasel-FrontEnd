@@ -1,5 +1,5 @@
 /* UserProfile Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .updateBox {
     animation: fadeIn 500ms;
     z-index:89;
@@ -15,7 +15,9 @@
     display: flex;
     left:0;
     right:0;
+    top:10vh;
     margin:0 auto;
+    position: absolute;
   }
 
   .updateBox p {
