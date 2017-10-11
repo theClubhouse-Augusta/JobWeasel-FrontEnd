@@ -15,6 +15,10 @@
   align-content: space-between;
   justify-content: center;
   z-index: 89;
+  position:absolute;
+  left: 13vw;
+  right: 13vw;
+  top: 10vh;
 }
 
 .profileFullOverlay {
