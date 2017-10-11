@@ -15,7 +15,7 @@ export default class SignIn extends React.PureComponent {
     this.state = {
       email:"",
       password: "",
-      NotificationTwo:""
+      notificationTwo:""
     }
   }
 
