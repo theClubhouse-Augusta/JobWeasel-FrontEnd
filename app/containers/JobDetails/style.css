@@ -5,7 +5,7 @@
   min-height:100vh;
   text-align: center;
   font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/hdr-nyc8.jpg");
+  background-image: url("../../IMAGES/businesspeople.jpg");
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -22,5 +22,5 @@
 }
 
 .detailContainer {
-
+  color:white;
 }

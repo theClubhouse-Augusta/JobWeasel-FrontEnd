@@ -1,0 +1,129 @@
+  <NewJob open={this.state.openNewJob} onClose={this.handleNewJob}>
+          </NewJob>
+
+  /*
+ *
+ * AddJob
+ *
+ */
+
+import React from 'react';
+import Helmet from 'react-helmet';
+
+import './style.css';
+import './styleM.css';
+
+
+export default class AddJob extends React.PureComponent {
+  constructor (props) {
+    super(props);
+    this.state = {
+      openNewJob:false,
+      // jobs:JSON.parse(sessionStorage.getJob('jobs'))
+
+      jobs:{
+        jobTitle: "Web Developer",
+        jobDesc:"Doing some Job stuff all day everyday...",
+        companyName:"Websites R US",
+        companyWebsite:"websitesRus.com",
+        jobLocation:"London,GA",
+        workers:"5",
+        budget:"$1,000,000",
+        startDate:"tomorrow",
+        timeFrame:"til christmas",
+        timeStamp:"today"
+      }
+    }
+  }
+
+
+
+
+  render() {
+    console.log(this.state.jobs.id);
+    return (
+      <div className="addJobContainer">
+        <Helmet title="AddJob" meta={[ { name: 'description', content: 'Description of AddJob' }]}/>
+
+        <div className="addJobFullOverlay">
+        </div>
+
+
+
+
+        <div className="jobDetailContainer">
+
+          <div className="jobTitle">
+          <p><b>Job Title:</b></p>
+          <h1><p><input type="text" placeholder="Job Title" /></p>{this.state.jobs.jobTitle}
+          </h1>
+          </div>
+
+
+
+          <div className="jobDesc">
+          <p><b>Job Description:</b></p>
+          {this.state.jobs.jobDesc}
+            <p><textarea rows="10" cols="30" wrap="hard"
+            placeholder="Job Description"/></p>
+          </div>
+
+
+          <div className="companyName">
+          <p><p><input type="text" placeholder="Company Name" /></p>
+          <b>Company Name: </b>{this.state.company.companyName}
+          </p>
+          </div>
+
+          <div className="companyWebsite">
+          <p><p><input type="text" placeholder="Email address"/></p>
+          <b>Company Website: </b>{this.state.company.companyWebsite}
+          </p>
+          </div>
+
+          <div className="jobLocation">
+          <p><p><input type="text" placeholder="Location" /></p>
+          <b>Job Location: </b>{this.state.jobs.jobLocation}
+          </p>
+          </div>
+
+          <div className="workers">
+          <p><p><input type="text" placeholder="Workers Needed" /></p>
+          <b>Workers Needed: </b>{this.state.jobs.workers}
+          </p>
+          </div>
+
+          <div className="budget">
+          <p><p><input type="text" placeholder="Budget" /></p>
+          <b>Budget: </b>{this.state.jobs.budget}
+          </p>
+          </div>
+
+          <div className="startDate">
+          <p><p><input type="text" placeholder="Start Date" /></p>
+          <b>Start Date: </b>{this.state.jobs.startDate}
+          </p>
+          </div>
+
+          <div className="timeFrame">
+          <p><p><input type="text" placeholder="Time Frame" /></p>
+          <b>Time Frame: </b>{this.state.jobs.timeFrame}
+          </p>
+          </div>
+
+          <div classname="timeStamp">
+          <p><b>Posted On: </b>{this.state.jobs.timestamp}
+          </p>
+          </div>
+
+
+        </div>
+
+      </div>
+    );
+  }
+}
+
+AddJob.contextTypes = {
+  router: React.PropTypes.object
+};

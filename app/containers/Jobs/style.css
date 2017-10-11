@@ -3,15 +3,19 @@
 .jobsContainer {
   display:flex;
   min-height:100vh;
-
-  font-family: 'Karla', sans-serif;
+  background: url('../../images/technology.jpg');
+  font-family:'Play', sans-serif;
+  background-size: cover;
+  background-attachment:fixed;
   background-color: #DBDBDB;
 }
+
 .jobsList {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+
 .jobDisplay {
   display: flex;
   flex-direction: row;
@@ -20,16 +24,21 @@
   margin:10px;
   width: 75%;
   padding: 10px;
+<<<<<<< HEAD
 
 }
+=======
+}
+
+>>>>>>> 4d62abbe75f3f64d36890a8a412663f03e7c9a3f
 .jobsFullOverlay {
   position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: rgba(24, 29, 38, 0.3);
   z-index: 1;
-
 }
+
 .resultBox {
   min-height: 100px;
   width: 20%;
@@ -71,4 +80,8 @@
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+a {
+  z-index: 999;
 }

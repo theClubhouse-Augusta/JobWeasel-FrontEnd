@@ -6,13 +6,7 @@
     align-items: center;
   }
 
-  .updateProfileButton {
-    width:auto;
-    margin:auto;
-    margin-top: 40px;
-    height: auto;
-    padding: auto;
-  }
+
 
   .profileDisplay {
     width: auto;
@@ -46,14 +40,7 @@
     margin-top: 10px;
   }
 
-  .updateProfileButton {
-    width:auto;
-    margin:auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: auto;
-    padding: auto;
-  }
+
 
   .profileDisplay {
     width: auto;
