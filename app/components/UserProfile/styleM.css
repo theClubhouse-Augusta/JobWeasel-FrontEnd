@@ -3,10 +3,10 @@
   .updateBox {
     animation: fadeIn 500ms;
     z-index:89;
-    width: 50%;
-    height:50%;
-    max-width: 90%;
-    max-height: 90%;
+    width: 80%;
+    height:80vh;
+    max-width: 75%;
+    max-height: 50%;
     background-color: #009999;
     border-radius: 25px;
     font-family: 'Play', sans-serif;
@@ -15,7 +15,7 @@
     display: flex;
     left:0;
     right:0;
-    top:10vh;
+    top:5vh;
     margin:0 auto;
     position: absolute;
   }
@@ -25,13 +25,15 @@
     margin-bottom: 5px;
     margin-left:5px;
     margin-top: 5px;
+    position: relative;
   }
 
   .updateImage img {
     width:50%;
-    height: 50%;
-    margin: 5px 5px 5px 5px;
+    height:50%;
+    margin: 1vh 1vw 1vh 1vw;
     border-radius: 25px;
+    margin-top: 3vh;
   }
 
   .updateTitle {
@@ -40,7 +42,7 @@
 
   .updateUser {
     padding: 5px;
-    line-height: 20px;
+
   }
 
   .updateStatus {
@@ -103,10 +105,11 @@
 
 
   .updateImage img {
-    width: 25%;
-    height: 25%;
-    border-radius: 20px;
-    margin:5px 5px 5px 5px;
+    width:5vw;
+    height:3vh;
+    margin: .5vh .5vw .5vh .5vw;
+    border-radius: 25px;
+    margin-top: 3vh;
 
   }
 
@@ -116,7 +119,6 @@
 
   .updateUser {
     padding: 5px;
-    line-height: 20px;
   }
 
   .updateStatus {
