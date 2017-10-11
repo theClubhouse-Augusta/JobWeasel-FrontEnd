@@ -80,7 +80,7 @@ export default class Jobs extends React.PureComponent {
       return (
         <div key={i} className="resultBox">
           <div className="companyDiv">{t.name}</div>
-          <div className="descriptionDiv"><p>{t.description}</p></div>
+          <div className="descriptionDiv"><p>{t.location}</p></div>
           <div className="budgetDiv"><p>{t.budget}</p></div>
         </div>
       )
