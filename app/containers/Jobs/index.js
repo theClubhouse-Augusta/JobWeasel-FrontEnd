@@ -69,7 +69,6 @@ export default class Jobs extends React.PureComponent {
   }
 
 
-
   handleSearch = (event) => {
     this.setState({
       search:event.target.value
@@ -96,6 +95,7 @@ export default class Jobs extends React.PureComponent {
       )
     }
   }
+
   render() {
     return (
       <div className="jobsContainer">
@@ -106,8 +106,8 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.searchResults.map((t, i) => (
-           <Link key={i} to={'/JobDetails/'+t.id}> Job Listings: {t.name}
-             <p>{t.description}</p>
+           <Link key={i} to={`/JobDetails/${t.id}`}> Job Listings: {t.name}
+             <p>{t.location}</p>
              <p>{t.budget}</p>
            </Link>))}
           </div>

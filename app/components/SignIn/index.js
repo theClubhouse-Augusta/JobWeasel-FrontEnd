@@ -14,7 +14,8 @@ export default class SignIn extends React.PureComponent {
     super();
     this.state = {
       email:"",
-      password: ""
+      password: "",
+      NotificationTwo:""
     }
   }
 
@@ -45,7 +46,7 @@ export default class SignIn extends React.PureComponent {
     .then(function(json) {
       if(json.error) {
         _this.setState({
-          notificationTwo:json.error
+          notificationTwo: json.error
         })
       }
       else {

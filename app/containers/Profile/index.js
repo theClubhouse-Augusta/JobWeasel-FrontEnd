@@ -7,6 +7,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
@@ -18,19 +19,8 @@ export default class Profile extends React.PureComponent {
     super(props);
     this.state = {
       openUserProfile:false,
-      // user:JSON.parse(sessionStorage.getItem('user'))
-
-      user:{
-        name:" Business Weasel, Esq.",
-        title:"Head Weasel at Job Weasel",
-        email:" businessWeasel@JobWeasel.com",
-        location:" None,YA  ",
-        availability:"Maybe",
-        bio:" All I do is business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business,  business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business, business... Is this working??"
-
-
-
-      }
+      user:JSON.parse(sessionStorage.getItem('user')),
+      token:sessionStorage.getItem('token')
     }
   };
 
@@ -55,6 +45,10 @@ export default class Profile extends React.PureComponent {
             </header>
 
           </div>
+
+          <Link to="/AddJob" className="addJobButton">Add Job</Link>
+          <Link to="/Jobs" className="viewJobsButton">View Jobs</Link>
+
         <section className="profileDisplay">
 
 
@@ -79,7 +73,7 @@ export default class Profile extends React.PureComponent {
             </div>
 
             <div className="profileLocation">
-              <b>Location:</b>{this.state.user.location}
+              <p><b>Location:</b>{this.state.user.location}</p>
               <b>Availability: </b>{this.state.user.availability}
             </div>
 

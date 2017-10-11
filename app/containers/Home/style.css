@@ -8,6 +8,7 @@
   font-family:'Play', sans-serif;
   background-size: cover;
   background-attachment:fixed;
+  background-position: center center;
   z-index: 0;
 }
 
