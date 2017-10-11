@@ -33,7 +33,7 @@ export default class Home extends React.PureComponent {
       )
     }
   }
-
+  /* Hi My head fell off*/
   render() {
     return (
       <div className="homeContainer">
