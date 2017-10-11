@@ -38,7 +38,7 @@ export default class Profile extends React.PureComponent {
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
         <div className= "profileFullOverlay">
         </div>
-
+        <div className="leftSideButtons">
           <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
 
             <header>Update Profile
@@ -48,7 +48,7 @@ export default class Profile extends React.PureComponent {
 
           <Link to="/AddJob" className="addJobButton">Add Job</Link>
           <Link to="/Jobs" className="viewJobsButton">View Jobs</Link>
-
+        </div>
         <section className="profileDisplay">
 
 
@@ -73,15 +73,19 @@ export default class Profile extends React.PureComponent {
             </div>
 
             <div className="profileLocation">
-              <p><b>Location:</b>{this.state.user.location}</p>
-              <b>Availability: </b>{this.state.user.availability}
+              <p><b>Location:</b>{this.state.user.location}
+              </p>
+            </div>
+
+            <div className="profileAvailability">
+              <p><b>Availability: </b>{this.state.user.availability}
+              </p>
             </div>
 
             <div className="profileBio">
               <p><b>Its All About Me: </b>{this.state.user.bio}
               </p>
             </div>
-
 
           </section>
 
