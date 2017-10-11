@@ -2,7 +2,8 @@
 
 .container {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
   min-height:100vh;
   text-align: center;
   font-family: 'Play', sans-serif;
@@ -18,7 +19,7 @@
   z-index: 0;
 }
 
-.adminFullOverlay{
+.adminFullOverlay {
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -26,18 +27,48 @@
   z-index: 1;
 }
 
-.recruiterReview {
-
+.userRow {
+  font-size: 15pt;
+  width: 75%;
+  border-width: 10px;
+  border-color: black;
+  padding-bottom: 15px;
+  background-color: rgba(0, 0, 0, .5);
 }
 
-.profileReview {
-
+.approvalPanel {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
-.changeRecruitersStatus {
-
+.approvalButton {
+  box-shadow: 3px 6px 2px #000000;
+  background-color: #999999;
+  border-width: 15px;
+  user-select: none;
+  cursor: default;
 }
 
-.changeProfileStatus {
+.approvalButton:hover {
+  background-color: #AAAAAA;
+}
 
+.approvalButton:active {
+  transform: translate(2px, 2px);
+}
+
+.userInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #AAAAAA;
+}
+
+.usersPanel {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  justify-content: center;
 }
