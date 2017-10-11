@@ -24,6 +24,7 @@ export default class AddJob extends React.PureComponent {
       budget:"",
       startDate:"",
       timeFrame:"",
+      notification:""
     }
   }
 
@@ -42,6 +43,9 @@ export default class AddJob extends React.PureComponent {
       body:data,
       headers:{"Authorization":"Bearer"+sessionStorage.getItem('token')}
     })
+    .then(function(response) {
+      return response.json();
+    })
     .then(function(json) {
       if(json.error) {
         _this.setState({
@@ -53,18 +57,11 @@ export default class AddJob extends React.PureComponent {
           notification:json.success
         })
       }
-    }), function(){
-        this.setstate({
-          jobTitle:"",
-          jobDescription:"",
-          jobLocation:"",
-          workersNeeded: "",
-          budget:"",
-          startDate:"",
-          timeFrame:""
-        })
-      }
+    });
     this.forceUpdate();
+    setTimeout(function(){
+      _this.context.router.history.push("/Profile");
+    }, 500);
   };
 
   handleJobTitle = (event) => {
