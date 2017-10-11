@@ -27,7 +27,7 @@ export default class AddJob extends React.PureComponent {
     }
   }
 
-  store = () => {
+  postJob = () => {
     let data = new FormData;
     let _this = this;
     data.append('name', this.state.jobTitle);
@@ -164,7 +164,7 @@ export default class AddJob extends React.PureComponent {
             <p>{date}</p>
           </div>
 
-          <input type="submit" className="postJobButton" value="Post Job" onClick={this.store}/>
+          <input type="submit" className="postJobButton" value="Post Job" onClick={this.postJob}/>
 
 
           <p className="submitNote">{this.state.notification}</p>
