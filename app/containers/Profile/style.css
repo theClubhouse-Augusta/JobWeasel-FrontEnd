@@ -23,25 +23,31 @@
   padding: 20px;
 }
 
+.leftButtons {
+  z-index: 2;
+  width: 150px;
+  height: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  padding: 5px 5px 5px 5px;
+}
+
 .updateProfileButton {
   background-color: #009999;
   border-radius: 25px;
   color: white;
   text-decoration: none;
   border: none;
-  font-size: .75em;
-  width: 175px;
-  height: 30px;
-  font-size: 1.4em;
+  font-size: 1.1em;
+  width: auto;
   outline: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 25px;
-  align-self:flex-start;
-  justify-content: center;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
-  cursor:pointer;
+  margin-bottom: 20px;
+  padding: 10px;
+  
 }
 
 .updateProfileButton:hover {
@@ -56,19 +62,13 @@
   color: white;
   text-decoration: none;
   border: none;
-  font-size: .75em;
-  width: 175px;
-  height: 30px;
-  font-size: 1.4em;
+  font-size: 1.1em;
+  width: auto;
   outline: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 25px;
-  align-self:flex-start;
-  justify-content: center;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
-  cursor:pointer;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .addJobButton:hover {
@@ -83,19 +83,13 @@
   color: white;
   text-decoration: none;
   border: none;
-  font-size: .75em;
-  width: 175px;
-  height: 30px;
-  font-size: 1.4em;
+  font-size: 1.1em;
+  width: auto;
   outline: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 25px;
-  align-self:flex-start;
-  justify-content: center;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
-  cursor:pointer;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .viewJobsButton:hover {

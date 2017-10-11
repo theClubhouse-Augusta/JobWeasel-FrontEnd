@@ -39,15 +39,19 @@ export default class Profile extends React.PureComponent {
         <div className= "profileFullOverlay">
         </div>
 
-          <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
+          <div className="leftButtons">
+            <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
+            Update Profile
+            </div>
 
-            <header>Update Profile
-            </header>
+            <div className="addJobButton">
+            <Link to="/AddJob">Add Job</Link>
+            </div>
 
+            <div className="viewJobsButton">
+            <Link to="/Jobs">View Jobs</Link>
+            </div>
           </div>
-
-          <Link to="/AddJob" className="addJobButton">Add Job</Link>
-          <Link to="/Jobs" className="viewJobsButton">View Jobs</Link>
 
         <section className="profileDisplay">
 
