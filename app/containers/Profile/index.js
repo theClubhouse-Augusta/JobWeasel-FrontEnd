@@ -7,6 +7,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
@@ -44,6 +45,9 @@ export default class Profile extends React.PureComponent {
             </header>
 
           </div>
+
+          <Link to="/AddJob" className="addJobButton">Add Job</Link>
+
         <section className="profileDisplay">
 
 
