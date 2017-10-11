@@ -36,14 +36,18 @@
   z-index:89;
   background-color: #009999;
   width: 50%;
-  height:100vh;
+  height:60vh;
   border-radius: 25px;
-  font-size: 1.5em;
+  font-size: 1em;
   color: #FFFFFF;
   box-shadow: 2px 4px 10px black;
   overflow:auto;
-  padding: 20px;
-  padding-bottom: 20px;
+  overflow-y:visible;
+  padding-top: 2vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vh;
+  margin-top: 5vh;
 }
 
 .innerBox {
@@ -53,8 +57,9 @@
 .updateImage img {
   max-width: 200px;
   max-height: 300px;
-  margin: 0 auto;
+  float: left;
   border-radius: 25px;
+  margin-top: 5vh;
 }
 
 .updateTitle {
@@ -63,7 +68,6 @@
 
 .updateUser {
   padding: 10px;
-  line-height: 40px;
 }
 
 .updateStatus {
@@ -84,23 +88,23 @@
 
 .updateProfile a {
   background-color: #FFFFFF;
-  border-radius: 25px;
+  border-radius: 5px;
   color: #009999;
   text-decoration: none;
   border: none;
   font-size: .7em;
   font-weight: bold;
   width: 25px;
-  padding: 5px;
+  padding: 10px;
   outline: none;
   text-align: center;
   align-self: center;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 .updateProfile a:hover {
   background-color: #009999;
-  border-radius: 25px;
+  border-radius: 5px;
   color: #FFFFFF;
   text-decoration: none;
   border: none;
@@ -110,6 +114,6 @@
 
 .updateBio {
   padding: 10px;
-  line-height: 40px;
+  line-height: 30px;
 
 }

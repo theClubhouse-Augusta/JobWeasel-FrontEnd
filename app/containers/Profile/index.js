@@ -41,9 +41,7 @@ export default class Profile extends React.PureComponent {
         <div className="leftSideButtons">
           <div className="updateProfileButton" onClick={this.handleUpdateProfile}>
 
-            <header>Update Profile
-            </header>
-
+            <header>Update Profile</header>
           </div>
 
           <Link to="/AddJob" className="addJobButton">Add Job</Link>
