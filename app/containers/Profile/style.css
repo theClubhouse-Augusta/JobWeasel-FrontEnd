@@ -34,8 +34,8 @@
   height: 30px;
   font-size: 1.4em;
   outline: none;
-  margin-left: 50px;
-  margin-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 25px;
   align-self:flex-start;
   justify-content: center;
@@ -45,6 +45,60 @@
 }
 
 .updateProfileButton:hover {
+  background-color: #FFFFFF;
+  color: #009999;
+
+}
+
+.addJobButton {
+  background-color: #009999;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: .75em;
+  width: 175px;
+  height: 30px;
+  font-size: 1.4em;
+  outline: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 25px;
+  align-self:flex-start;
+  justify-content: center;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  cursor:pointer;
+}
+
+.addJobButton:hover {
+  background-color: #FFFFFF;
+  color: #009999;
+
+}
+
+.viewJobsButton {
+  background-color: #009999;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: .75em;
+  width: 175px;
+  height: 30px;
+  font-size: 1.4em;
+  outline: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 25px;
+  align-self:flex-start;
+  justify-content: center;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  cursor:pointer;
+}
+
+.viewJobsButton:hover {
   background-color: #FFFFFF;
   color: #009999;
 
@@ -107,6 +161,7 @@
 .linksBox {
   margin-top: 25px;
   z-index: 2;
+  margin-left: 20px;
 }
 
 .linksBox a {
