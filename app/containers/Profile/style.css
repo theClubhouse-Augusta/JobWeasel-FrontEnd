@@ -28,7 +28,6 @@
   flex-direction: column;
   margin-top: 25vh;
   margin-left: 20vw;
-  margin-right: 5vw;
 }
 
 .updateProfileButton {
@@ -160,7 +159,6 @@
 .linksBox {
   margin-top: 25vh;
   z-index: 2;
-  margin-left: 5vw;
   margin-right: 20vw;
 }
 
@@ -182,4 +180,8 @@
 .linksBox a:hover {
   background-color: #FFFFFF;
   color: #009999;
+}
+
+.updateBox::-webkit-scrollbar {
+    display: none;
 }
