@@ -161,7 +161,6 @@
 .linksBox {
   margin-top: 25vh;
   z-index: 2;
-  margin-left: 5vw;
   margin-right: 20vw;
   width:10vw;
 }
@@ -185,4 +184,8 @@
 .linksBox a:hover {
   background-color: #FFFFFF;
   color: #009999;
+}
+
+.updateBox::-webkit-scrollbar {
+    display: none;
 }
