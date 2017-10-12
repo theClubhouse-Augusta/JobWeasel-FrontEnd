@@ -13,6 +13,7 @@ import JobDetails from 'containers/JobDetails';
 import Jobs from 'containers/Jobs';
 import SignUp from 'containers/SignUp';
 import Admin from 'containers/Admin';
+import ViewProfiles from 'containers/ViewProfiles';
 
 ReactDOM.render((
   <BrowserRouter>
@@ -24,6 +25,7 @@ ReactDOM.render((
       <Route path='/Profile/:id' component={Profile}/>
       <Route path='/SignUp' component={SignUp}/>
       <Route path='/Admin' component={Admin}/>
+      <Route path='/ViewProfiles' component={ViewProfiles}/>
       <Route path='*' component={NotFound}/>
     </Switch>
   </BrowserRouter>
