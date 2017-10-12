@@ -18,8 +18,8 @@ export default class Profile extends React.PureComponent {
   constructor (props) {
     super(props);
     this.state = {
-      openUserProfile:false,
-      user:JSON.parse(sessionStorage.getItem('user')),
+      openUserProfile: false,
+      user: {},
       token:sessionStorage.getItem('token')
     }
   };
@@ -30,9 +30,25 @@ export default class Profile extends React.PureComponent {
       })
     }
 
+  componentWillMount() {
+    let user_id = this.props.match.params.id;
+    let url = "http://localhost:8000/api/showUser/" + user_id;
+    let _this = this;
+
+    fetch(url, {method: 'GET'}).then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        _this.setState({
+          user: json.user
+        })
+      }
+    );
+  }
 
   render() {
-    console.log(this.state.user.id);
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
@@ -58,11 +74,6 @@ export default class Profile extends React.PureComponent {
               <p><b>Name:</b></p>
               <h1>{this.state.user.name}
               </h1>
-            </div>
-
-            <div className="profileTitle">
-              <p><b>Title: </b>{this.state.user.title}
-              </p>
             </div>
 
             <div className="profileEmail">
