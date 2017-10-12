@@ -41,11 +41,6 @@ export default class Home extends React.PureComponent {
           {this.renderSignIn()}
           <div className="homeFullOverlay">
           </div>
-
-          <div className="jobWeaselLogo">
-              <img src={require("../../images/businessWeasel.jpg")} />
-          </div>
-
           <div className="welcome-text">
               <h1>Welcome to Job Weasel</h1>
 
