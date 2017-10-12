@@ -68,7 +68,6 @@ export default class Jobs extends React.PureComponent {
     }
   }
 
-
   handleSearch = (event) => {
     this.setState({
       search:event.target.value
