@@ -36,9 +36,6 @@ export default class PhotoUpload extends React.PureComponent {
     event.preventDefault();
   }
 
-
-
-
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
