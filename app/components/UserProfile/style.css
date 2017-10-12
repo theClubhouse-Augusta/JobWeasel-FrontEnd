@@ -85,12 +85,10 @@
 .updateProfile:hover {
   border-radius: 5px;
   text-decoration: underline;
-
 }
 
 
 .updateBio {
   padding: 10px;
   line-height: 30px;
-
 }

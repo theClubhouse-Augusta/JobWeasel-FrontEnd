@@ -46,7 +46,7 @@ export default class Nav extends React.PureComponent {
   render() {
     return (
       <div className="navContainer">
-      <div className="siteName">{this.props.siteName}</div>
+      <div className="siteName">Job Weasel</div>
 
       <nav className="nav">
         <Link to="/Profile" className="navButton">Home</Link>

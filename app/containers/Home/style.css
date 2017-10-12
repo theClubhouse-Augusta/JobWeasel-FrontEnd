@@ -2,15 +2,13 @@
 
 .homeContainer {
   display:flex;
+  flex-direction: column;
   min-height:100vh;
-  text-align: center;
-  font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/computer_7.jpg");
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
+  background-size: cover;
   background-attachment:fixed;
   z-index: 0;
+  background:url('../../images/crew.jpg');
+  background-size: cover;
   margin: 0 auto;
 }
 
@@ -89,7 +87,13 @@
   flex-direction:row;
   align-items:center;
   justify-content: center;
-  margin-right: 2vw;
-  margin-top: 2vh;
-  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+  font-family: 'Open-sans', sans-serif;
+  font-weight: 300;
+}
+.helloJob {
+  font-family: 'Dosis', sans-serif;
+}
+.subHeader {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }

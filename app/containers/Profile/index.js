@@ -70,7 +70,6 @@ export default class Profile extends React.PureComponent {
       )
     }
   }
-
   renderProfile = (user) => {
     let photoUrl = user.photo;
     if (!photoUrl) {photoUrl = require("../../images/businessWeasel.jpg")}
@@ -95,7 +94,6 @@ export default class Profile extends React.PureComponent {
         {this.renderProfileField("Location", user.location)}
         {phoneField}
         {this.renderProfileField("Availability", availability)}
-
         <div className="profileBio">
         <p>
         {user.bio}
@@ -167,38 +165,30 @@ export default class Profile extends React.PureComponent {
       </span>
     );
   }
-
   renderPanelLink = (url, text) => {
     return (
       <Link to={url} className="sideButton">{text}</Link>
     );
   }
-
   renderProfileLink = (url, text) => {
     return (
       <a href={url} className="sideButton">{text}</a>
     );
   }
-
   render() {
-
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
         <div className= "profileFullOverlay">
         </div>
           {this.renderLeftPanel(JSON.parse(sessionStorage.getItem("user")))}
-
           {this.renderProfile(this.state.user)}
-
           {this.renderRightPanel(this.state.user)}
-
           {this.renderUpdateBox()}
         </div>
       );
     }
 }
-
 Profile.contextTypes = {
   router: React.PropTypes.object
 };
