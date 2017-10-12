@@ -36,8 +36,9 @@ export default class Nav extends React.PureComponent {
       if(this.state.menuOpen === true){
         return (
           <nav className="navMobile">
-          <Link to="/" className="navButton">Home</Link>
-          <Link to="/" className="navButton">Contact</Link>
+          <Link to="/Profile" className="navButton">Home</Link>
+          <Link to="/Jobs" className="navButton">Jobs List</Link>
+          <Link to="/ViewProfiles" className="navButton">Profiles List</Link>
           </nav>
         )
       }
@@ -48,9 +49,9 @@ export default class Nav extends React.PureComponent {
       <div className="siteName">Job Weasel</div>
 
       <nav className="nav">
-        <Link to="/" className="navButton">Home</Link>
-        <Link to="/" className="navButton">Profile</Link>
-
+        <Link to="/Profile" className="navButton">Home</Link>
+        <Link to="/Jobs" className="navButton">Jobs List</Link>
+        <Link to="/ViewProfiles" className="navButton">Profiles List</Link>
       </nav>
         <Bars className="menuIcon" onClick={this.handleMenu}/>
 

@@ -2,21 +2,21 @@
 
 .homeContainer {
   display:flex;
-  flex-direction:column;
+  flex-direction: column;
   min-height:100vh;
   background-size: cover;
   background-attachment:fixed;
-  background-position: center center;
   z-index: 0;
   background:url('../../images/crew.jpg');
   background-size: cover;
+  margin: 0 auto;
 }
 
 .homeFullOverlay {
   position: fixed;
   height: 100vh;
-  width: 100%;
-  background-color: rgba(24, 29, 38, 0.3);
+  width: 100vw;
+  background-color: rgba(24, 29, 38, 0.2);
   z-index: 1;
 }
 
@@ -27,7 +27,9 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  color: white;
+  margin: 0 auto;
+  color: #FFFFFF;
+  font-size: 1em;
 }
 
 .jobWeaselLogo img {
@@ -36,6 +38,8 @@
   margin: 0 auto;
   border-radius: 20px;
   justify-content: center;
+  z-index: 2;
+  margin-bottom: 2vh;
 }
 
 .entranceButtons {
@@ -44,35 +48,37 @@
   width: 40%;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
   margin: 0 auto;
-  margin-top: 2%;
+  margin-top: .5vh;
+  z-index: 2;
 }
 
 .sign-in {
-  background-color: #E07B3C;
+  background-color: #009999;
   border-radius: 5px;
   text-decoration: none;
   color: white;
   border: none;
   font-size: 1.2em;
-  width: 90px;
+  width: 20vw;
   height: 45px;
   outline: none;
   text-align: center;
   z-index: 2;
-  font-family: 'Open-sans', sans-serif;
-  font-weight: 300;
+  cursor: pointer;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
 }
 
 .sign-up {
-  background-color: #E07B3C;
+  background-color: #009999;
   border-radius: 5px;
   text-decoration: none;
   color: white;
   border: none;
   font-size: 1.2em;
-  width: 90px;
+  width: 20vw;
   height: 45px;
   outline: none;
   text-align: center;
@@ -90,5 +96,4 @@
 .subHeader {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-
 }

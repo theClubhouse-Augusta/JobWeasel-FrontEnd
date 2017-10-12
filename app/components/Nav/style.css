@@ -8,8 +8,6 @@
   justify-content: space-between;;
   align-items: center;
   color: white;
-
-
 }
 
 .navButtons {
@@ -18,7 +16,9 @@
   font-weight:bold;
   font-variant: small-caps;
   margin-right:15px;
-  font-size: 4em;
+  font-size: 2em;
+  background-color: #FFFFFF;
+  width:100vw;
 }
 
 .siteName {

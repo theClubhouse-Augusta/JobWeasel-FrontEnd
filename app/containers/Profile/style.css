@@ -5,9 +5,9 @@
   min-height:100vh;
   text-align: center;
   font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/1.jpg");
+  background-image: url("../../IMAGES/businesspeople1.jpg");
   background-size:cover;
-  background-position:center center;
+  background-position:center top;
   background-repeat:no-repeat;
   background-attachment:fixed;
   z-index: 0;
@@ -19,19 +19,19 @@
   width: 100%;
   background-color: rgba(24, 29, 38, 0.3);
   z-index: 1;
-
 }
 
-.leftSideButtons {
+.sidePanel {
   z-index: 2;
   display: flex;
   flex-direction: column;
   margin-top: 25vh;
   margin-left: 20vw;
   margin-right: 5vw;
+  width:10vw;
 }
 
-.updateProfileButton {
+.sideButton {
   background-color: #009999;
   border-radius: 5px;
   color: white;
@@ -46,49 +46,7 @@
   margin-bottom: 2vh;
 }
 
-.updateProfileButton:hover {
-  background-color: #FFFFFF;
-  color: #009999;
-
-}
-
-.addJobButton {
-  background-color: #009999;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.1em;
-  width: auto;
-  outline: none;
-  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
-  cursor:pointer;
-  padding: 10px;
-  margin-bottom: 2vh;
-
-}
-
-.addJobButton:hover {
-  background-color: #FFFFFF;
-  color: #009999;
-
-}
-
-.viewJobsButton {
-  background-color: #009999;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.1em;
-  width: auto;
-  outline: none;
-  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
-  cursor:pointer;
-  padding: 10px;
-}
-
-.viewJobsButton:hover {
+.sideButton:hover {
   background-color: #FFFFFF;
   color: #009999;
 
@@ -97,7 +55,7 @@
 .profileDisplay  {
   background-color: rgba(255, 255, 255, 1);
   max-width:750px;
-  height:700px;
+  min-height:50vh;
   padding-left: 50px;
   padding-top: 30px;
   padding-right: 40px;
@@ -110,19 +68,41 @@
   margin-bottom: 5vh;
 }
 
-.profileEmail {
-  margin-top: 15px;
-  z-index: 2;
+.profileField {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.profileName h1 {
+.profileLabel {
+  display: flex;
+  justify-content: flex-end;
+  width: 48%;
+  font-weight: bold;
+}
+
+.profileValue {
+  display: flex;
+  justify-content: flex-start;
+  width: 48%;
+}
+
+.profileBio {
+  display: flex;
+  width: 90%;
+  padding: 10px;
+  font-size: 14pt;
+}
+
+.profileName {
   font-weight: bold;
   color: #009999;
   font-size: 1.6em;
   z-index: 2;
 }
 
-.profileImage img {
+.profilePhoto {
   max-width: 200px;
   max-height: 200px;
   flex-wrap:wrap;
@@ -131,37 +111,13 @@
   z-index: 2;
 }
 
-.profileTitle {
-  margin-top: 10px;
-  z-index: 2;
-}
 
-.profileLocation {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  word-spacing: .4em;
-  z-index: 2;
-}
-
-.profileAvailability {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  word-spacing: .4em;
-  z-index: 2;
-}
-
-.profileBio {
-  line-height: 35px;
-  text-align: justify;
-  font-kerning: 2.5em;
-  z-index: 2;
-}
 
 .linksBox {
   margin-top: 25vh;
   z-index: 2;
-  margin-left: 5vw;
   margin-right: 20vw;
+  width:10vw;
 }
 
 .linksBox a {
@@ -171,10 +127,11 @@
   text-decoration: none;
   border: none;
   font-size: 1.1em;
-  width: auto;
+  width: 10vw;
   padding: 10px;
   outline: none;
   line-height: 55px;
+  word-break: keep-all;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
 }
@@ -182,4 +139,8 @@
 .linksBox a:hover {
   background-color: #FFFFFF;
   color: #009999;
+}
+
+.updateBox::-webkit-scrollbar {
+    display: none;
 }

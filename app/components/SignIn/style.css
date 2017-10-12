@@ -1,14 +1,14 @@
 /* SignIn Styles */
 .signInContainer {
   background-color: white;
-  height: 180px;
+  height: 210px;
   width: 250px;
   border-radius: 13px;
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin-top: 10vh;
-  margin-left: 35vw;
+  margin-top:27vh;
+  margin-left: 42vw;
   font-family: 'Play', sans-serif;
   z-index: 11;
 
@@ -20,9 +20,10 @@
 
   align-items: center;
 }
+
 .signInButton {
-  background-color: #8DB580;
-  border-radius: 25px;
+  background-color: #009999;
+  border-radius: 5px;
   color: white;
   text-decoration: none;
   border: none;
@@ -32,11 +33,13 @@
   outline: none;
   margin-top: 10px;
 }
+
 .emailSignIn {
   padding: 5px;
   width: 150px;
   margin-top: 20px;
 }
+
 .passwordSignIn {
   padding: 5px;
   width: 150px;
