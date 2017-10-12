@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import SignIn from 'components/SignIn';
 import { Link } from 'react-router-dom';
+import Nav from 'components/Nav';
 
 import './style.css';
 import './styleM.css';
@@ -32,12 +33,13 @@ export default class Home extends React.PureComponent {
         <SignIn/>
       )
     }
-  }
+  };
   /* Hi My head fell off*/
   render() {
     return (
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+          <Nav/>
           {this.renderSignIn()}
           <div className="homeFullOverlay">
           </div>
