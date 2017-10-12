@@ -22,7 +22,7 @@ ReactDOM.render((
       <Route path='/AddJob' component={AddJob}/>
       <Route path='/JobDetails/:id' component={JobDetails}/>
       <Route path='/Jobs' component={Jobs}/>
-      <Route path='/Profile' component={Profile}/>
+      <Route path='/Profile/:id' component={Profile}/>
       <Route path='/SignUp' component={SignUp}/>
       <Route path='/Admin' component={Admin}/>
       <Route path='/ViewProfiles' component={ViewProfiles}/>
