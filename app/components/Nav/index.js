@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom'
 
 import './style.css';
 import './styleM.css';
+import Bars from 'react-icons/lib/fa/bars';
 
 export default class Nav extends React.PureComponent {
   constructor () {
@@ -35,9 +36,9 @@ export default class Nav extends React.PureComponent {
       if(this.state.menuOpen === true){
         return (
           <nav className="navMobile">
-          <Link to="/" className="navButton">Home</Link>
-          <Link to="/" className="navButton">Contact</Link>
-          <a href="https://github.com/dijahmac" className="navButton">Github</a>
+          <Link to="/Profile" className="navButton">Home</Link>
+          <Link to="/Jobs" className="navButton">Jobs List</Link>
+          <Link to="/ViewProfiles" className="navButton">Profiles List</Link>
           </nav>
         )
       }
@@ -48,12 +49,12 @@ export default class Nav extends React.PureComponent {
       <div className="siteName">{this.props.siteName}</div>
 
       <nav className="nav">
-        <Link to="/" className="navButton">Home</Link>
-        <Link to="/" className="navButton">Contact</Link>
-        <a href="https://github.com/dijahmac" className="navButton">Github</a>
+        <Link to="/Profile" className="navButton">Home</Link>
+        <Link to="/Jobs" className="navButton">Jobs List</Link>
+        <Link to="/ViewProfiles" className="navButton">Profiles List</Link>
       </nav>
         <Bars className="menuIcon" onClick={this.handleMenu}/>
-    
+
       {this.renderMenu()}
       </div>
     );
