@@ -42,19 +42,30 @@ export default class Home extends React.PureComponent {
           <div className="homeFullOverlay">
           </div>
 
-          <div className="jobWeaselLogo">
-              <img src={require("../../images/businessWeasel.jpg")} />
-          </div>
+
 
           <div className="welcome-text">
+
+            <div className="profileImage">
+              <img src={require("../../images/businessWeasel.jpg")} />
+            </div>
+
               <h1>Welcome to Job Weasel</h1>
 
               <h3>A place to find your next job or your next employee.</h3>
+
             <div className="entranceButtons">
               <Link to="/SignUp" className="sign-up">Sign-Up</Link>
               <input type="submit" className="sign-in" value="Sign-in" onClick={this.handleSignIn}/>
             </div>
+
+
+
           </div>
+
+
+
+
       </div>
     );
   }

@@ -5,9 +5,9 @@
   min-height:100vh;
   text-align: center;
   font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/1.jpg");
+  background-image: url("../../IMAGES/businesspeople1.jpg");
   background-size:cover;
-  background-position:center center;
+  background-position:center top;
   background-repeat:no-repeat;
   background-attachment:fixed;
   z-index: 0;
@@ -29,6 +29,7 @@
   margin-top: 25vh;
   margin-left: 20vw;
   margin-right: 5vw;
+  width:10vw;
 }
 
 .updateProfileButton {
@@ -162,6 +163,7 @@
   z-index: 2;
   margin-left: 5vw;
   margin-right: 20vw;
+  width:10vw;
 }
 
 .linksBox a {
@@ -171,10 +173,11 @@
   text-decoration: none;
   border: none;
   font-size: 1.1em;
-  width: auto;
+  width: 10vw;
   padding: 10px;
   outline: none;
   line-height: 55px;
+  word-break: keep-all;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
 }

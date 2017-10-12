@@ -103,12 +103,13 @@ export default class Jobs extends React.PureComponent {
 
         <div className="jobsFullOverlay">
         </div>
+
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.searchResults.map((t, i) => (
-           <Link key={i} to={`/JobDetails/${t.id}`}> Job Listings: {t.name}
-             <p>{t.location}</p>
-             <p>{t.budget}</p>
+           <Link key={i} to={`/JobDetails/${t.id}`} className="jobDetailLink"> Job: {t.name}
+             <p>Job Location: {t.location}</p>
+             <p>Budget: {t.budget}</p>
            </Link>))}
           </div>
         </div>
