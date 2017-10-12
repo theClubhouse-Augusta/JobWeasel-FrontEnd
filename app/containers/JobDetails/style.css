@@ -5,7 +5,7 @@
   min-height:100vh;
   text-align: center;
   font-family: 'Play', sans-serif;
-  background-image: url("../../IMAGES/businesspeople.jpg");
+  background-image: url("../../IMAGES/computer_7.jpg");
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -17,10 +17,21 @@
   position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: rgba(24, 29, 38, 0.3);
+
   z-index: 1;
 }
 
 .detailContainer {
-  color:white;
+  color: #009999;
+  background-color: #FFFFFF;
+  width:50vw;
+  height: 60vh;
+  border-radius: 25px;
+  margin-top: 10vh;
+  margin-left: 5vw;
+  font-size: 1.4em;
+  padding: 25px 10px 10px 10px;
+  line-height: 1.5em;
+  box-shadow: 2px 4px 10px black;
+
 }

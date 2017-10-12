@@ -6,19 +6,22 @@
   background-size: cover;
   width:auto;
   justify-content:space-between;
-  align-items:right;
+  align-items:right top;
   text-align: center;
   overflow:auto;
   z-index: 2;
   position: fixed;
-  margin-top: 5vh;
+  margin-top: 100vh;
+  font-family:'Play', sans-serif;
 }
 
 .navButtons {
-  color:#0e1b4c;
+  color:#009999;
   text-decoration: none;
   font-weight:bold;
   font-variant: small-caps;
   margin-right:15px;
-  font-size: 4em;
+  font-size: 2em;
+  background-color: #FFFFFF;
+  width:100vw;
 }

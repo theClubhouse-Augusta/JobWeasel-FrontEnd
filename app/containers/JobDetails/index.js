@@ -10,6 +10,8 @@ import Helmet from 'react-helmet';
 import './style.css';
 import './styleM.css';
 
+import Nav from 'components/Nav';
+
 export default class JobDetails extends React.PureComponent {
 
   constructor() {
@@ -47,14 +49,18 @@ export default class JobDetails extends React.PureComponent {
         </div>
 
         <div className="detailContainer">
-            Job Details: {this.state.job.name}
-           <p>Location:{this.state.job.location}</p>
-           <p>Description:{this.state.job.description}</p>
-           <p>Workers Needed:{this.state.job.workers_needed}</p>
-           <p>Start Date:{this.state.job.start_date}</p>
-           <p>Project Length in Months:{this.state.job.time_frame}</p>
-           <p>Job Posted on:{this.state.job.created_at}</p>
+         <h3><b>Job: {this.state.job.name}</b></h3>
+         <p>Location: {this.state.job.location}</p>
+         <p>Description: {this.state.job.description}</p>
+         <p>Budget: {this.state.job.budget}</p>
+         <p>Workers Needed: {this.state.job.workers_needed}</p>
+         <p>Start Date: {this.state.job.start_date}</p>
+         <p>Project Length in Months: {this.state.job.time_frame}</p>
+         <p>Job Posted on: {this.state.job.created_at}</p>
         </div>
+
+        <Nav/>
+
       </div>
     )
   }
