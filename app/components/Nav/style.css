@@ -1,24 +1,52 @@
 /* Nav Styles */
 .navContainer {
-  display:flex;
-  flex-direction:column;
-  background: rgba(0,0,0,0);
-  background-size: cover;
-  width:auto;
-  justify-content:space-between;
-  align-items:right;
-  text-align: center;
-  overflow:auto;
-  z-index: 2;
-  position: fixed;
-  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  background: #404040;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;;
+  align-items: center;
+  color: white;
+
+
 }
 
 .navButtons {
-  color:#0e1b4c;
+  color: white;
   text-decoration: none;
   font-weight:bold;
   font-variant: small-caps;
   margin-right:15px;
   font-size: 4em;
+}
+
+.siteName {
+  width: 30%;
+  font-size: 2em;
+  margin-left: 15px;
+  font-family: 'Open-Sans', sans-serif;
+
+}
+.nav {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 15px;
+
+}
+.navButton {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: normal;
+  font-variant:normal;
+  font-family: 'Open-Sans', sans-serif;
+}
+.menuIcon {
+  display: none;
+}
+.navButton:hover {
+
 }

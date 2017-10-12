@@ -62,8 +62,10 @@
 .jobSearch {
   border-radius: 2px;
   outline: none;
-  border: none;
+  border: solid;
   height: 20px;
+  
+
 }
 .nextIcon {
   font-size: 1.8em;
