@@ -1,6 +1,6 @@
 /* Admin Styles */
 
-.container {
+.adminContainer {
   display:flex;
   flex-direction: row;
   align-items: flex-start;
@@ -9,7 +9,6 @@
   font-family: 'Play', sans-serif;
   color: #FFFFFF;
   font-size: 2em;
-  font-weight: bold;
   padding: 50px;
   background-image: url("../../IMAGES/technology1.jpg");
   background-size:cover;
@@ -28,12 +27,14 @@
 }
 
 .userRow {
-  font-size: 15pt;
+  font-size: .5em;
   width: 75%;
   border-width: 10px;
   border-color: black;
   padding-bottom: 15px;
   background-color: rgba(0, 0, 0, .5);
+  font-family: 'Play', sans-serif;
+
 }
 
 .approvalPanel {
@@ -44,14 +45,22 @@
 
 .approvalButton {
   box-shadow: 3px 6px 2px #000000;
-  background-color: #999999;
+  background-color: #009999;
   border-width: 15px;
   user-select: none;
-  cursor: default;
+  cursor: pointer;
+  height:2.2vh;
+  width:5vw;
+  border-radius: 5px;
+  font-family: 'Play', sans-serif;
+  font-variant: small-caps;
+  padding-top: .5vh;
 }
 
 .approvalButton:hover {
-  background-color: #AAAAAA;
+  background-color: #FFFFFF;
+  color: #009999;
+
 }
 
 .approvalButton:active {
@@ -66,7 +75,14 @@
   background-color: #AAAAAA;
 }
 
-.usersPanel {
+.usersPanel_approved {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  justify-content: center;
+}
+
+.usersPanel_pending {
   display: flex;
   flex-direction: column;
   width: 50vw;
