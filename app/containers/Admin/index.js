@@ -65,7 +65,7 @@ export default class Admin extends React.PureComponent {
         <div className="userInfo">
           {user.name} <span className="roleLabel"> {role} </span>
         </div>
-        
+
         {this.renderApprovalPanel(user)}
       </div>
     );
@@ -144,17 +144,17 @@ export default class Admin extends React.PureComponent {
     let reviewed = this.getFinishedReviews();
 
     return (
-      <div className="container">
+      <div className="adminContainer">
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
         {/*<div className="adminFullOverlay">
         </div>*/}
 
-        <div className="usersPanel pending">
+        <div className="usersPanel_pending">
           <header>Profiles to Review:</header>
           {pending.map((user, index) => (this.renderUser(user, index)))}
         </div>
 
-        <div className="usersPanel approved">
+        <div className="usersPanel_approved">
           <header>Accepted Recruiters:</header>
           (Click the recruiter to change the review approved status)
           {reviewed.map((user, index) => (this.renderUser(user, index)))}
