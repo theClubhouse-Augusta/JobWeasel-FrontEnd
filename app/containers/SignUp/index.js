@@ -83,9 +83,8 @@ export default class SignUp extends React.PureComponent {
           notificationTwo: json.success
         })
         sessionStorage.setItem('token', json.token);
-        sessionStorage.setItem('user', JSON.stringify(json.user));
         setTimeout(function(){
-          _this.context.router.history.push("/Profile");
+          _this.context.router.history.push('/Profile/${:id}');
         }, 1000)
       }
     }.bind(this))

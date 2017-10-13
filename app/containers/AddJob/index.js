@@ -60,7 +60,7 @@ export default class AddJob extends React.PureComponent {
     });
     this.forceUpdate();
     setTimeout(function(){
-      _this.context.router.history.push("/Profile");
+      _this.context.router.history.push('/Profile/{$:id}');
     }, 500);
   };
 

@@ -56,7 +56,7 @@ export default class SignIn extends React.PureComponent {
         sessionStorage.setItem('token', json.token);
         sessionStorage.setItem('user', JSON.stringify(json.user));
         setTimeout(function(){
-          _this.context.router.history.push("/Profile");
+          _this.context.router.history.push('/Profile/{$:id}');
         }, 500)
       }
     }.bind(this))
