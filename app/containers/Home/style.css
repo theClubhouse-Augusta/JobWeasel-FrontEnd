@@ -69,6 +69,8 @@
   margin-left: 2vw;
   margin-top: 2vh;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+  font-family: 'Open-sans', sans-serif;
+  font-weight: 300;
 }
 
 .sign-up {
@@ -89,9 +91,12 @@
   justify-content: center;
   font-family: 'Open-sans', sans-serif;
   font-weight: 300;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
+  margin-top: 2vh;
 }
 .helloJob {
   font-family: 'Dosis', sans-serif;
+  font-size: 3.4em;
 }
 .subHeader {
   font-family: 'Open Sans', sans-serif;

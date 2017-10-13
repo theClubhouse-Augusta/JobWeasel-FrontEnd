@@ -50,8 +50,8 @@ export default class Nav extends React.PureComponent {
 
       <nav className="nav">
         <Link to="/Profile" className="navButton">Home</Link>
-        <Link to="/Jobs" className="navButton">Jobs List</Link>
-        <Link to="/ViewProfiles" className="navButton">Profiles List</Link>
+        <Link to="/Jobs" className="navButton">Jobs</Link>
+        <Link to="/ViewProfiles" className="navButton">Profiles</Link>
       </nav>
         <Bars className="menuIcon" onClick={this.handleMenu}/>
 
