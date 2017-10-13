@@ -36,30 +36,32 @@ export default class SignIn extends React.PureComponent {
     data.append('email', this.state.email);
     data.append('password', this.state.password);
 
-  fetch('http://localhost:8000/api/signIn', {
-    method:'Post',
-    body:data
-    })
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(json) {
-      if(json.error) {
-        _this.setState({
-          notificationTwo: json.error
-        })
-      }
-      else {
-        _this.setState({
-          notificationTwo: json.success
-        })
-        sessionStorage.setItem('token', json.token);
-        sessionStorage.setItem('user', JSON.stringify(json.user));
-        setTimeout(function(){
-          _this.context.router.history.push('/Profile/{$:id}');
-        }, 500)
-      }
-    }.bind(this))
+    fetch('http://localhost:8000/api/signIn', {
+      method:'Post',
+      body:data
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        if(json.error) {
+          _this.setState({
+            notificationTwo: json.error
+          })
+        }
+        else {
+          _this.setState({
+            notificationTwo: json.success
+          })
+          sessionStorage.setItem('token', json.token);
+          sessionStorage.setItem('user', JSON.stringify(json.user));
+          setTimeout(function(){
+            let user = JSON.parse(sessionStorage.getItem('user'));
+            let url = '/Profile/' + user.id;
+            _this.context.router.history.push(url);
+          }, 500)
+        }
+      }.bind(this))
   }
 
 
