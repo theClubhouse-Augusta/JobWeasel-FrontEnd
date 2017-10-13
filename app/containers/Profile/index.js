@@ -76,7 +76,7 @@ export default class Profile extends React.PureComponent {
 
     let availability = user.availability;
     if (availability == 1) {availability = "Ok"}
-    if (availability == 1) {availability = "Busy"}
+    if (availability == 2) {availability = "Busy"}
 
     let phoneField = "";
     if (user.phone != 0) {phoneField = this.renderProfileField("Phone", user.phone)}
@@ -84,22 +84,21 @@ export default class Profile extends React.PureComponent {
     if (this.state.user !== "") {
       return (
         <div className="profileDisplay">
-        {this.renderProfilePhoto(photoUrl)}
+          {this.renderProfilePhoto(photoUrl)}
 
-        <div className="profileName">
-        {user.name}
-        </div>
+          <div className="profileName">
+            {user.name}
+          </div>
 
-        {this.renderProfileField("Email", user.email)}
-        {this.renderProfileField("Location", user.location)}
-        {phoneField}
-        {this.renderProfileField("Availability", availability)}
-        <div className="profileBio">
-        <p>
-        {user.bio}
-        </p>
-        </div>
-
+          {this.renderProfileField("Email", user.email)}
+          {this.renderProfileField("Location", user.location)}
+          {phoneField}
+          {this.renderProfileField("Availability", availability)}
+          <div className="profileBio">
+            <p>
+            {user.bio}
+            </p>
+          </div>
         </div>
       );
     }
@@ -179,8 +178,8 @@ export default class Profile extends React.PureComponent {
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
-        <div className= "profileFullOverlay">
-        </div>
+          <div className= "profileFullOverlay">
+          </div>
           {this.renderLeftPanel(JSON.parse(sessionStorage.getItem("user")))}
           {this.renderProfile(this.state.user)}
           {this.renderRightPanel(this.state.user)}
