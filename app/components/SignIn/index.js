@@ -9,6 +9,9 @@ import React from 'react';
 import './style.css';
 import './styleM.css';
 
+import LeftIcon from 'react-icons/lib/fa/chevron-left';
+import RightIcon from 'react-icons/lib/fa/chevron-right';
+
 export default class SignIn extends React.PureComponent {
   constructor() {
     super();
@@ -28,6 +31,14 @@ export default class SignIn extends React.PureComponent {
     this.setState({
       password:event.target.value
     })
+  }
+
+  enterKey = (event) => {
+    var key = event.keyCode;
+
+    if (key === 13) {
+      this.storeItem();
+    }
   }
 
   signIn =() => {
@@ -75,7 +86,7 @@ export default class SignIn extends React.PureComponent {
             <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
 
             <input type="password" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
-            <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn}/>
+            <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn} onKeyDown={this.enterKey}/>
             <p className="submitNote">{this.state.notificationTwo}</p>
 
           </div>
