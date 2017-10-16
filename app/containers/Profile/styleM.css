@@ -17,11 +17,7 @@
     height: auto;
   }
 
-  .profileEmail {
-    font-weight: bold;
-    font-size: 80%;
-    width: auto;
-  }
+
 
   .linksBox {
     margin-top: 20px;
@@ -40,7 +36,9 @@
     margin-top: 10px;
   }
 
-
+  .sideButton {
+    flex-basis: 80px;
+  }
 
   .profileDisplay {
     width: auto;
@@ -49,11 +47,7 @@
     height: auto;
   }
 
-  .profileEmail {
-    font-weight: bold;
-    font-size: 90%;
-    width: auto;
-  }
+
 
   .linksBox {
     margin-top: 20px;

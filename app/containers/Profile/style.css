@@ -3,7 +3,6 @@
 .profileContainer {
   display:flex;
   min-height:100vh;
-  text-align: center;
   font-family: 'Play', sans-serif;
   background-image: url("../../IMAGES/businesspeople1.jpg");
   background-size:cover;
@@ -28,7 +27,8 @@
   margin-top: 25vh;
   margin-left: 20vw;
   margin-right: 5vw;
-  width:10vw;
+  
+  text-align: center;
 }
 
 .sideButton {
@@ -50,56 +50,6 @@
   background-color: #FFFFFF;
   color: #009999;
 
-}
-
-.profileDisplay  {
-  background-color: rgba(255, 255, 255, 1);
-  max-width:750px;
-  min-height:50vh;
-  padding-left: 50px;
-  padding-top: 30px;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  font-size: 1.5em;
-  border-radius: 25px;
-  z-index: 2;
-  margin: 0 auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-}
-
-.profileField {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.profileLabel {
-  display: flex;
-  justify-content: flex-end;
-  width: 48%;
-  font-weight: bold;
-}
-
-.profileValue {
-  display: flex;
-  justify-content: flex-start;
-  width: 48%;
-}
-
-.profileBio {
-  display: flex;
-  width: 90%;
-  padding: 10px;
-  font-size: 14pt;
-}
-
-.profileName {
-  font-weight: bold;
-  color: #009999;
-  font-size: 1.6em;
-  z-index: 2;
 }
 
 .profilePhoto {
