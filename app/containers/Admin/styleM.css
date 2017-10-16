@@ -1,1 +1,47 @@
 /* Admin Mobile Styles */
+@media (max-width: 1024px) {
+  .adminContainer {
+    flex-direction:column;
+    flex-wrap:wrap;
+    flex-basis: auto;
+  }
+
+
+
+}
+
+@media (max-width: 768px) {
+  .adminContainer {
+    flex-direction:column;
+    flex-wrap:wrap;
+    flex-basis: auto;
+    font-size: 1.2em;
+    width: auto;
+    height: auto;
+    font-family: 'Play', sans-serif;
+
+  }
+
+  .userRow {
+    width: 100%;
+    border-width: 10px;
+    border-color: black;
+    background-color: rgba(0, 0, 0, .5);
+    padding-top: .5vh;
+  }
+
+
+
+}
+
+@media (max-width: 425px) {
+  .adminContainer {
+    flex-direction:column;
+    flex-wrap:wrap;
+    flex-basis: auto;
+
+  }
+
+
+
+}
