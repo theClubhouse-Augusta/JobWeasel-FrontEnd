@@ -92,6 +92,14 @@ export default class Profile extends React.PureComponent {
     );
   }
 
+  renderUpdateBox = (id) => {
+    return (
+      <div className="updateProfile">
+        <EditUser userId={id} />
+      </div>
+    );
+  }
+
   openUpdateProfilePanel = () => {
     this.setState({
       openUpdateProfile: !this.state.openUpdateProfile
@@ -115,6 +123,7 @@ export default class Profile extends React.PureComponent {
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
+
 
           {leftPanel}
           {user}

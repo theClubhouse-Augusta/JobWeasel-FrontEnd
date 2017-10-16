@@ -16,6 +16,7 @@ export default class EditUser extends React.PureComponent {
     super(props);
 
     this.state = {
+      notification: "",
       user: {},
       location: "",
       phone: "",
@@ -99,6 +100,17 @@ export default class EditUser extends React.PureComponent {
     );
   }
 
+  getNotification = (json) => {
+    if (json.success) {
+      this.setState({notification: json.success});
+    }
+
+    if (json.error) {
+      this.setState({notification: json.error});
+    }
+
+  }
+
   handlePhoto = (event) => {
     event.preventDefault();
     let reader = new FileReader();
@@ -117,6 +129,7 @@ export default class EditUser extends React.PureComponent {
   handleUpdateProfile = () => {
     let user = this.state.user;
     let url = "http://localhost:8000/api/editUser";
+    let _this = this;
 
     let data = new FormData;
     data.append("location", this.state.location);
@@ -134,6 +147,8 @@ export default class EditUser extends React.PureComponent {
       .then(function(json) {
         console.log("editUser");
         console.log(json);
+
+        _this.getNotification(json)
       }
     );
   }
@@ -141,6 +156,7 @@ export default class EditUser extends React.PureComponent {
   handleAddLink = () => {
     let user = this.state.user;
     let url = "http://localhost:8000/api/addLinkToUser";
+    let _this = this;
 
     let data = new FormData;
     data.append("text", this.state.linkText);
@@ -154,14 +170,16 @@ export default class EditUser extends React.PureComponent {
       .then(function(json) {
         console.log("addLinkToUser");
         console.log(json);
+
+        _this.getNotification(json);
       }
     );
   }
 
   handleRemoveLink = (id) => {
-    alert(id);
     let user = this.state.user;
     let url = "http://localhost:8000/api/removeLink";
+    let _this = this;
 
     let data = new FormData;
     data.append('link_id', id);
@@ -174,6 +192,11 @@ export default class EditUser extends React.PureComponent {
       .then(function(json) {
         console.log("removeLink");
         console.log(json);
+        let note = "";
+        if (json.error) {note = json.error}
+        if (json.success) {note = json.success}
+
+        _this.getNotification(json);
       }
     );
   }
@@ -276,10 +299,19 @@ export default class EditUser extends React.PureComponent {
     );
   }
 
+  renderNotification = (text) => {
+    return (
+      <div className="jsonNotification">
+        {text}
+      </div>
+    );
+  }
+
   render() {
     let user = "";
     let links = "";
     let skills = "";
+    let notification = "";
 
     if (this.state.user !== {}) {
         user = this.renderUser(this.state.user);
@@ -293,9 +325,14 @@ export default class EditUser extends React.PureComponent {
       skills = this.renderSkills(this.state.user);
     }
 
+    if (this.state.notification !== "") {
+      notification = this.renderNotification(this.state.notification);
+    }
+
     return (
       <div className="editUser">
         {user}
+        {notification}
         {skills}
         {links}
       </div>
