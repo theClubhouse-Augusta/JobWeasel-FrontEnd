@@ -5,7 +5,7 @@
   border-radius: 5px;
   font-size: .8em;
   width:50%;
-  height:150%;
+  height: auto;
   line-height: 25px;
   background-color: #FFFFFF;
   cursor:default;
