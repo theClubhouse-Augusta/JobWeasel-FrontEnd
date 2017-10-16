@@ -43,6 +43,8 @@ export default class Profile extends React.PureComponent {
         _this.setState({
           user: json.user
         })
+
+        //alert(_this.state.user.bio);
       }.bind(this)
     );
   }
@@ -61,8 +63,7 @@ export default class Profile extends React.PureComponent {
     let addJob = "";
     if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
 
-    let viewJobs = "";
-    if (role == 2) {viewJobs = this.renderPanelLink("/Jobs", "View Jobs")}
+    let viewJobs = this.renderPanelLink("/Jobs", "View Jobs");
 
     let viewProfiles = this.renderPanelLink("/viewProfiles", "View Profiles");
 
@@ -101,9 +102,16 @@ export default class Profile extends React.PureComponent {
   }
 
   openUpdateProfilePanel = () => {
+    let open = this.state.openUpdateProfile;
+
     this.setState({
-      openUpdateProfile: !this.state.openUpdateProfile
+      openUpdateProfile: !open
     });
+
+    if(open) {
+      this.child.getUser(this.props.match.params.id);
+      //this.getUser(this.props.match.params.id);
+    }
   }
 
   render() {
@@ -113,7 +121,7 @@ export default class Profile extends React.PureComponent {
 
     if (this.state.user !== "") {
       leftPanel = this.renderLeftPanel(this.state.user);
-      user = <ShowProfile userId={this.state.user.id} />;
+      user = <ShowProfile userId={this.state.user.id} ref={instance => { this.child = instance; }}/>;
     }
 
     if (this.state.openUpdateProfile) {

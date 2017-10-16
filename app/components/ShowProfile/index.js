@@ -58,6 +58,7 @@ export default class ShowProfile extends React.PureComponent {
         _this.setState({
           links: json.links
         });
+
         console.log(json.links);
       }.bind(this)
     );
@@ -77,6 +78,7 @@ export default class ShowProfile extends React.PureComponent {
           user: json.user
         });
         console.log(json.user);
+        
       }.bind(this)
     );
   }

@@ -182,6 +182,7 @@ export default class EditUser extends React.PureComponent {
     let user = this.state.user;
     let url = "http://localhost:8000/api/removeLink";
     let _this = this;
+    let user_id = this.state.user.id;
 
     let data = new FormData;
     data.append('link_id', id);
@@ -196,6 +197,7 @@ export default class EditUser extends React.PureComponent {
         console.log(json);
 
         _this.getNotification(json);
+        _this.getLinks(user_id);
       }
     );
   }
