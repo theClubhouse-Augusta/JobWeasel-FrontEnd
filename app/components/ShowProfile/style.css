@@ -1,56 +1,93 @@
 /* ShowProfile Styles */
 
 .profileSection {
-  background-color: gray;
+  background-color: #009999;
   padding: 10px;
-  margin: 2px;
+  margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
+  max-width: 60vw;
   align-items: center;
+  margin-top: 8vh;
+  border-radius: 5px;
+
 }
 
 .linksSection {
-  background-color: gray;
+  background-color: #009999;
   padding: 10px;
-  margin: 2px;
+  margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
+  max-width: 60vw;
   align-items: center;
+  border-radius: 5px;
 }
 
+.userLink a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
 .skillsSection {
-  background-color: gray;
+  background-color: #009999;
   padding: 10px;
-  margin: 2px;
+  margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
+  max-width: 60vw;
   align-items: center;
+  color: #009999;
+  border-radius: 5px;
+}
+
+.profileField {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
 
 .panel {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    margin: 5px;
-    background-color: #AAAAAA;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 5px;
+  background-color: #FFFFFF;
+  color: #009999;
+  text-align: left;
+  padding-left: .5vw;
+  padding-right: .5vw;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  justify-content: left;
 }
 
 .label {
   font-weight: bold;
   width: 50%;
   display: flex;
-  justify-content: flex-end;
+  justify-content:flex-start;
   margin-right: 10px;
   padding-bottom: 5px;
+  padding-top: 5px;
+  color: #009999;
+  font-size: 1.2em;
 }
 
 .value {
-  max-width: 50%;
+  max-width: 80%;
+  width: 10vw;
+  height: auto;
   display: flex;
   flex-direction: column;
+  color: #009999;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 1.3em;
 }
 
 textarea{
@@ -62,6 +99,7 @@ textarea{
   margin: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .bio p{

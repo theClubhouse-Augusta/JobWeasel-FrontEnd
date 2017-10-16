@@ -96,7 +96,7 @@ export default class ShowProfile extends React.PureComponent {
         {this.renderField("Location", user.location)}
         {this.renderField("Phone", user.phone)}
 
-        {this.renderBio(user.bio)}
+        {this.renderBio("Bio", user.bio)}
       </div>
     );
   }
@@ -118,7 +118,7 @@ export default class ShowProfile extends React.PureComponent {
   renderBio = (bio) => {
     return (
       <div className="profileField panel">
-        <p className="profileField bio">{bio}</p>
+        <p className="profileField label">{bio}:</p>
       </div>
     );
   }
