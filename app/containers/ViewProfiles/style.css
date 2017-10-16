@@ -1,7 +1,32 @@
 /* ViewProfiles Styles */
 
-.container {
+.viewProfilesContainer {
   display:flex;
-  flex-direction:column;
   min-height:100vh;
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  background-image: url("../../IMAGES/Computer_5.jpg");
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  z-index: 0;
+}
+
+.usersDisplay {
+  background-color: #009999;
+  width: auto;
+  height: auto;
+  padding: 30px;
+  border-radius: 25px;
+  font-size: 1.5em;
+  color: #FFFFFF;
+  justify-content: center;
+  box-shadow: 2px 4px 10px black;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  z-index: 2;
 }

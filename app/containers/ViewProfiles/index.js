@@ -94,14 +94,14 @@ export default class ViewProfiles extends React.PureComponent {
 
   render() {
     return (
-      <div className="container">
+      <div className="viewProfilesContainer">
         <Helmet title="ViewProfiles" meta={[ { name: 'description', content: 'Description of ViewProfiles' }]}/>
 
         <div className="usersFullOverlay">
         </div>
         <div className="usersList">
           <div className="usersDisplay">
-            {this.state.searchResults.map((t,i) => (<Link key={i} to={'/Profile/${t.id}'}>
+            {this.state.searchResults.map((t,i) => (<Link key={i} to={`/Profile/${t.id}`}>
             User Listings: {t.name}
             <p>{t.location}</p>
             </Link>))}

@@ -68,6 +68,38 @@ export default class Jobs extends React.PureComponent {
     }
   }
 
+  nextPageclick = () => {
+    var page = this.state.currentPage;
+    var activeIndex = this.state.activeIndex;
+
+    if(activeIndex + 1 < page.length){
+      this.setState({
+        activeIndex: activeIndex +1,
+      });
+    }
+    else {
+      this.setState({
+        activeIndex: 0,
+      });
+    }
+  }
+
+  previousPageclick = () => {
+    var page = this.state.currentPage;
+    var activeIndex = this.state.activeIndex;
+
+    if(activeIndex - 1 >= 0){
+      this.setState({
+        activeIndex: activeIndex -1,
+      })
+    }
+    else{
+    this.setState({
+      activeIndex:page.length - 1,
+    });
+    }
+  }
+
   handleSearch = (event) => {
     this.setState({
       search:event.target.value
@@ -103,14 +135,27 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsFullOverlay">
         </div>
 
+        <div className="jobsTitle">Job List
+        </div>
+
         <div className="jobsList">
           <div className="jobDisplay">
+
             {this.state.searchResults.map((t, i) => (
            <Link key={i} to={`/JobDetails/${t.id}`} className="jobDetailLink"> Job: {t.name}
              <p>Job Location: {t.location}</p>
              <p>Budget: {t.budget}</p>
            </Link>))}
           </div>
+
+           <LeftIcon ClassName="previousIcon"
+             onClick={this.previousPageclick}
+             />
+
+           <RightIcon className="nextIcon"
+             onClick={this.nextPageclick}
+             />
+
         </div>
       </div>
     );
