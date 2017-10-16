@@ -94,7 +94,7 @@ export default class ViewProfiles extends React.PureComponent {
 
   render() {
     return (
-      <div className="container">
+      <div className="viewProfilesContainer">
         <Helmet title="ViewProfiles" meta={[ { name: 'description', content: 'Description of ViewProfiles' }]}/>
 
         <div className="usersFullOverlay">
