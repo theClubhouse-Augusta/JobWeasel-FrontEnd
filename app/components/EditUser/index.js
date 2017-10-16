@@ -40,9 +40,10 @@ export default class EditUser extends React.PureComponent {
   }
 
   handlePhone = (event) => {
-    this.setState({
-      phone: event.target.value
-    });
+    let phone = event.target.value;
+    phone = phone.replace(/\D/g,'');
+
+    this.setState({phone});
   }
 
   handleBio = (event) => {
