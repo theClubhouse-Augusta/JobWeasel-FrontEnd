@@ -111,6 +111,7 @@ export default class EditUser extends React.PureComponent {
       this.setState({notification: json.error});
     }
 
+    this.forceUpdate();
   }
 
   handlePhoto = (event) => {
@@ -182,6 +183,7 @@ export default class EditUser extends React.PureComponent {
     let user = this.state.user;
     let url = "http://localhost:8000/api/removeLink";
     let _this = this;
+    let user_id = this.state.user.id;
 
     let data = new FormData;
     data.append('link_id', id);
@@ -196,6 +198,7 @@ export default class EditUser extends React.PureComponent {
         console.log(json);
 
         _this.getNotification(json);
+        _this.getLinks(user_id);
       }
     );
   }
@@ -213,7 +216,7 @@ export default class EditUser extends React.PureComponent {
         {this.renderBio(this.state.bio, this.handleBio)}
 
         <input type="submit" value="Update Profile"
-         className="updateProfile" onClick={this.handleUpdateProfile}/>
+         className="submitButton button" onClick={this.handleUpdateProfile}/>
 
       </div>
     );
@@ -271,7 +274,7 @@ export default class EditUser extends React.PureComponent {
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
-           className="updateProfile" onClick={this.handleAddLink}/>
+           className="submitButton buton" onClick={this.handleAddLink}/>
         </div>
 
         <div className="links panel">
