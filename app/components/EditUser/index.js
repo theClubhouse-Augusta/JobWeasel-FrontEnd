@@ -271,7 +271,7 @@ export default class EditUser extends React.PureComponent {
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
-           className="submitButton" onClick={this.handleAddLink}/>
+           className="submitButton buton" onClick={this.handleAddLink}/>
         </div>
 
         <div className="links panel">
