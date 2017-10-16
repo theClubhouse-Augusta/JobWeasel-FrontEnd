@@ -6,6 +6,7 @@ import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 
 import Home from 'containers/Home';
+import About from 'containers/About';
 import Profile from 'containers/Profile';
 import NotFound from 'containers/NotFound';
 import AddJob from 'containers/AddJob';
@@ -19,6 +20,7 @@ ReactDOM.render((
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={Home}/>
+      <Route path='/About' component={About}/>
       <Route path='/AddJob' component={AddJob}/>
       <Route path='/JobDetails/:id' component={JobDetails}/>
       <Route path='/Jobs' component={Jobs}/>

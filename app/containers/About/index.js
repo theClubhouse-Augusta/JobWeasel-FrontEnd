@@ -13,7 +13,7 @@ import './styleM.css';
 export default class About extends React.PureComponent {
   render() {
     return (
-      <div className="container">
+      <div className="aboutContainer">
         <Helmet title="About" meta={[ { name: 'description', content: 'Description of About' }]}/>
 
         //Remove this line and you can start writing your code here.
