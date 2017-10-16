@@ -192,9 +192,6 @@ export default class EditUser extends React.PureComponent {
       .then(function(json) {
         console.log("removeLink");
         console.log(json);
-        let note = "";
-        if (json.error) {note = json.error}
-        if (json.success) {note = json.success}
 
         _this.getNotification(json);
       }
