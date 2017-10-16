@@ -101,7 +101,7 @@ export default class ViewProfiles extends React.PureComponent {
         </div>
         <div className="usersList">
           <div className="usersDisplay">
-            {this.state.searchResults.map((t,i) => (<Link key={i} to={'/Profile/${t.id}'}>
+            {this.state.searchResults.map((t,i) => (<Link key={i} to={`/Profile/${t.id}`}>
             User Listings: {t.name}
             <p>{t.location}</p>
             </Link>))}

@@ -103,6 +103,9 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsFullOverlay">
         </div>
 
+        <div className="jobsTitle">Job List
+        </div>
+
         <div className="jobsList">
           <div className="jobDisplay">
             {this.state.searchResults.map((t, i) => (
