@@ -54,9 +54,9 @@ export default class Profile extends React.PureComponent {
     let ownProfile = login.id == this.state.user.id;
 
     let editProfile = "";
-    if (ownProfile) {editProfile = this.renderPanelButton(
-      "Update Profile", this.openUpdateProfilePanel
-    )}
+    if (ownProfile) {
+      editProfile = this.renderPanelButton("Update Profile", this.openUpdateProfilePanel)
+    }
 
     let addJob = "";
     if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
@@ -106,6 +106,8 @@ export default class Profile extends React.PureComponent {
     });
   }
 
+
+
   render() {
     let user = "";
     let leftPanel = "";
@@ -116,10 +118,6 @@ export default class Profile extends React.PureComponent {
       user = <ShowProfile userId={this.state.user.id} />;
     }
 
-    if (this.state.openUpdateProfile) {
-      updatePanel = <EditUser userId={this.state.user.id} />;
-    };
-
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
@@ -127,7 +125,7 @@ export default class Profile extends React.PureComponent {
 
           {leftPanel}
           {user}
-          {updatePanel}
+          <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>
       </div>
       );
     }

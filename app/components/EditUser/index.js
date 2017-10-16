@@ -200,10 +200,7 @@ export default class EditUser extends React.PureComponent {
   }
 
   renderUser = (user) => {
-    let photo = "";
-    if (user.photo !== "") {
-      photo = this.renderPhotoUpload()
-    }
+    let photo = this.renderPhotoUpload()
 
     return (
       <div className="profileSection">
@@ -327,14 +324,27 @@ export default class EditUser extends React.PureComponent {
       notification = this.renderNotification(this.state.notification);
     }
 
-    return (
-      <div className="editUser">
-        {user}
-        {notification}
-        {skills}
-        {links}
-      </div>
-    );
+    if(this.props.open === true)
+    {
+
+      return (
+        <div>
+          <div className="fullOverlay" onClick={this.props.onClose}>
+          </div>
+          <div className="renuiDialogOverlay">
+            <div className="renuiDialog">
+              {user}
+              {notification}
+              {skills}
+              {links}
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (<div className="renuiDialogOverlayHidden"></div>
+      );
+    }
   }
 }
 
