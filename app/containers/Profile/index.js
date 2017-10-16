@@ -8,31 +8,29 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from 'react-router-dom';
+import ShowProfile from 'components/ShowProfile';
 
 import './style.css';
 import './styleM.css';
 
 import UserProfile from "components/UserProfile";
+import EditUser from "components/EditUser";
 
 export default class Profile extends React.PureComponent {
   constructor (props) {
     super(props);
-    this.state = {
-      openUserProfile: false,
-      user: "",
-      token:sessionStorage.getItem('token'),
-      links: ""
-    }
-  };
 
-    handleUpdateProfile = () => {
-      this.setState({
-        openUserProfile: !this.state.openUserProfile
-      })
-    }
+    this.state = {
+      openUpdateProfile: false,
+      user: "",
+    };
+  }
 
   componentWillMount() {
-    let user_id = this.props.match.params.id;
+    this.getUser(this.props.match.params.id);
+  }
+
+  getUser = (user_id) => {
     let url = "http://localhost:8000/api/showUser/" + user_id;
     let _this = this;
 
@@ -47,87 +45,17 @@ export default class Profile extends React.PureComponent {
         })
       }.bind(this)
     );
-
-    url = "http://localhost:8000/api/getUserSkills/" + user_id;
-    fetch(url, {method: 'GET'}).then(
-      function(response) {
-        return response.json();
-      }
-    ).then(
-      function(json) {
-        _this.setState({
-          links: json.links
-        })
-      }
-    );
-  }
-
-  renderUpdateBox = () => {
-    if(this.state.user !== "") {
-      return(
-        <UserProfile open={this.state.openUserProfile} onClose={this.handleUpdateProfile} user={this.state.user}>
-        </UserProfile>
-      )
-    }
-  }
-  renderProfile = (user) => {
-    let photoUrl = user.photo;
-    if (!photoUrl) {photoUrl = require("../../images/businessWeasel.jpg")}
-
-    let availability = user.availability;
-    if (availability == 1) {availability = "Ok"}
-    if (availability == 2) {availability = "Busy"}
-
-    let phoneField = "";
-    if (user.phone != 0) {phoneField = this.renderProfileField("Phone", user.phone)}
-
-    if (this.state.user !== "") {
-      return (
-        <div className="profileDisplay">
-          {this.renderProfilePhoto(photoUrl)}
-
-          <div className="profileName">
-            {user.name}
-          </div>
-
-          {this.renderProfileField("Email", user.email)}
-          {this.renderProfileField("Location", user.location)}
-          {phoneField}
-          {this.renderProfileField("Availability", availability)}
-          <div className="profileBio">
-            <p>
-            {user.bio}
-            </p>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  renderProfilePhoto = (url) => {
-    // alert(url);
-    return (
-      <img className="profilePhoto" src={url} />
-    );
-  }
-
-  renderProfileField = (name, value) => {
-    return (
-      <div className="profileField">
-        <span className="profileLabel">{name}:</span>
-        <span className="profileValue">{value}</span>
-      </div>
-    );
   }
 
   renderLeftPanel = (user) => {
-    let role = user.role_id;
-    let user_id = user.id;
-    let ownProfile = user_id == this.state.user.id;
+    let login = JSON.parse(sessionStorage.getItem("user"));
+
+    let role = login.role_id;
+    let ownProfile = login.id == this.state.user.id;
 
     let editProfile = "";
     if (ownProfile) {editProfile = this.renderPanelButton(
-      "Update Profile", this.handleUpdateProfile
+      "Update Profile", this.openUpdateProfilePanel
     )}
 
     let addJob = "";
@@ -150,13 +78,6 @@ export default class Profile extends React.PureComponent {
     }
   }
 
-  renderRightPanel = (user) => {
-    return (
-      <div className="sidePanel">
-      </div>
-    );
-  }
-
   renderPanelButton = (text, clickFunc) => {
     return (
       <span className="sideButton" onClick={clickFunc}>
@@ -164,27 +85,41 @@ export default class Profile extends React.PureComponent {
       </span>
     );
   }
+
   renderPanelLink = (url, text) => {
     return (
       <Link to={url} className="sideButton">{text}</Link>
     );
   }
-  renderProfileLink = (url, text) => {
-    return (
-      <a href={url} className="sideButton">{text}</a>
-    );
+
+  openUpdateProfilePanel = () => {
+    this.setState({
+      openUpdateProfile: !this.state.openUpdateProfile
+    });
   }
+
   render() {
+    let user = "";
+    let leftPanel = "";
+    let updatePanel = "";
+
+    if (this.state.user !== "") {
+      leftPanel = this.renderLeftPanel(this.state.user);
+      user = <ShowProfile userId={this.state.user.id} />;
+    }
+
+    if (this.state.openUpdateProfile) {
+      updatePanel = <EditUser userId={this.state.user.id} />;
+    };
+
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
-          <div className= "profileFullOverlay">
-          </div>
-          {this.renderLeftPanel(JSON.parse(sessionStorage.getItem("user")))}
-          {this.renderProfile(this.state.user)}
-          {this.renderRightPanel(this.state.user)}
-          {this.renderUpdateBox()}
-        </div>
+
+          {leftPanel}
+          {user}
+          {updatePanel}
+      </div>
       );
     }
 }

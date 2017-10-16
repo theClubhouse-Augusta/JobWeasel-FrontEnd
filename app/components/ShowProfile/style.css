@@ -1,0 +1,69 @@
+/* ShowProfile Styles */
+
+.profileSection {
+  background-color: gray;
+  padding: 10px;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  align-items: center;
+}
+
+.linksSection {
+  background-color: gray;
+  padding: 10px;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  align-items: center;
+}
+
+.skillsSection {
+  background-color: gray;
+  padding: 10px;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  align-items: center;
+}
+
+.panel {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 5px;
+    background-color: #AAAAAA;
+}
+
+.label {
+  font-weight: bold;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+
+.value {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea{
+  width: 100%;
+}
+
+.bio {
+  max-width: 25vw;
+  margin: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bio p{
+  text-indent: 5em;
+}
