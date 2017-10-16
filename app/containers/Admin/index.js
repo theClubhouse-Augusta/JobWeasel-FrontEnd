@@ -150,13 +150,13 @@ export default class Admin extends React.PureComponent {
         </div>*/}
 
         <div className="usersPanel_pending">
-          <header>Profiles to Review:</header>
+          <h4>Profiles to Review:</h4>
           {pending.map((user, index) => (this.renderUser(user, index)))}
         </div>
 
         <div className="usersPanel_approved">
-          <header>Accepted Recruiters:</header>
-          (Click the recruiter to change the review approved status)
+          <h4>Accepted Employers:</h4>
+          <h5>(Click the Employer to change approval status.)</h5>
           {reviewed.map((user, index) => (this.renderUser(user, index)))}
         </div>
 
