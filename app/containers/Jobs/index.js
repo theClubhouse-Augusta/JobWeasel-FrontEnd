@@ -23,7 +23,9 @@ export default class Jobs extends React.PureComponent {
       nextPage: 1,
       currentPage: 0,
       lastPage:1,
-      jobs:[]
+      jobs:[],
+      result:[],
+      taskContent:""
     }
   }
 
@@ -100,6 +102,36 @@ export default class Jobs extends React.PureComponent {
     }
   }
 
+  handleEnter = (event) => {
+    if (event.keyCode === 13)
+    this.searchContent();
+  };
+
+  handleContent = (event) => {
+    this.setState({
+      taskContent: event.target.value
+    })
+  }
+
+  searchContent = () => {
+    let data = new FormData();
+    let _this = this;
+    data.append('searchContent', this.state.taskContent);
+  fetch('http://localhost:8000/api/search', {
+    method:'POST',
+    body:data
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      _this.setState({
+        result:json.data
+      })
+      console.log(json.data);
+    }.bind(this))
+  };
+
   handleSearch = (event) => {
     this.setState({
       search:event.target.value
@@ -137,6 +169,10 @@ export default class Jobs extends React.PureComponent {
 
         <div className="jobsTitle">Job List
         </div>
+
+        <input type="text" className="searchContentInput" placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
+
+        <input type="submit" className="submitButton" onClick={this.searchContent}/>
 
         <div className="jobsList">
           <div className="jobDisplay">

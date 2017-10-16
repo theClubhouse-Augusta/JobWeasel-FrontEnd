@@ -89,11 +89,6 @@
   font-weight: bold;
 }
 
-
-.jobSearch {
-  width: 250px;
-}
-
 .searchHolder {
   display: flex;
   flex-direction: column;
@@ -101,13 +96,26 @@
   margin-top: 5%;
 }
 
-.jobSearch {
-  border-radius: 2px;
-  outline: none;
-  border: solid;
-  height: 20px;
+.searchContentInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: 5vh;
+  font-size: 1.5em;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000000;
+  z-index: 3;
+}
 
-
+.submitButton {
+  margin-top: 15px;
+  height: 5vh;
+  width: 10%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000000;
+  z-index: 3;
 }
 
 .nextIcon {
