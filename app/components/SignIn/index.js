@@ -9,6 +9,9 @@ import React from 'react';
 import './style.css';
 import './styleM.css';
 
+import LeftIcon from 'react-icons/lib/fa/chevron-left';
+import RightIcon from 'react-icons/lib/fa/chevron-right';
+
 export default class SignIn extends React.PureComponent {
   constructor() {
     super();
