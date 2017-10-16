@@ -200,10 +200,8 @@ export default class EditUser extends React.PureComponent {
   }
 
   renderUser = (user) => {
-    let photo = "";
-    if (user.photo !== "") {
-      photo = this.renderPhotoUpload()
-    }
+    let  photo = this.renderPhotoUpload()
+  
 
     return (
       <div className="profileSection">

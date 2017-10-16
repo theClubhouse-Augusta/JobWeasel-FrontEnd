@@ -37,7 +37,7 @@ export default class SignIn extends React.PureComponent {
     var key = event.keyCode;
 
     if (key === 13) {
-      this.storeItem();
+      this.signIn();
     }
   }
 
@@ -80,13 +80,14 @@ export default class SignIn extends React.PureComponent {
     return (
       <div>
         <div className="signInContainer">
-
+            <div className="signInUnderlay">
+            </div>
           <div className="signInInput">
             <h3>Sign in to Job Weasel</h3>
             <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
 
-            <input type="password" className="passwordSignIn" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
-            <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn} onKeyDown={this.enterKey}/>
+            <input type="password" className="passwordSignIn" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
+            <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn} />
             <p className="submitNote">{this.state.notificationTwo}</p>
 
           </div>
