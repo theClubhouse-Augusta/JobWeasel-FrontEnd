@@ -204,6 +204,7 @@ export default class EditUser extends React.PureComponent {
         console.log(json);
 
         _this.getNotification(json);
+        _this.getLinks(_this.props.userId);
       }
     );
   }
