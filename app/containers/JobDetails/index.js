@@ -20,6 +20,7 @@ export default class JobDetails extends React.PureComponent {
   constructor() {
     super();
     this.state = {
+      notification: "",
       openEditJob: false,
       job: "",
     }
@@ -39,23 +40,40 @@ export default class JobDetails extends React.PureComponent {
       }
     ).then(
       function(json) {
-        _this.setState({
-          job: json.job
-        });
+        if (!json.error) {
+          _this.setState({
+            job: json.job
+          });
+        }
+
+        _this.getNotification(json);
         console.log("showJob");
         console.log(json.job);
       }.bind(this)
     );
   }
 
+  getNotification = (json) => {
+    if (json.error) {
+      this.setState({notification: json.error});
+    }
+
+    if (json.success) {
+      this.setState({notification: json.success});
+    }
+
+    this.forceUpdate();
+  }
+
   renderLeftPanel = () => {
     let login = JSON.parse(sessionStorage.getItem("user"));
+    let role = 0;
+    let ownJob = false;
 
-    let role = login.role_id;
-    console.log("LEFT PANEL");
-    console.log(login);
-    console.log(this.state.job);
-    let ownJob = login.id == this.state.job.user_id;
+    if (login) {
+      role = login.role_id;
+      ownJob = login.id == this.state.job.user_id;
+    }
 
     let editJob = "";
     if (ownJob) {
@@ -79,6 +97,11 @@ export default class JobDetails extends React.PureComponent {
         </div>
       );
     }
+    else {
+      return (
+        <div></div>
+      );
+    }
   }
 
   renderPanelButton = (text, clickFunc) => {
@@ -96,7 +119,6 @@ export default class JobDetails extends React.PureComponent {
   }
 
   openEditJobPanel = () => {
-    console.log("Test");
     let open = this.state.openEditJob;
 
     this.setState({
@@ -104,19 +126,33 @@ export default class JobDetails extends React.PureComponent {
     });
 
     if(open) {
-      this.child.getUser(this.props.match.params.id);
+      this.child.getJob(this.props.match.params.id);
+      this.child.getLinks(this.props.match.params.id);
     }
+  }
+
+  renderNotification = (text) => {
+    return (
+      <div className="jsonNotification">
+        {text}
+      </div>
+    );
   }
 
   render() {
     let leftPanel = "";
     let job = "";
     let edit = "";
+    let notification = "";
 
     if (this.state.job !== "") {
       leftPanel = this.renderLeftPanel();
       job = <ShowJob jobId={this.state.job.id}  ref={instance => { this.child = instance; }}/>;
       edit = <EditJob jobId={this.state.job.id}  open={this.state.openEditJob} onClose={this.openEditJobPanel}/>
+    }
+
+    if (this.state.notification !== "") {
+      notification = this.renderNotification(this.state.notification);
     }
 
     return (
@@ -126,6 +162,7 @@ export default class JobDetails extends React.PureComponent {
         {leftPanel}
         {job}
         {edit}
+        {notification}
 
       </div>
     );

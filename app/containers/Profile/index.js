@@ -20,6 +20,7 @@ export default class Profile extends React.PureComponent {
     super(props);
 
     this.state = {
+      notification: "",
       openUpdateProfile: false,
       user: "",
     };
@@ -39,20 +40,39 @@ export default class Profile extends React.PureComponent {
       }
     ).then(
       function(json) {
-        _this.setState({
-          user: json.user
-        })
+        if (!json.error) {
+          _this.setState({
+            user: json.user
+          })
+        }
 
+        _this.getNotification(json);
         //alert(_this.state.user.bio);
       }.bind(this)
     );
   }
 
+  getNotification = (json) => {
+    if (json.error) {
+      this.setState({notification: json.error});
+    }
+
+    if (json.success) {
+      this.setState({notification: json.success});
+    }
+
+    this.forceUpdate();
+  }
+
   renderLeftPanel = () => {
     let login = JSON.parse(sessionStorage.getItem("user"));
+    let role = 0;
+    let ownProfile = false;
 
-    let role = login.role_id;
-    let ownProfile = login.id == this.state.user.id;
+    if (login) {
+      role = login.role_id;
+      ownProfile = login.id == this.state.user.id;
+    }
 
     let editProfile = "";
     if (ownProfile) {
@@ -101,18 +121,33 @@ export default class Profile extends React.PureComponent {
 
     if(open) {
       this.child.getUser(this.props.match.params.id);
+      this.child.getLinks(this.props.match.params.id);
+      this.child.getSkills(this.props.match.params.id);
     }
+  }
+
+  renderNotification = (text) => {
+    return (
+      <div className="jsonNotification">
+        {text}
+      </div>
+    );
   }
 
   render() {
     let user = "";
     let edit = "";
     let leftPanel = "";
+    let notification = "";
 
     if (this.state.user !== "") {
       leftPanel = this.renderLeftPanel();
       user = <ShowProfile userId={this.state.user.id} ref={instance => { this.child = instance; }}/>;
       edit = <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>;
+    }
+
+    if (this.state.notification !== "") {
+      notification = this.renderNotification(this.state.notification);
     }
 
     return (
@@ -122,6 +157,7 @@ export default class Profile extends React.PureComponent {
           {leftPanel}
           {user}
           {edit}
+          {notification}
 
       </div>
       );

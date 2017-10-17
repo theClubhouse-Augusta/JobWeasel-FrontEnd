@@ -90,7 +90,6 @@ export default class EditJob extends React.PureComponent {
   }
 
   handleUpdateJob = () => {
-    let user = this.state.user;
     let url = "http://localhost:8000/api/editJob";
     let _this = this;
 
@@ -102,19 +101,42 @@ export default class EditJob extends React.PureComponent {
     data.append("time_frame", this.state.time_frame);
     data.append("budget", this.state.budget);
     data.append("start_date", this.state.start_date);
-    data.append("job_id", this.props.match.params.id);
+    data.append("job_id", this.props.jobId);
 
     if (this.state.photo !== "") {
       data.append("photo", this.state.photo);
     }
 
-    let token = this.state.token;
+    let token = sessionStorage.getItem("token");
+
     let auth = {"Authorization": "Bearer " + token};
 
     fetch(url, {method: 'POST', body: data, headers: auth})
       .then(function(response) {return response.json();})
       .then(function(json) {
-        console.log("editJob");
+        console.log(url);
+        console.log(json);
+        _this.getNotification(json);
+      }
+    );
+  }
+
+  handleDeleteJob = () => {
+    let url = "http://localhost:8000/api/removeJob";
+    let _this = this;
+
+    let data = new FormData;
+    console.log("FORM DATA");
+    console.log(this.state.job);
+    data.append("job_id", this.state.job.id)
+
+    let token = sessionStorage.getItem("token");
+    let auth = {"Authorization": "Bearer " + token};
+
+    fetch(url, {method: 'POST', body: data, headers: auth})
+      .then(function(response) {return response.json();})
+      .then(function(json) {
+        console.log(url);
         console.log(json);
         _this.getNotification(json);
       }
@@ -131,7 +153,7 @@ export default class EditJob extends React.PureComponent {
     data.append("url", this.state.linkUrl);
     data.append("job_id", this.state.job.id);
 
-    let token = this.state.token;
+    let token = sessionStorage.getItem("token");
     let auth = {"Authorization": "Bearer " + token};
 
     fetch(url, {method: 'POST', body: data, headers: auth})
@@ -139,7 +161,9 @@ export default class EditJob extends React.PureComponent {
       .then(function(json) {
         console.log("addLinkToJob");
         console.log(json);
+
         _this.getNotification(json);
+        _this.getLinks(_this.props.jobId);
       }
     );
   }
@@ -152,7 +176,7 @@ export default class EditJob extends React.PureComponent {
     let data = new FormData;
     data.append('link_id', id);
 
-    let token = this.state.token;
+    let token = sessionStorage.getItem("token");
     let auth = {"Authorization": "Bearer " + token};
 
     fetch(url, {method: 'POST', body: data, headers: auth})
@@ -162,6 +186,7 @@ export default class EditJob extends React.PureComponent {
         console.log(json);
 
         _this.getNotification(json);
+        _this.getLinks(_this.props.jobId);
       }
     );
   }
@@ -172,37 +197,37 @@ export default class EditJob extends React.PureComponent {
     });
   }
 
-  handleLocation = () => {
+  handleLocation = (event) => {
     this.setState({
       location: event.target.value
     });
   }
 
-  handleDescription = () => {
+  handleDescription = (event) => {
     this.setState({
       description: event.target.value
     });
   }
 
-  handleBudget = () => {
+  handleBudget = (event) => {
     this.setState({
       budget: event.target.value
     });
   }
 
-  handleWorkers = () => {
+  handleWorkers = (event) => {
     this.setState({
       workers_needed: event.target.value
     });
   }
 
-  handleDate = () => {
+  handleDate = (event) => {
     this.setState({
       start_date: event.target.value
     });
   }
 
-  handleTime = () => {
+  handleTime = (event) => {
     this.setState({
       time_frame: event.target.value
     });
@@ -233,6 +258,9 @@ export default class EditJob extends React.PureComponent {
 
         <input type="submit" value="Update Job"
          className="submitButton button" onClick={this.handleUpdateJob}/>
+
+        <input type="button" value="Delete Job"
+         className="deleteButton button" onClick={this.handleDeleteJob}/>
 
       </div>
     );
