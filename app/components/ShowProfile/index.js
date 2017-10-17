@@ -78,7 +78,7 @@ export default class ShowProfile extends React.PureComponent {
           user: json.user
         });
         console.log(json.user);
-        
+
       }.bind(this)
     );
   }
@@ -90,7 +90,7 @@ export default class ShowProfile extends React.PureComponent {
     }
 
     return (
-      <div className="profileSection">
+      <div className="showProfileSection">
         {photo}
 
         {this.renderField("Name", user.name)}

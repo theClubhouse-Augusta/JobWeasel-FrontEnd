@@ -4,24 +4,40 @@
     flex-direction:column;
     flex-wrap:wrap;
     align-items: center;
+
+  }
+
+  .profilePhoto {
+    max-width: 100px;
+    max-height: 100px;
+    flex-wrap:wrap;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding-bottom:1vh;
   }
 
 
 
   .profileDisplay {
     width: auto;
-    margin-left: 20px;
     margin-right: 20px;
-    padding: 30px;
     margin-top:20px;
     height: auto;
   }
 
-
+  .showProfileSection {
+    margin-top: 0;
+  }
 
   .linksBox {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
+  }
+
+  .sidePanel {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -47,10 +63,12 @@
     height: auto;
   }
 
-
+  .sidePanel {
+    margin-top: 5px;
+  }
 
   .linksBox {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
   }
 }

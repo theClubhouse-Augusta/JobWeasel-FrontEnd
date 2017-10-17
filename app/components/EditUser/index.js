@@ -25,7 +25,8 @@ export default class EditUser extends React.PureComponent {
       linkText: "",
       linkUrl: "",
       skills: [],
-      links: []
+      links: [],
+      photo: ""
     }
   }
 
@@ -96,7 +97,8 @@ export default class EditUser extends React.PureComponent {
           user: json.user,
           location: json.user.location,
           phone: json.user.phone,
-          bio: json.user.bio
+          bio: json.user.bio,
+          preview:json.user.photo
         });
       }.bind(this)
     );
@@ -271,11 +273,11 @@ export default class EditUser extends React.PureComponent {
   renderLinks = (user) => {
     return (
       <div className="linksSection">
-        <div className="addLink panel">
-          <input placeholder="url" onChange={this.handleLinkUrl} />
-          <input placeholder="text" onChange={this.handleLinkText}/>
-          <input type="submit" value="Add Link"
-           className="updateProfile" onClick={this.handleAddLink}/>
+        <div className="addLink-panel">
+          <p><input placeholder="url" onChange={this.handleLinkUrl} />
+          <input placeholder="text" onChange={this.handleLinkText}/></p>
+          <p><input type="submit" value="Add Link"
+           className="updateProfile" onClick={this.handleAddLink}/></p>
         </div>
 
         <div className="links panel">
@@ -337,12 +339,15 @@ export default class EditUser extends React.PureComponent {
           <div className="fullOverlay" onClick={this.props.onClose}>
           </div>
           <div className="renuiDialogOverlay">
+
             <div className="renuiDialog">
+              <h1>Update Profile</h1>
               {user}
               {notification}
               {skills}
               {links}
             </div>
+
           </div>
         </div>
       );

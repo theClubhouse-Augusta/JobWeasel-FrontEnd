@@ -27,7 +27,7 @@
   margin-top: 25vh;
   margin-left: 20vw;
   margin-right: 5vw;
-  
+
   text-align: center;
 }
 
@@ -58,7 +58,8 @@
   max-height: 200px;
   flex-wrap:wrap;
   margin: 0 auto;
-  border-radius: 25px;
+  border-radius: 5px;
+  padding-bottom:1vh;
 }
 
 
