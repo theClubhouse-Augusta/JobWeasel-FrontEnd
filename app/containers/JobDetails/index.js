@@ -6,63 +6,129 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
 
 import Nav from 'components/Nav';
+import ShowJob from 'components/ShowJob';
+import EditJob from 'components/EditJob';
 
 export default class JobDetails extends React.PureComponent {
 
   constructor() {
     super();
     this.state = {
-      search:"",
-      job:[]
+      openEditJob: false,
+      job: "",
     }
   }
 
   componentWillMount() {
-    this.showJob();
+    this.getJob(this.props.match.params.id);
   }
 
-  showJob = () => {
-    let _this=this;
-    fetch('http://localhost:8000/api/showJob/'+this.props.match.params.id,{
-      method:'GET'
-    })
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(json) {
-      _this.setState({
-        job: json.job
-      })
-    }.bind(this))
-  };
+  getJob = (id) => {
+    let url = "http://localhost:8000/api/showJob/" + id;
+    let _this = this;
+
+    fetch(url, {method: 'GET'}).then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        _this.setState({
+          job: json.job
+        });
+        console.log("showJob");
+        console.log(json.job);
+      }.bind(this)
+    );
+  }
+
+  renderLeftPanel = () => {
+    let login = JSON.parse(sessionStorage.getItem("user"));
+
+    let role = login.role_id;
+    console.log("LEFT PANEL");
+    console.log(login);
+    console.log(this.state.job);
+    let ownJob = login.id == this.state.job.user_id;
+
+    let editJob = "";
+    if (ownJob) {
+      editJob = this.renderPanelButton("Edit Job", this.openEditJobPanel)
+    }
+
+    let addJob = "";
+    if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
+
+    let viewJobs = this.renderPanelLink("/Jobs", "View Jobs");
+
+    let viewProfiles = this.renderPanelLink("/viewProfiles", "View Profiles");
+
+    if (this.state.user !== "") {
+      return (
+        <div className="sidePanel">
+          {editJob}
+          {addJob}
+          {viewJobs}
+          {viewProfiles}
+        </div>
+      );
+    }
+  }
+
+  renderPanelButton = (text, clickFunc) => {
+    return (
+      <span className="sideButton" onClick={clickFunc}>
+        {text}
+      </span>
+    );
+  }
+
+  renderPanelLink = (url, text) => {
+    return (
+      <Link to={url} className="sideButton">{text}</Link>
+    );
+  }
+
+  openEditJobPanel = () => {
+    console.log("Test");
+    let open = this.state.openEditJob;
+
+    this.setState({
+      openEditJob: !open
+    });
+
+    if(open) {
+      this.child.getUser(this.props.match.params.id);
+    }
+  }
 
   render() {
+    let leftPanel = "";
+    let job = "";
+    let edit = "";
+
+    if (this.state.job !== "") {
+      leftPanel = this.renderLeftPanel();
+      job = <ShowJob jobId={this.state.job.id}  ref={instance => { this.child = instance; }}/>;
+      edit = <EditJob jobId={this.state.job.id}  open={this.state.openEditJob} onClose={this.openEditJobPanel}/>
+    }
+
     return (
       <div className="jobDetailsContainer">
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
-        <div className="jobDetailFullOverlay">
-        </div>
 
-        <div className="detailContainer">
-         <h3><b>Job: {this.state.job.name}</b></h3>
-         <p>Location: {this.state.job.location}</p>
-         <p>Description: {this.state.job.description}</p>
-         <p>Budget: {this.state.job.budget}</p>
-         <p>Workers Needed: {this.state.job.workers_needed}</p>
-         <p>Start Date: {this.state.job.start_date}</p>
-         <p>Project Length in Months: {this.state.job.time_frame}</p>
-         <p>Job Posted on: {this.state.job.created_at}</p>
-        </div>
-
-        <Nav/>
+        {leftPanel}
+        {job}
+        {edit}
 
       </div>
-    )
+    );
   }
 }
 

@@ -32,6 +32,7 @@ export default class EditUser extends React.PureComponent {
   componentWillMount() {
     this.getUser(this.props.userId);
     this.getLinks(this.props.userId);
+    this.getSkills(this.props.userId);
   }
 
   handleLocation = (event) => {
@@ -78,6 +79,10 @@ export default class EditUser extends React.PureComponent {
         _this.setState({
           links: json.links
         });
+
+        console.log("LINKSSS");
+        console.log(url);
+        console.log(json);
       }.bind(this)
     );
   }
@@ -98,6 +103,29 @@ export default class EditUser extends React.PureComponent {
           phone: json.user.phone,
           bio: json.user.bio
         });
+
+        console.log("USER");
+        console.log(url);
+        console.log(json);
+      }.bind(this)
+    );
+  }
+
+  getSkills = (id) => {
+    let url = "http://localhost:8000/api/getUserSkills/" + id;
+    let _this = this;
+
+    fetch(url, {method: 'GET'}).then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        _this.setState({
+          skills: json.skills
+        });
+        console.log("getUserSKills");
+        console.log(json.skills);
       }.bind(this)
     );
 
@@ -321,7 +349,7 @@ export default class EditUser extends React.PureComponent {
       links = this.renderLinks(this.state.user);
     }
 
-    if (this.state.user !== {}) {
+    if (this.state.skills !== []) {
       skills = this.renderSkills(this.state.user);
     }
 

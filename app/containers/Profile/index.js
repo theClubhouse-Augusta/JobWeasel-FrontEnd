@@ -8,12 +8,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from 'react-router-dom';
-import ShowProfile from 'components/ShowProfile';
 
 import './style.css';
 import './styleM.css';
 
-import UserProfile from "components/UserProfile";
+import ShowProfile from 'components/ShowProfile';
 import EditUser from "components/EditUser";
 
 export default class Profile extends React.PureComponent {
@@ -49,7 +48,7 @@ export default class Profile extends React.PureComponent {
     );
   }
 
-  renderLeftPanel = (user) => {
+  renderLeftPanel = () => {
     let login = JSON.parse(sessionStorage.getItem("user"));
 
     let role = login.role_id;
@@ -93,14 +92,6 @@ export default class Profile extends React.PureComponent {
     );
   }
 
-  renderUpdateBox = (id) => {
-    return (
-      <div className="updateProfile">
-        <EditUser userId={id} />
-      </div>
-    );
-  }
-
   openUpdateProfilePanel = () => {
     let open = this.state.openUpdateProfile;
 
@@ -110,30 +101,30 @@ export default class Profile extends React.PureComponent {
 
     if(open) {
       this.child.getUser(this.props.match.params.id);
-      //this.getUser(this.props.match.params.id);
     }
   }
 
-
-
   render() {
     let user = "";
+    let edit = "";
     let leftPanel = "";
-    let updatePanel = "";
 
     if (this.state.user !== "") {
-      leftPanel = this.renderLeftPanel(this.state.user);
+      leftPanel = this.renderLeftPanel();
       user = <ShowProfile userId={this.state.user.id} ref={instance => { this.child = instance; }}/>;
+      edit = <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>;
     }
 
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
 
-
           {leftPanel}
           {user}
-          <EditUser userId={this.props.match.params.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>
+
+          {edit}
+
+
       </div>
       );
     }

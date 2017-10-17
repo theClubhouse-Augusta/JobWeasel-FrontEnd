@@ -12,26 +12,3 @@
   background-attachment:fixed;
   z-index: 0;
 }
-
-.jobDetailFullOverlay {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-
-  z-index: 1;
-}
-
-.detailContainer {
-  color: #009999;
-  background-color: #FFFFFF;
-  width:50vw;
-  height: 60vh;
-  border-radius: 25px;
-  margin-top: 10vh;
-  margin-left: 5vw;
-  font-size: 1.4em;
-  padding: 25px 10px 10px 10px;
-  line-height: 1.5em;
-  box-shadow: 2px 4px 10px black;
-
-}
