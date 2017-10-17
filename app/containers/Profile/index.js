@@ -110,8 +110,19 @@ export default class Profile extends React.PureComponent {
 
     if(open) {
       this.child.getUser(this.props.match.params.id);
-      //this.getUser(this.props.match.params.id);
     }
+  }
+
+  renderEditUser = () => {
+    return (
+      <div className="updateProfilePanel">
+        <div className="fullOverlay" onClick={this.openUpdateProfilePanel}></div>
+
+        <div className="popupInner">
+          <EditUser userId={this.state.user.id} />
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -125,7 +136,7 @@ export default class Profile extends React.PureComponent {
     }
 
     if (this.state.openUpdateProfile) {
-      updatePanel = <EditUser userId={this.state.user.id} />;
+      updatePanel = this.renderEditUser();
     };
 
     return (
