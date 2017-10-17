@@ -133,7 +133,7 @@ export default class Profile extends React.PureComponent {
 
           {leftPanel}
           {user}
-          <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>
+          <EditUser userId={this.props.match.params.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>
       </div>
       );
     }

@@ -8,8 +8,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  height: 100vh;
-  width: 100%;
+  width: 100vh;
   bottom: 0;
   z-index: 996;
   left:0;
@@ -18,8 +17,6 @@
 
 .renuiDialogOverlay {
   position:fixed;
-  top:0;
-  left:0;
   animation: fadeIn 500ms;
   z-index:997;
   display:flex;
@@ -27,6 +24,10 @@
   justify-content:center;
   align-items:center;
   color: black;
+  max-height:100vh;
+  left: 30vw;
+  top: 2vh;
+  bottom: 2vh;
 }
 
 @keyframes fadeIn {
@@ -41,6 +42,8 @@
 .renuiDialog {
   background:#FFFFFF;
   min-height:40vh;
+  max-height:90%;
+  overflow:auto;
   width:40vw;
   z-index:998;
   border-radius:5px;

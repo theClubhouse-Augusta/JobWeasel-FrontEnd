@@ -2,6 +2,7 @@
 
 .jobsContainer {
   display:flex;
+  flex-direction: column;
   min-height:100vh;
   background: url('../../images/NYC_windows.jpg');
   font-family:'Play', sans-serif;
@@ -13,7 +14,7 @@
 .jobsTitle {
   margin: 0 auto;
   font-size: 4em;
-  z-index: 2;
+  z-index: 99;
 }
 
 .jobDisplay {
@@ -40,6 +41,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
+  background-color: rgba(0,0,0,0.3);
   z-index: 1;
 }
 
@@ -69,7 +71,6 @@
 .resultBox {
   min-height: 100px;
   width: 100px;
-  margin:15px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -89,33 +90,29 @@
   font-weight: bold;
 }
 
-.searchHolder {
+/*.searchHolder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-self: center;
-  margin-top: 5%;
-}
+}*/
 
 .searchContentInput {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: auto;
   height: 5vh;
-  font-size: 1.5em;
-  margin-top: 30px;
+  margin-left: 35%;
+  font-size: 1.4em;
   border-radius: 5px;
   box-shadow: 5px 5px 5px #000000;
-  z-index: 3;
+  z-index: 99;
 }
 
 .submitButton {
-  margin-top: 15px;
   height: 5vh;
-  width: 10%;
+  width: 85px;
+  margin-left: 2%;
   border-radius: 5px;
   box-shadow: 5px 5px 5px #000000;
-  z-index: 3;
+  z-index: 99;
 }
 
 .nextIcon {
