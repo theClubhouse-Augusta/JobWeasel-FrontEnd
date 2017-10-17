@@ -7,6 +7,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import EditAdmins from 'components/EditAdmins';
+
 import './style.css';
 import './styleM.css';
 
@@ -14,7 +16,8 @@ export default class Admin extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      users: {data: {}}
+      users: {data: {}},
+      editAdmins: false
     };
 
   }
@@ -34,8 +37,7 @@ export default class Admin extends React.PureComponent {
           });
         }
 
-        console.log('Users Data:');
-        console.log(json);
+      
       }
     );
   }
@@ -135,6 +137,12 @@ export default class Admin extends React.PureComponent {
     );
   }
 
+  handleEditAdmins = () => {
+    this.setState({
+      editAdmins:!this.state.editAdmins
+    })
+  }
+
   componentWillMount() {
     this.getUsers();
   }
@@ -148,6 +156,9 @@ export default class Admin extends React.PureComponent {
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
         {/*<div className="adminFullOverlay">
         </div>*/}
+
+        <input type="submit" className="editAdminsButton" value="EditAdmins" onClick={this.handleEditAdmins}/>
+        <EditAdmins open={this.state.editAdmins} onClose={this.handleEditAdmins}/>
 
         <div className="usersPanel_pending">
           <h4>Profiles to Review:</h4>
