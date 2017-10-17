@@ -10,6 +10,7 @@ import './style.css';
 import './styleM.css';
 
 import Skills from 'components/Skills';
+import FaClose from "react-icons/lib/fa/close";
 
 export default class EditUser extends React.PureComponent {
   constructor(props) {
@@ -110,6 +111,7 @@ export default class EditUser extends React.PureComponent {
       this.setState({notification: json.error});
     }
 
+    this.forceUpdate();
   }
 
   handlePhoto = (event) => {
@@ -181,6 +183,7 @@ export default class EditUser extends React.PureComponent {
     let user = this.state.user;
     let url = "http://localhost:8000/api/removeLink";
     let _this = this;
+    let user_id = this.state.user.id;
 
     let data = new FormData;
     data.append('link_id', id);
@@ -195,13 +198,13 @@ export default class EditUser extends React.PureComponent {
         console.log(json);
 
         _this.getNotification(json);
+        _this.getLinks(user_id);
       }
     );
   }
 
   renderUser = (user) => {
-    let  photo = this.renderPhotoUpload()
-  
+    let photo = this.renderPhotoUpload();
 
     return (
       <div className="profileSection">
@@ -213,7 +216,7 @@ export default class EditUser extends React.PureComponent {
         {this.renderBio(this.state.bio, this.handleBio)}
 
         <input type="submit" value="Update Profile"
-         className="submitButton" onClick={this.handleUpdateProfile}/>
+         className="submitButton button" onClick={this.handleUpdateProfile}/>
 
       </div>
     );
@@ -271,7 +274,7 @@ export default class EditUser extends React.PureComponent {
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
-           className="submitButton" onClick={this.handleAddLink}/>
+           className="submitButton buton" onClick={this.handleAddLink}/>
         </div>
 
         <div className="links panel">
@@ -283,7 +286,7 @@ export default class EditUser extends React.PureComponent {
 
                 <a href={link.url}>{link.text}</a>
                 <span className="deleteButton" onClick={() => this.handleRemoveLink(link.id)}>
-                  X
+                    <FaClose/>  
                 </span>
 
               </div>
@@ -325,14 +328,27 @@ export default class EditUser extends React.PureComponent {
       notification = this.renderNotification(this.state.notification);
     }
 
-    return (
-      <div className="editUser">
-        {user}
-        {notification}
-        {skills}
-        {links}
-      </div>
-    );
+    if(this.props.open === true)
+    {
+
+      return (
+        <div>
+          <div className="fullOverlay" onClick={this.props.onClose}>
+          </div>
+          <div className="renuiDialogOverlay">
+            <div className="renuiDialog">
+              {user}
+              {notification}
+              {skills}
+              {links}
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (<div className="renuiDialogOverlayHidden"></div>
+      );
+    }
   }
 }
 

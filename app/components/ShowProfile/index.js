@@ -58,6 +58,7 @@ export default class ShowProfile extends React.PureComponent {
         _this.setState({
           links: json.links
         });
+
         console.log(json.links);
       }.bind(this)
     );
@@ -77,6 +78,7 @@ export default class ShowProfile extends React.PureComponent {
           user: json.user
         });
         console.log(json.user);
+        
       }.bind(this)
     );
   }
@@ -96,7 +98,7 @@ export default class ShowProfile extends React.PureComponent {
         {this.renderField("Location", user.location)}
         {this.renderField("Phone", user.phone)}
 
-        {this.renderBio("Bio", user.bio)}
+        {this.renderBio(user.bio)}
       </div>
     );
   }
@@ -118,7 +120,9 @@ export default class ShowProfile extends React.PureComponent {
   renderBio = (bio) => {
     return (
       <div className="profileField panel">
-        <p className="profileField label">{bio}:</p>
+        <div className="profileField label">Bio:</div>
+
+        <p className="profileField value">{bio}</p>
       </div>
     );
   }
