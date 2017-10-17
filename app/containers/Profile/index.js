@@ -8,12 +8,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from 'react-router-dom';
-import ShowProfile from 'components/ShowProfile';
 
 import './style.css';
 import './styleM.css';
 
-import UserProfile from "components/UserProfile";
+import ShowProfile from 'components/ShowProfile';
 import EditUser from "components/EditUser";
 
 export default class Profile extends React.PureComponent {
@@ -49,16 +48,16 @@ export default class Profile extends React.PureComponent {
     );
   }
 
-  renderLeftPanel = (user) => {
+  renderLeftPanel = () => {
     let login = JSON.parse(sessionStorage.getItem("user"));
 
     let role = login.role_id;
     let ownProfile = login.id == this.state.user.id;
 
     let editProfile = "";
-    if (ownProfile) {editProfile = this.renderPanelButton(
-      "Update Profile", this.openUpdateProfilePanel
-    )}
+    if (ownProfile) {
+      editProfile = this.renderPanelButton("Update Profile", this.openUpdateProfilePanel)
+    }
 
     let addJob = "";
     if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
@@ -93,14 +92,6 @@ export default class Profile extends React.PureComponent {
     );
   }
 
-  renderUpdateBox = (id) => {
-    return (
-      <div className="updateProfile">
-        <EditUser userId={id} />
-      </div>
-    );
-  }
-
   openUpdateProfilePanel = () => {
     let open = this.state.openUpdateProfile;
 
@@ -113,40 +104,25 @@ export default class Profile extends React.PureComponent {
     }
   }
 
-  renderEditUser = () => {
-    return (
-      <div className="updateProfilePanel">
-        <div className="fullOverlay" onClick={this.openUpdateProfilePanel}></div>
-
-        <div className="popupInner">
-          <EditUser userId={this.state.user.id} />
-        </div>
-      </div>
-    );
-  }
-
   render() {
     let user = "";
+    let edit = "";
     let leftPanel = "";
-    let updatePanel = "";
 
     if (this.state.user !== "") {
-      leftPanel = this.renderLeftPanel(this.state.user);
+      leftPanel = this.renderLeftPanel();
       user = <ShowProfile userId={this.state.user.id} ref={instance => { this.child = instance; }}/>;
+      edit = <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>;
     }
-
-    if (this.state.openUpdateProfile) {
-      updatePanel = this.renderEditUser();
-    };
 
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
 
-
           {leftPanel}
           {user}
-          {updatePanel}
+          {edit}
+
       </div>
       );
     }

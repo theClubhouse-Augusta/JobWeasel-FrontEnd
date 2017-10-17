@@ -10,6 +10,7 @@ import './style.css';
 import './styleM.css';
 
 import Skills from 'components/Skills';
+import FaClose from "react-icons/lib/fa/close";
 
 export default class EditUser extends React.PureComponent {
   constructor(props) {
@@ -31,6 +32,7 @@ export default class EditUser extends React.PureComponent {
   componentWillMount() {
     this.getUser(this.props.userId);
     this.getLinks(this.props.userId);
+    this.getSkills(this.props.userId);
   }
 
   handleLocation = (event) => {
@@ -77,6 +79,10 @@ export default class EditUser extends React.PureComponent {
         _this.setState({
           links: json.links
         });
+
+        console.log("LINKSSS");
+        console.log(url);
+        console.log(json);
       }.bind(this)
     );
   }
@@ -97,6 +103,29 @@ export default class EditUser extends React.PureComponent {
           phone: json.user.phone,
           bio: json.user.bio
         });
+
+        console.log("USER");
+        console.log(url);
+        console.log(json);
+      }.bind(this)
+    );
+  }
+
+  getSkills = (id) => {
+    let url = "http://localhost:8000/api/getUserSkills/" + id;
+    let _this = this;
+
+    fetch(url, {method: 'GET'}).then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        _this.setState({
+          skills: json.skills
+        });
+        console.log("getUserSKills");
+        console.log(json.skills);
       }.bind(this)
     );
   }
@@ -203,7 +232,7 @@ export default class EditUser extends React.PureComponent {
   }
 
   renderUser = (user) => {
-    let photo = this.renderPhotoUpload()
+    let photo = this.renderPhotoUpload();
 
     return (
       <div className="profileSection">
@@ -284,8 +313,8 @@ export default class EditUser extends React.PureComponent {
               <div className="userLink" key={index}>
 
                 <a href={link.url}>{link.text}</a>
-                <span className="deleteButton button" onClick={() => this.handleRemoveLink(link.id)}>
-                  X
+                <span className="deleteButton" onClick={() => this.handleRemoveLink(link.id)}>
+                    <FaClose/>
                 </span>
 
               </div>
@@ -319,7 +348,7 @@ export default class EditUser extends React.PureComponent {
       links = this.renderLinks(this.state.user);
     }
 
-    if (this.state.user !== {}) {
+    if (this.state.skills !== []) {
       skills = this.renderSkills(this.state.user);
     }
 
@@ -327,14 +356,27 @@ export default class EditUser extends React.PureComponent {
       notification = this.renderNotification(this.state.notification);
     }
 
-    return (
-      <div className="editUser">
-        {user}
-        {notification}
-        {skills}
-        {links}
-      </div>
-    );
+    if(this.props.open === true)
+    {
+
+      return (
+        <div>
+          <div className="fullOverlay" onClick={this.props.onClose}>
+          </div>
+          <div className="renuiDialogOverlay">
+            <div className="renuiDialog">
+              {user}
+              {notification}
+              {skills}
+              {links}
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (<div className="renuiDialogOverlayHidden"></div>
+      );
+    }
   }
 }
 
