@@ -156,7 +156,6 @@ export default class Admin extends React.PureComponent {
 
         <div className="usersPanel_approved">
           <h4>Approved Profiles:</h4>
-          <h5>(Click the Profile to change Approval status.)</h5>
           {reviewed.map((user, index) => (this.renderUser(user, index)))}
         </div>
 
