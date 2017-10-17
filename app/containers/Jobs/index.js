@@ -170,9 +170,11 @@ export default class Jobs extends React.PureComponent {
         <div className="jobsTitle">Job List
         </div>
 
-        <input type="text" className="searchContentInput" placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
+        <div className="searchHolder">
+          <input type="text" className="searchContentInput" placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
 
-        <input type="submit" className="submitButton" onClick={this.searchContent}/>
+          <input type="submit" className="submitButton" onClick={this.searchContent}/>
+        </div>
 
         <div className="jobsList">
           <div className="jobDisplay">

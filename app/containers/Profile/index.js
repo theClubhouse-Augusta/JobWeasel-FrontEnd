@@ -121,7 +121,9 @@ export default class Profile extends React.PureComponent {
 
           {leftPanel}
           {user}
+
           {edit}
+
 
       </div>
       );
