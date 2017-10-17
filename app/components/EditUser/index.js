@@ -216,7 +216,7 @@ export default class EditUser extends React.PureComponent {
         {this.renderBio(this.state.bio, this.handleBio)}
 
         <input type="submit" value="Update Profile"
-         className="submitButton button" onClick={this.handleUpdateProfile}/>
+         className="updateProfile" onClick={this.handleUpdateProfile}/>
 
       </div>
     );
@@ -274,7 +274,7 @@ export default class EditUser extends React.PureComponent {
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
-           className="submitButton buton" onClick={this.handleAddLink}/>
+           className="updateProfile" onClick={this.handleAddLink}/>
         </div>
 
         <div className="links panel">
@@ -286,7 +286,7 @@ export default class EditUser extends React.PureComponent {
 
                 <a href={link.url}>{link.text}</a>
                 <span className="deleteButton" onClick={() => this.handleRemoveLink(link.id)}>
-                    <FaClose/>  
+                    <FaClose/>
                 </span>
 
               </div>
