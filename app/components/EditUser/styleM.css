@@ -1,1 +1,69 @@
 /* EditUser Mobile Styles */
+@media (max-width: 768px) {
+  .renuiDialog {
+    overflow:auto;
+    width:70vw;
+    z-index:998;
+    padding:10px;
+
+  }
+
+  .renuiDialogOverlay {
+
+    left: 15vw;
+
+  }
+
+  .label {
+    font-weight: bold;
+    width: 40%;
+    padding-left: 2vw;
+    font-size: 75%;
+  }
+
+  .value {
+    padding-right: 2vw;
+    font-size: 75%;
+  }
+
+
+  .userLink a {
+    margin-right: 3px;
+    font-size: 75%;
+  }
+
+
+}
+
+@media (max-width: 425px) {
+  .renuiDialog {
+    overflow:auto;
+    width:70vw;
+    z-index:998;
+    padding:10px;
+
+  }
+
+  .renuiDialogOverlay {
+
+    left: 15vw;
+
+  }
+
+  .label {
+    font-weight: bold;
+    width: 40%;
+    padding-left: 2vw;
+  }
+
+  .value {
+    padding-right: 2vw;
+  }
+
+  .userLink a {
+    margin-right: 3px;
+  }
+
+
+
+}
