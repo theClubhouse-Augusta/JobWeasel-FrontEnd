@@ -53,7 +53,9 @@
   max-height: 200px;
   margin: 0 auto;
   border-radius: 5px;
-  padding-bottom:1vh;
+  padding-bottom:5px;
+  padding-top:5px;
+  margin-bottom: 5px;
 }
 
 .imagePreview {
