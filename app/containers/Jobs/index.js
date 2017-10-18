@@ -12,6 +12,7 @@ import './style.css';
 import './styleM.css';
 import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
+import Nav from 'components/Nav';
 
 export default class Jobs extends React.PureComponent {
 
@@ -114,21 +115,18 @@ export default class Jobs extends React.PureComponent {
   }
 
   searchContent = () => {
-    let data = new FormData();
     let _this = this;
-    data.append('searchContent', this.state.taskContent);
-  fetch('http://localhost:8000/api/search', {
-    method:'POST',
-    body:data
+    fetch('http://localhost:8000/api/searchJobs/'+this.state.taskContent, {
+      method:'GET'
     })
     .then(function(response) {
       return response.json();
     })
     .then(function(json) {
       _this.setState({
-        result:json.data
+        searchResults:json.jobs
       })
-      console.log(json.data);
+      console.log(json.jobs);
     }.bind(this))
   };
 
@@ -163,7 +161,7 @@ export default class Jobs extends React.PureComponent {
     return (
       <div className="jobsContainer">
         <Helmet title="Jobs" meta={[ { name: 'description', content: 'Description of Jobs' }]}/>
-
+          <Nav/>
         <div className="jobsFullOverlay">
         </div>
 
@@ -180,13 +178,14 @@ export default class Jobs extends React.PureComponent {
           <div className="jobDisplay">
 
             {this.state.searchResults.map((t, i) => (
-           <Link key={i} to={`/JobDetails/${t.id}`} className="jobDetailLink"> Job: {t.name}
-             <p>Job Location: {t.location}</p>
-             <p>Budget: {t.budget}</p>
-           </Link>))}
+               <Link key={i} to={`/JobDetails/${t.id}`} className="jobDetailLink"> Job: {t.name}
+                 <p>Job Location: {t.location}</p>
+                 <p>Budget: {t.budget}</p>
+               </Link>
+             ))}
           </div>
 
-           <LeftIcon ClassName="previousIcon"
+           <LeftIcon className="previousIcon"
              onClick={this.previousPageclick}
              />
 
