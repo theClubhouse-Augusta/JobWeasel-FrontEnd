@@ -1,7 +1,7 @@
 /* ShowProfile Styles */
 
 .userProfile {
-  width:40%;
+  width:50%;
 }
 
 .showProfileSection {
@@ -10,20 +10,9 @@
   margin: 3px;
   display: flex;
   flex-direction: column;
-  width:100%;
+
   align-items: center;
   margin-top: 8vh;
-  border-radius: 5px;
-
-}
-
-.profileSection {
-  background-color: #009999;
-  padding: 5px;
-  margin: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 5px;
 
 }
@@ -38,7 +27,6 @@
   margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
   align-items: center;
   border-radius: 5px;
 }
@@ -67,11 +55,11 @@
 
 .skillsSection {
   background-color: #009999;
-  padding: 10px;
+  padding: 5px;
   margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
+
   align-items: center;
   color: #009999;
   border-radius: 5px;

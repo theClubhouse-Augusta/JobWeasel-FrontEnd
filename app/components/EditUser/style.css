@@ -5,7 +5,6 @@
   color: #FFFFFF;
 }
 
-
 .fullOverlay {
   display: flex;
   flex-direction: column;
@@ -18,8 +17,15 @@
   background:rgba(0, 0, 0, 0.3);
 }
 
-.searchHolder {
-  z-index: 3;
+.profileSection {
+  background-color: #009999;
+  padding: 5px;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+
 }
 
 .renuiDialogOverlay {

@@ -96,6 +96,10 @@
   align-self: center;
 }*/
 
+
+.searchHolder {
+  z-index: 3;
+}
 .searchContentInput {
   width: auto;
   height: 5vh;
