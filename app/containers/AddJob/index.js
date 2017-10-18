@@ -24,11 +24,13 @@ export default class AddJob extends React.PureComponent {
       budget:"",
       startDate:"",
       timeFrame:"",
-      notification:""
+      notification:"",
+      token:sessionStorage.getItem('token')
     }
   }
 
   postJob = () => {
+    console.log(this.state.token);
     let data = new FormData;
     let _this = this;
     data.append('name', this.state.jobTitle);
@@ -41,7 +43,7 @@ export default class AddJob extends React.PureComponent {
     fetch('http://localhost:8000/api/postJob', {
       method:'POST',
       body:data,
-      headers:{"Authorization":"Bearer"+sessionStorage.getItem('token')}
+      headers:{"Authorization":"Bearer "+ this.state.token}
     })
     .then(function(response) {
       return response.json();
@@ -53,17 +55,19 @@ export default class AddJob extends React.PureComponent {
         })
       }
       else if(json.success){
+
         _this.setState({
           notification:json.success
         })
       }
+      setTimeout(function(){
+        let user = JSON.parse(sessionStorage.getItem('user'));
+        let url = '/Profile/' + user.id;
+        _this.context.router.history.push(url);
+      }, 500);
     });
     this.forceUpdate();
-    setTimeout(function(){
-      let user = JSON.parse(sessionStorage.getItem('user'));
-      let url = '/Profile/' + user.id;
-      _this.context.router.history.push(url);
-    }, 500);
+
   };
 
   handleJobTitle = (event) => {

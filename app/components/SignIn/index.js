@@ -64,6 +64,7 @@ export default class SignIn extends React.PureComponent {
           _this.setState({
             notificationTwo: json.success
           })
+          console.log(json.token);
           sessionStorage.setItem('token', json.token);
           sessionStorage.setItem('user', JSON.stringify(json.user));
           setTimeout(function(){
