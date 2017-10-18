@@ -123,27 +123,3 @@ textarea{
 .bio p {
   text-indent: 5em;
 }
-
-.updateProfile {
-  display: flex;
-  justify-content: center;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  color: #009999;
-  text-decoration: none;
-  border: none;
-  font-size: .7em;
-  font-weight: bold;
-  padding: 5px;
-  outline: none;
-  margin: 0 auto;
-  cursor: pointer;
-  outline: none;
-}
-
-.updateProfile:hover {
-  border-radius: 5px;
-  text-decoration: none;
-  background-color: #009999;
-  color: #FFFFFF;
-}
