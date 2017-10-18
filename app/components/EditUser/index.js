@@ -181,6 +181,7 @@ export default class EditUser extends React.PureComponent {
       .then(function(json) {
         console.log("editUser");
         console.log(json);
+        _this.props.onClose();
 
         _this.getNotification(json)
       }
