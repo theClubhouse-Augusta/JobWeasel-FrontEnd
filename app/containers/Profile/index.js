@@ -148,8 +148,10 @@ export default class Profile extends React.PureComponent {
       edit = <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>;
 
       let login = JSON.parse(sessionStorage.getItem("user"));
-      if ((login.id == this.state.user.id) && (login.role_id == 2)) {
-        applications = <ShowUserApplications userId={login.id} />
+      if (login) {
+        if ((login.id == this.state.user.id) && (login.role_id == 2)) {
+          applications = <ShowUserApplications userId={login.id} />
+        }
       }
     }
 

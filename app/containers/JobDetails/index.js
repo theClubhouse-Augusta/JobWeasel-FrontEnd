@@ -184,8 +184,10 @@ export default class JobDetails extends React.PureComponent {
       edit = <EditJob jobId={this.state.job.id}  open={this.state.openEditJob} onClose={this.openEditJobPanel}/>;
 
       let login = JSON.parse(sessionStorage.getItem("user"));
-      if (login.id == this.state.job.user_id) {
-        applicants = <ShowJobApplicants jobId={this.state.job.id} />;
+      if (login) {
+        if (login.id == this.state.job.user_id) {
+          applicants = <ShowJobApplicants jobId={this.state.job.id} />;
+        }
       }
     }
 
