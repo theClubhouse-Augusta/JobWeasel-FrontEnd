@@ -155,7 +155,7 @@ export default class ShowProfile extends React.PureComponent {
 
   renderLinks = (user) => {
     return (
-      <div className="linksSection">
+      <div className="showProfileLinksSection">
         <div className="links panel">
           <div className="links label">Links:</div>
 

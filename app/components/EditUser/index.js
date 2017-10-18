@@ -302,7 +302,7 @@ export default class EditUser extends React.PureComponent {
 
   renderLinks = (user) => {
     return (
-      <div className="linksSection">
+      <div className="showProfileLinksSection">
         <div className="addLink-panel">
           <p><input placeholder="url" onChange={this.handleLinkUrl} />
           <input placeholder="text" onChange={this.handleLinkText}/></p>
