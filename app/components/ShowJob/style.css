@@ -1,1 +1,8 @@
 /* ShowJob Styles */
+.jobDetailsContainer {
+  width: 100%
+}
+
+.job {
+  width:60%;
+}
