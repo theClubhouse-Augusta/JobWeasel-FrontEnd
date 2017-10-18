@@ -87,6 +87,11 @@ export default class JobDetails extends React.PureComponent {
 
         console.log(url);
         console.log(json);
+        setTimeout(function(){
+          let user = JSON.parse(sessionStorage.getItem('user'));
+          let url = '/Jobs';
+          _this.context.router.history.push(url);
+        }, 500)
       }.bind(this)
     );
   }
