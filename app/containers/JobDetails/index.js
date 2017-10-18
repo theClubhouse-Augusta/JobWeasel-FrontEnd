@@ -13,6 +13,7 @@ import './styleM.css';
 
 import Nav from 'components/Nav';
 import ShowJob from 'components/ShowJob';
+import ShowJobApplicants from 'components/ShowJobApplicants';
 import EditJob from 'components/EditJob';
 
 export default class JobDetails extends React.PureComponent {
@@ -22,7 +23,7 @@ export default class JobDetails extends React.PureComponent {
     this.state = {
       notification: "",
       openEditJob: false,
-      job: "",
+      job: ""
     }
   }
 
@@ -47,7 +48,7 @@ export default class JobDetails extends React.PureComponent {
         }
 
         _this.getNotification(json);
-        console.log("showJob");
+        console.log(url);
         console.log(json.job);
       }.bind(this)
     );
@@ -65,6 +66,44 @@ export default class JobDetails extends React.PureComponent {
     this.forceUpdate();
   }
 
+  handleSubmitApplication = () => {
+    let url = "http://localhost:8000/api/submitApplication/";
+    let _this = this;
+
+    let data = new FormData;
+    data.append('job_id', this.state.job.id);
+
+    let token = sessionStorage.getItem("token");
+    let auth = {"Authorization": "Bearer " + token};
+
+    fetch(url, {method: 'POST', body: data, headers: auth})
+    .then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        _this.getNotification(json);
+
+        console.log(url);
+        console.log(json);
+      }.bind(this)
+    );
+  }
+
+  openEditJobPanel = () => {
+    let open = this.state.openEditJob;
+
+    this.setState({
+      openEditJob: !open
+    });
+
+    if(open) {
+      this.child.getJob(this.props.match.params.id);
+      this.child.getLinks(this.props.match.params.id);
+    }
+  }
+
   renderLeftPanel = () => {
     let login = JSON.parse(sessionStorage.getItem("user"));
     let role = 0;
@@ -80,6 +119,11 @@ export default class JobDetails extends React.PureComponent {
       editJob = this.renderPanelButton("Edit Job", this.openEditJobPanel)
     }
 
+    let apply = "";
+    if (role == 2) {
+      apply = this.renderPanelButton("Apply for Job", this.handleSubmitApplication)
+    }
+
     let addJob = "";
     if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
 
@@ -91,6 +135,7 @@ export default class JobDetails extends React.PureComponent {
       return (
         <div className="sidePanel">
           {editJob}
+          {apply}
           {addJob}
           {viewJobs}
           {viewProfiles}
@@ -118,19 +163,6 @@ export default class JobDetails extends React.PureComponent {
     );
   }
 
-  openEditJobPanel = () => {
-    let open = this.state.openEditJob;
-
-    this.setState({
-      openEditJob: !open
-    });
-
-    if(open) {
-      this.child.getJob(this.props.match.params.id);
-      this.child.getLinks(this.props.match.params.id);
-    }
-  }
-
   renderNotification = (text) => {
     return (
       <div className="jsonNotification">
@@ -142,13 +174,19 @@ export default class JobDetails extends React.PureComponent {
   render() {
     let leftPanel = "";
     let job = "";
+    let applicants = "";
     let edit = "";
     let notification = "";
 
     if (this.state.job !== "") {
       leftPanel = this.renderLeftPanel();
       job = <ShowJob jobId={this.state.job.id}  ref={instance => { this.child = instance; }}/>;
-      edit = <EditJob jobId={this.state.job.id}  open={this.state.openEditJob} onClose={this.openEditJobPanel}/>
+      edit = <EditJob jobId={this.state.job.id}  open={this.state.openEditJob} onClose={this.openEditJobPanel}/>;
+
+      let login = JSON.parse(sessionStorage.getItem("user"));
+      if (login.id == this.state.job.user_id) {
+        applicants = <ShowJobApplicants jobId={this.state.job.id} />;
+      }
     }
 
     if (this.state.notification !== "") {
@@ -161,6 +199,7 @@ export default class JobDetails extends React.PureComponent {
 
         {leftPanel}
         {job}
+        {applicants}
         {edit}
         {notification}
 

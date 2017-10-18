@@ -13,6 +13,7 @@ import './style.css';
 import './styleM.css';
 
 import ShowProfile from 'components/ShowProfile';
+import ShowUserApplications from 'components/ShowUserApplications';
 import EditUser from "components/EditUser";
 
 export default class Profile extends React.PureComponent {
@@ -138,12 +139,18 @@ export default class Profile extends React.PureComponent {
     let user = "";
     let edit = "";
     let leftPanel = "";
+    let applications = "";
     let notification = "";
 
     if (this.state.user !== "") {
       leftPanel = this.renderLeftPanel();
       user = <ShowProfile userId={this.state.user.id} ref={instance => { this.child = instance; }}/>;
       edit = <EditUser userId={this.state.user.id} open={this.state.openUpdateProfile} onClose={this.openUpdateProfilePanel}/>;
+
+      let login = JSON.parse(sessionStorage.getItem("user"));
+      if ((login.id == this.state.user.id) && (login.role_id == 2)) {
+        applications = <ShowUserApplications userId={login.id} />
+      }
     }
 
     if (this.state.notification !== "") {
@@ -156,6 +163,7 @@ export default class Profile extends React.PureComponent {
 
           {leftPanel}
           {user}
+          {applications}
           {edit}
           {notification}
 
