@@ -38,7 +38,7 @@ export default class Jobs extends React.PureComponent {
     let searchResults = this.state.searchResults;
     if(this.state.currentPage != this.state.lastPage)
     {
-      fetch('http://localhost:8000/api/getJobs', {
+      fetch('http://localhost:8000/api/getJobs?page='+nextPage, {
         method: 'GET'
       })
       .then(function(response) {
@@ -71,36 +71,13 @@ export default class Jobs extends React.PureComponent {
     }
   }
 
-  nextPageclick = () => {
-    var page = this.state.currentPage;
-    var activeIndex = this.state.activeIndex;
-
-    if(activeIndex + 1 < page.length){
-      this.setState({
-        activeIndex: activeIndex +1,
-      });
-    }
-    else {
-      this.setState({
-        activeIndex: 0,
-      });
-    }
-  }
-
   previousPageclick = () => {
-    var page = this.state.currentPage;
-    var activeIndex = this.state.activeIndex;
-
-    if(activeIndex - 1 >= 0){
-      this.setState({
-        activeIndex: activeIndex -1,
-      })
-    }
-    else{
+    let pageNum = this.state.nextPage;
+    pageNum = pageNum - 2;
     this.setState({
-      activeIndex:page.length - 1,
-    });
-    }
+      nextPage:pageNum
+    })
+    this.getJobs();
   }
 
   handleEnter = (event) => {
@@ -188,9 +165,9 @@ export default class Jobs extends React.PureComponent {
            <LeftIcon className="previousIcon"
              onClick={this.previousPageclick}
              />
-
+             
            <RightIcon className="nextIcon"
-             onClick={this.nextPageclick}
+             onClick={this.getTest}
              />
 
         </div>
