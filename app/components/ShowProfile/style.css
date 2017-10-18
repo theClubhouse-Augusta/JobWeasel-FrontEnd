@@ -1,12 +1,16 @@
 /* ShowProfile Styles */
 
+.userProfile {
+  width:40%;
+}
+
 .showProfileSection {
   background-color: #009999;
   padding: 10px;
   margin: 3px;
   display: flex;
   flex-direction: column;
-  max-width: 60vw;
+  width:100%;
   align-items: center;
   margin-top: 8vh;
   border-radius: 5px;
@@ -58,7 +62,7 @@
   word-spacing: 1em;
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
   margin-right: 12px;
 }
 
