@@ -2,7 +2,7 @@
 
 .showProfileSection {
   background-color: #009999;
-  padding: 10px;
+  padding: 5px;
   margin: 3px;
   display: flex;
   flex-direction: column;
@@ -15,11 +15,10 @@
 
 .profileSection {
   background-color: #009999;
-  padding: 10px;
+  padding: 5px;
   margin: 3px;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   border-radius: 5px;
 
@@ -31,7 +30,7 @@
 
 .linksSection {
   background-color: #009999;
-  padding: 10px;
+  padding: 5px;
   margin: 3px;
   display: flex;
   flex-direction: column;
