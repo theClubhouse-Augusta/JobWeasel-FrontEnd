@@ -2,7 +2,9 @@
 
 .jsonNotification {
   background-color: gray;
+  color: #FFFFFF;
 }
+
 
 .fullOverlay {
   display: flex;
