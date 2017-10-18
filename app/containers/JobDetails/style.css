@@ -2,8 +2,11 @@
 
 .jobDetailsContainer {
   display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
   min-height:100vh;
-  text-align: center;
   font-family: 'Play', sans-serif;
   background-image: url("../../IMAGES/computer_7.jpg");
   background-size:cover;
