@@ -8,6 +8,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import EditAdmins from 'components/EditAdmins';
+import Nav from 'components/Nav'
 
 import './style.css';
 import './styleM.css';
@@ -155,8 +156,7 @@ export default class Admin extends React.PureComponent {
     return (
       <div className="adminContainer">
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
-        {/*<div className="adminFullOverlay">
-        </div>*/}
+        <Nav/>
 
         <input type="submit" className="editAdminsButton" value="EditAdmins" onClick={this.handleEditAdmins}/>
         <EditAdmins open={this.state.editAdmins} onClose={this.handleEditAdmins}/>

@@ -47,8 +47,7 @@ export default class Home extends React.PureComponent {
     return (
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-          <div className="siteTitle">Job Weasel
-          </div>
+          <Nav/>
           {this.renderSignIn()}
           <div className="homeFullOverlay">
           </div>
