@@ -33,6 +33,7 @@ export default class Jobs extends React.PureComponent {
   componentWillMount() {
     this.getJobs();
   }
+  
   getJobs = () => {
     let nextPage = this.state.nextPage;
     let searchResults = this.state.searchResults;
@@ -165,7 +166,7 @@ export default class Jobs extends React.PureComponent {
            <LeftIcon className="previousIcon"
              onClick={this.previousPageclick}
              />
-             
+
            <RightIcon className="nextIcon"
              onClick={this.getTest}
              />

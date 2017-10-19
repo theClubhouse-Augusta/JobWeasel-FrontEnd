@@ -29,7 +29,24 @@ export default class Profile extends React.PureComponent {
   }
 
   componentWillMount() {
-    this.getUser(this.props.match.params.id);
+    let id = this.props.match.params.id;
+    if (id === undefined) {
+      let login = JSON.parse(sessionStorage.getItem("user"));
+      if (login) {
+        id = login.id;
+      }
+    }
+
+    if (id !== undefined) {
+      this.getUser(id);
+    }
+    else {
+      this.setState({notification: "You are not Logged In"})
+      let _this = this;
+      setTimeout(function () {
+        _this.context.router.history.push("/");
+      }, 500);
+    }
   }
 
   getUser = (user_id) => {
