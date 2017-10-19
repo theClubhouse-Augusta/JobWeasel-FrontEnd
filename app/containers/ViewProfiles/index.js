@@ -15,6 +15,7 @@ import '../../global.css';
 import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
 
+
 export default class ViewProfiles extends React.PureComponent {
 
   constructor () {
