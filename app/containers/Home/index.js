@@ -30,7 +30,7 @@ export default class Home extends React.PureComponent {
   renderSignIn = () => {
     if(this.state.signIn === true) {
       return (
-        <SignIn/>
+        <SignIn open={this.state.signIn} onClose={this.handleSignIn}/>
       )
     }
   }
@@ -39,7 +39,8 @@ export default class Home extends React.PureComponent {
     return (
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
-          <Nav/>
+          <div className="siteTitle">Job Weasel
+          </div>
           {this.renderSignIn()}
           <div className="homeFullOverlay">
           </div>

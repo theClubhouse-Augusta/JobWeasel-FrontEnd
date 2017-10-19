@@ -13,12 +13,13 @@ import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
 
 export default class SignIn extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email:"",
       password: "",
-      notificationTwo:""
+      notificationTwo:"",
+      open: this.props.open
     }
   }
 
@@ -77,26 +78,32 @@ export default class SignIn extends React.PureComponent {
   }
 
 
-  render() {
-    return (
-      <div>
-        <div className="signInContainer">
-            <div className="signInUnderlay">
+    render() {
+      if(this.props.open === true)
+      {
+      return (
+        <div>
+          <div className="signInFullContainer">
+              <div className="signInUnderlay" onClick={this.props.onClose}>
+              </div>
+            <div className="signInContainer">
+              <div className="signInInput">
+                <h3>Sign in to Job Weasel</h3>
+                <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
+
+                <input type="password" className="passwordSignIn" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
+                <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn} />
+                <p className="submitNote">{this.state.notificationTwo}</p>
+              </div>
             </div>
-          <div className="signInInput">
-            <h3>Sign in to Job Weasel</h3>
-            <input type="text" className="emailSignIn" value={this.state.email} onChange={this.handleEmail} placeholder="E-mail"/>
-
-            <input type="password" className="passwordSignIn" value={this.state.password} onKeyDown={this.enterKey} onChange={this.handlePassword} placeholder="Password"/>
-            <input type="submit" className="signInButton" placeholder="Sign-In" onClick={this.signIn} />
-            <p className="submitNote">{this.state.notificationTwo}</p>
-
           </div>
-
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (<div className="renuiDialogOverlayHidden"></div>
+      );
   }
+}
 }
 
 SignIn.contextTypes = {
