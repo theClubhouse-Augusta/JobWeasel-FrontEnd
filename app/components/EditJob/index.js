@@ -9,6 +9,8 @@ import React from 'react';
 import './style.css';
 import './styleM.css';
 
+import FaClose from "react-icons/lib/fa/close";
+
 export default class EditJob extends React.PureComponent {
   constructor(props) {
       super(props);
@@ -260,7 +262,7 @@ export default class EditJob extends React.PureComponent {
          className="submitButton button" onClick={this.handleUpdateJob}/>
 
         <input type="button" value="Delete Job"
-         className="deleteButton button" onClick={this.handleDeleteJob}/>
+         className="submitButton button" onClick={this.handleDeleteJob}/>
 
       </div>
     );
@@ -285,7 +287,7 @@ export default class EditJob extends React.PureComponent {
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
-           className="submitButton" onClick={this.handleAddLink}/>
+           className="submitButton button" onClick={this.handleAddLink}/>
         </div>
 
         <div className="links panel">

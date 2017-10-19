@@ -181,7 +181,6 @@ export default class EditUser extends React.PureComponent {
         console.log("editUser");
         console.log(json);
         _this.props.onClose();
-
         _this.getNotification(json)
       }
     );
@@ -306,7 +305,7 @@ export default class EditUser extends React.PureComponent {
           <p><input placeholder="url" onChange={this.handleLinkUrl} />
           <input placeholder="text" onChange={this.handleLinkText}/></p>
           <p><input type="submit" value="Add Link"
-           className="updateProfile" onClick={this.handleAddLink}/></p>
+           className="updateProfile button" onClick={this.handleAddLink}/></p>
         </div>
 
         <div className="links panel">

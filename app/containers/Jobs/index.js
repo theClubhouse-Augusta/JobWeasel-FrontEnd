@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
+
 import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
 import Nav from 'components/Nav';
@@ -33,7 +35,7 @@ export default class Jobs extends React.PureComponent {
   componentWillMount() {
     this.getJobs();
   }
-  
+
   getJobs = () => {
     let nextPage = this.state.nextPage;
     let searchResults = this.state.searchResults;

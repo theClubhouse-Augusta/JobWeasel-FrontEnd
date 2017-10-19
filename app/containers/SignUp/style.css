@@ -79,17 +79,15 @@
   font-size: 1em;
 }
 
-
-.submitButton {
+.submitButton .button {
   padding: 5px;
   margin-top: 10px;
+
   border-radius: 5px;
-  z-index: 2;
+  z-index: 99;
   cursor: pointer;
-}
-
-.submitButton:hover {
-
+  padding: 5px;
+  margin-top: 10px;
 }
 
 .choose-seeker {
@@ -125,7 +123,7 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 4px 10px black;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
   margin:  0 auto;
 }
@@ -139,7 +137,7 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 4px 10px black;
+  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
   margin:  0 auto;
 }

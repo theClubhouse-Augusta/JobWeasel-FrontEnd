@@ -106,14 +106,7 @@
   z-index: 99;
 }
 
-.submitButton {
-  height: 5vh;
-  width: 85px;
-  margin-left: 2%;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #000000;
-  z-index: 99;
-}
+
 
 .nextIcon {
   font-size: 1.8em;
@@ -128,7 +121,7 @@
   right:0;
   top:50vh;
   z-index:99999;
-  
+
 }
 
 a {

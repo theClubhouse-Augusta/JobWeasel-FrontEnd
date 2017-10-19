@@ -1,6 +1,5 @@
 .panel {
   display: flex;
-  width: 95%;
   margin: 5px;
   background-color: #FFFFFF;
   color: #009999;
@@ -44,7 +43,6 @@
   text-decoration: none;
   border: none;
   font-size: 1.1em;
-  width: 70%;
   outline: none;
   box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
   cursor:pointer;
