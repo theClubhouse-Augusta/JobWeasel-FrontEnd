@@ -170,7 +170,7 @@ export default class AddJob extends React.PureComponent {
             <p>{date}</p>
           </div>
 
-          <input type="submit" className="postJobButton" value="Post Job" onClick={this.postJob}/>
+          <input type="submit" className="postJobButton button" value="Post Job" onClick={this.postJob}/>
 
 
           <p className="submitNote">{this.state.notification}</p>

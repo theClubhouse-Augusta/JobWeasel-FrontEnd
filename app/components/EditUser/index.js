@@ -247,7 +247,7 @@ export default class EditUser extends React.PureComponent {
         {this.renderBio(this.state.bio, this.handleBio)}
 
         <input type="submit" value="Update Profile"
-         className="updateProfile" onClick={this.handleUpdateProfile}/>
+         className="updateProfile button" onClick={this.handleUpdateProfile}/>
 
       </div>
     );
@@ -366,7 +366,6 @@ export default class EditUser extends React.PureComponent {
           <div className="fullOverlay" onClick={this.props.onClose}>
           </div>
           <div className="renuiDialogOverlay">
-
             <div className="renuiDialog">
               <h1>Update Profile</h1>
               {user}
