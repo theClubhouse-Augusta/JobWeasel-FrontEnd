@@ -18,11 +18,13 @@ export default class Skills extends React.PureComponent {
       notification: "",
       user_id: "",
       tags: [],
-      suggestions: []
+      tags_loaded: false,
+      suggestions: [],
+      suggestions_loaded: false
     };
   }
 
-  componentWillReceiveProps(props) {
+  componentWillMount() {
     this.getTags(this.props.id);
     this.getSuggestions();
   }
@@ -38,7 +40,8 @@ export default class Skills extends React.PureComponent {
     ).then(
       function(json) {
         _this.setState({
-          tags: json.skills
+          tags: json.skills,
+          tags_loaded: true
         });
       }.bind(this)
     );
@@ -55,31 +58,35 @@ export default class Skills extends React.PureComponent {
     ).then(
       function(json) {
         _this.setState({
-          suggestions: json.skills
+          suggestions: json.skills,
+          suggestions_loaded: true
         });
-      }.bind(this)
-    );
-  }
 
-  getUser = (id) => {
-    let url = "http://localhost:8000/api/showUser/" + id;
-    let _this = this;
-
-    fetch(url, {method: 'GET'}).then(
-      function(response) {
-        return response.json();
+        console.log(url);
+        console.log(json.skills);
       }
-    ).then(
-      function(json) {
-        _this.setState({
-          user: json.user,
-          location: json.user.location,
-          phone: json.user.phone,
-          bio: json.user.bio
-        });
-      }.bind(this)
     );
   }
+
+  // getUser = (id) => {
+  //   let url = "http://localhost:8000/api/showUser/" + id;
+  //   let _this = this;
+  //
+  //   fetch(url, {method: 'GET'}).then(
+  //     function(response) {
+  //       return response.json();
+  //     }
+  //   ).then(
+  //     function(json) {
+  //       _this.setState({
+  //         user: json.user,
+  //         location: json.user.location,
+  //         phone: json.user.phone,
+  //         bio: json.user.bio
+  //       });
+  //     }.bind(this)
+  //   );
+  // }
 
   getNotification = (json) => {
     if (json.success) {
@@ -164,19 +171,27 @@ export default class Skills extends React.PureComponent {
       notification = this.renderNotification(this.state.notification);
     }
 
-    return (
-      <div className="userSkills">
-        <ReactTags className=""
+    if (this.state.suggestions_loaded && this.state.tags_loaded )
+    {
+      return (
+        <div className="userSkills">
+          <ReactTags className=""
           tags={this.state.tags}
           suggestions={this.state.suggestions}
           handleDelete={this.handleDelete.bind(this)}
           handleAddition={this.handleAddition.bind(this)}
           allowNew={true}
-        />
+          />
 
-        {notification}
-      </div>
-    )
+          {notification}
+        </div>
+      );
+    }
+    else {
+      return (
+        <div></div>
+      );
+    }
   }
 }
 

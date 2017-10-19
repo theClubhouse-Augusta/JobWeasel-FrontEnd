@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 import ShowProfile from 'components/ShowProfile';
 import ShowUserApplications from 'components/ShowUserApplications';

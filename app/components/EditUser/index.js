@@ -81,7 +81,6 @@ export default class EditUser extends React.PureComponent {
           links: json.links
         });
 
-        console.log("LINKSSS");
         console.log(url);
         console.log(json);
       }.bind(this)
@@ -347,14 +346,13 @@ export default class EditUser extends React.PureComponent {
 
     if (this.state.user !== {}) {
         user = this.renderUser(this.state.user);
-    }
+        if (this.state.links !== []) {
+          links = this.renderLinks(this.state.user);
+        }
 
-    if (this.state.links !== []) {
-      links = this.renderLinks(this.state.user);
-    }
-
-    if (this.state.skills !== []) {
-      skills = this.renderSkills(this.state.user);
+        if (this.state.skills !== []) {
+          skills = this.renderSkills(this.state.user);
+        }
     }
 
     if (this.state.notification !== "") {
