@@ -105,11 +105,11 @@ export default class ShowUserApplications extends React.PureComponent {
     return (
       <div className="jobApplications panel" key={index}>
         <div className="jobApplications label">Job:</div>
-        <div className="jobApplications value">
+        <div className="jobApplications panel">
           <Link to={url}>{app.name}</Link>
         </div>
 
-        <div className="jobApplications label">{message}</div>
+        <div className="jobApplications">{message}</div>
 
         {accept}
 
@@ -133,7 +133,7 @@ export default class ShowUserApplications extends React.PureComponent {
     }
 
     return (
-      <div className="jobApplications section">
+      <div className="jobApplications">
         {notification}
 
         {this.state.applications.map(

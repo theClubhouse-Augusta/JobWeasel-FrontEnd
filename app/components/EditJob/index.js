@@ -250,7 +250,7 @@ export default class EditJob extends React.PureComponent {
   renderJob = () => {
     return (
       <div className="jobSection">
-        {this.renderField("Name", this.state.name, this.handleName)}
+        {this.renderField("Job Title", this.state.name, this.handleName)}
         {this.renderField("Location", this.state.location, this.handleLocation)}
         {this.renderField("Description", this.state.description, this.handleDescription)}
         {this.renderField("Budget", this.state.budget, this.handleBudget)}
@@ -284,8 +284,8 @@ export default class EditJob extends React.PureComponent {
     return (
       <div className="jobSectionLinksSection">
         <div className="addLink panel">
-          <input placeholder="url" onChange={this.handleLinkUrl}/>
-          <input placeholder="text" onChange={this.handleLinkText}/>
+          <input placeholder="Company url" onChange={this.handleLinkUrl}/>
+          <input placeholder="Company Name" onChange={this.handleLinkText}/>
           <input type="submit" value="Add Link"
            className="submitButton button" onClick={this.handleAddLink}/>
         </div>
@@ -298,8 +298,8 @@ export default class EditJob extends React.PureComponent {
               <div className="userLink" key={index}>
 
                 <a href={link.url}>{link.text}</a>
-                <span className="deleteButton button" onClick={() => this.handleRemoveLink(link.id)}>
-                  X
+                <span className="deleteButton" onClick={() => this.handleRemoveLink(link.id)}>
+                  <FaClose/>
                 </span>
 
               </div>

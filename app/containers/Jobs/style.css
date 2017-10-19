@@ -71,6 +71,7 @@
   background-color: #FFFFFF;
   color: #009999;
   font-family:'Play', sans-serif;
+  justify-content: center;
 }
 
 .jobDetailLink {

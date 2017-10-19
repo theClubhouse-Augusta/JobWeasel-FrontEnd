@@ -66,7 +66,7 @@ export default class ShowJob extends React.PureComponent {
   renderJob = (job) => {
     return (
       <div className="jobSection">
-        {this.renderField("Name", job.name)}
+        {this.renderField("Job Title", job.name)}
         {this.renderField("Location", job.location)}
         {this.renderField("Description", job.description)}
         {this.renderField("Budget", job.budget)}
@@ -94,7 +94,7 @@ export default class ShowJob extends React.PureComponent {
 
   renderLinks = () => {
     return (
-      <div className="linksSection">
+      <div className="jobSectionLinksSection">
         <div className="links panel">
           <div className="links label">Links:</div>
 
