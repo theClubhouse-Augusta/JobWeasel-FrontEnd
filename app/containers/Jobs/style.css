@@ -57,6 +57,7 @@
   border-radius: 50%;
   left: 0;
   top:50vh;
+  z-index:9999;
 }
 
 .resultBox {
@@ -121,7 +122,6 @@
   right:0;
   top:50vh;
   z-index:99999;
-
 }
 
 a {

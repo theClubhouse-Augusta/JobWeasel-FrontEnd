@@ -38,49 +38,47 @@ export default class Jobs extends React.PureComponent {
 
   getJobs = () => {
     let nextPage = this.state.nextPage;
-    let searchResults = this.state.searchResults;
-    if(this.state.currentPage != this.state.lastPage)
-    {
-      fetch('http://localhost:8000/api/getJobs?page='+nextPage, {
-        method: 'GET'
-      })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(json) {
-        if(json.error)
-         {
-          console.log(json.error);
-        }
-        else
+
+    fetch('http://localhost:8000/api/getJobs?page='+nextPage, {
+      method: 'GET'
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.error)
+       {
+        console.log(json.error);
+      }
+      else
+      {
+        console.log(JSON.stringify(json.jobs));
+        if(json.jobs.current_page != json.jobs.last_page)
         {
-          console.log(JSON.stringify(json.jobs));
-          if(json.current_page != json.last_page)
-          {
-            nextPage = nextPage + 1;
-          }
-          for(var i = 0; i < json.jobs.data.length; i++)
-          {
-            searchResults.push(json.jobs.data[i]);
-          }
-          this.setState({
-            nextPage: nextPage,
-            lastPage: json.last_page,
-            currentPage: json.current_page,
-            searchResults: searchResults
-          })
+          nextPage = nextPage + 1;
         }
-      }.bind(this));
-    }
+        this.setState({
+          nextPage: nextPage,
+          lastPage: json.jobs.last_page,
+          currentPage: json.jobs.current_page,
+          searchResults: json.jobs.data
+        }, function() {
+          this.forceUpdate();
+        })
+      }
+    }.bind(this));
   }
 
   previousPageclick = () => {
-    let pageNum = this.state.nextPage;
-    pageNum = pageNum - 2;
-    this.setState({
-      nextPage:pageNum
-    })
-    this.getJobs();
+    if(this.state.nextPage > 1) {
+      let pageNum = this.state.nextPage;
+      pageNum = pageNum - 2;
+      this.setState({
+        nextPage:pageNum
+      }, function() {
+        this.getJobs();
+      })
+    }
   }
 
   handleEnter = (event) => {
@@ -170,7 +168,7 @@ export default class Jobs extends React.PureComponent {
              />
 
            <RightIcon className="nextIcon"
-             onClick={this.getTest}
+             onClick={this.getJobs}
              />
 
         </div>
