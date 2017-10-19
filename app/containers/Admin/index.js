@@ -7,10 +7,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import EditAdmins from 'components/EditAdmins';
-
 import './style.css';
 import './styleM.css';
+import '../../global.css';
+
+import EditAdmins from 'components/EditAdmins';
 
 export default class Admin extends React.PureComponent {
   constructor() {
@@ -37,7 +38,7 @@ export default class Admin extends React.PureComponent {
           });
         }
 
-      
+
       }
     );
   }
@@ -157,7 +158,7 @@ export default class Admin extends React.PureComponent {
         {/*<div className="adminFullOverlay">
         </div>*/}
 
-        <input type="submit" className="editAdminsButton" value="EditAdmins" onClick={this.handleEditAdmins}/>
+        <input type="submit" className="editAdminsButton button" value="EditAdmins" onClick={this.handleEditAdmins}/>
         <EditAdmins open={this.state.editAdmins} onClose={this.handleEditAdmins}/>
 
         <div className="usersPanel_pending">

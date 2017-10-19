@@ -296,7 +296,7 @@ export default class EditJob extends React.PureComponent {
               <div className="userLink" key={index}>
 
                 <a href={link.url}>{link.text}</a>
-                <span className="deleteButton" onClick={() => this.handleRemoveLink(link.id)}>
+                <span className="deleteButton button" onClick={() => this.handleRemoveLink(link.id)}>
                   X
                 </span>
 

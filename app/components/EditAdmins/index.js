@@ -76,22 +76,27 @@ export default class EditAdmins extends React.PureComponent {
   render() {
     if(this.props.open === true) {
       return (
-        <div>
-          <div className="editAdminsContainer">
-              <div className="editAdminsUnderlay" onClick={this.props.onClose}>
-              </div>
-            <div className="editAdminsInput">
-              <h3>Add Administrators</h3>
-              <div className="usersList">
-                <div className="usersDisplay">
-                  {this.state.users.map((t,i) => (<div key={i} onClick={()=>this.makeAdmin(t.id)}>
-                  {t.name}
-                  </div>))}
-                </div>
-              </div>
-              <p className="submitNote">{this.state.notification}</p>
+        <div className="editAdmins">
+
+          {/*
+            <div className="editAdminsUnderlay" onClick={this.props.onClose}>
             </div>
+          */}
+
+          <div className="editAdminsInput panel">
+            <div className="editAdminsInput label">Add Administrators</div>
+
+            {this.state.users.map(
+              (t,i) => (
+                <div className="editAdminsInput value" key={i} onClick={()=>this.makeAdmin(t.id)}>
+                  {t.name}
+                </div>)
+              )
+            }
+
+            <div className="jsonNotification">{this.state.notification}</div>
           </div>
+
         </div>
       );
     }
