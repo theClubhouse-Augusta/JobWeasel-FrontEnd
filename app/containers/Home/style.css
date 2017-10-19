@@ -3,7 +3,7 @@
 .homeContainer {
   display:flex;
   flex-direction: column;
-  min-height:100vh;
+  height:100vh;
   background-size: cover;
   background-attachment:fixed;
   z-index: 0;
@@ -12,11 +12,26 @@
   margin: 0 auto;
 }
 
+.siteTitle {
+  display: flex;
+  flex-direction: row;
+  background: #404040;
+  width: calc(100% - 15px);
+  height: 50px;
+  justify-content: space-between;;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+  padding-left: 15px;
+  font-family: 'Open-Sans', sans-serif;
+  z-index: 11;
+}
+
 .homeFullOverlay {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(24, 29, 38, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 

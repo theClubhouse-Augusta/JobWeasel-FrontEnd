@@ -1,8 +1,9 @@
 /* ShowJob Styles */
-.jobDetailsContainer {
-  width: 100%
-}
+
 
 .job {
   width:60%;
+  background-color: #009999;
+  padding:10px;
+  border-radius: 5px;
 }
