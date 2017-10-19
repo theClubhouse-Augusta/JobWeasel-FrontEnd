@@ -1,7 +1,7 @@
 /* ShowProfile Styles */
 
 .userProfile {
-  width:60%;
+  width:100%;
 }
 
 .showProfileSection {
@@ -79,4 +79,19 @@ textarea{
 
 .bio p {
   text-indent: 5em;
+}
+
+.profilePhoto {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding-bottom:5px;
+  padding-top:5px;
+  margin-bottom: 5px;
+}
+
+.imagePreview {
+  max-width: 100px;
+  max-height: 100px;
 }
