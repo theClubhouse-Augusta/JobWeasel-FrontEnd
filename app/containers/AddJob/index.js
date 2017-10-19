@@ -6,9 +6,11 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import Nav from 'components/Nav';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 
 export default class AddJob extends React.PureComponent {
@@ -123,6 +125,7 @@ export default class AddJob extends React.PureComponent {
         <Helmet title="AddJob" meta={[ { name: 'description', content: 'Description of AddJob' }]}/>
         <div className="addJobFullOverlay">
         </div>
+        <Nav/>
         <div className="jobDetailContainer">
 
           <div className="jobTitle">
@@ -167,7 +170,7 @@ export default class AddJob extends React.PureComponent {
             <p>{date}</p>
           </div>
 
-          <input type="submit" className="postJobButton" value="Post Job" onClick={this.postJob}/>
+          <input type="submit" className="postJobButton button" value="Post Job" onClick={this.postJob}/>
 
 
           <p className="submitNote">{this.state.notification}</p>

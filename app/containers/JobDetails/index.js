@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 import Nav from 'components/Nav';
 import ShowJob from 'components/ShowJob';
@@ -203,9 +204,11 @@ export default class JobDetails extends React.PureComponent {
     return (
       <div className="jobDetailsContainer">
         <Helmet title="JobDetails" meta={[ { name: 'description', content: 'Description of JobDetails' }]}/>
-
+        <Nav className="navBar"/>
+        <div className="leftPanel">
         {leftPanel}
         {job}
+        </div>
         {applicants}
         {edit}
         {notification}

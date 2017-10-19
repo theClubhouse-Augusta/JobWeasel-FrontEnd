@@ -2,9 +2,8 @@
 
 .jobDetailsContainer {
   display:flex;
-  justify-content:center;
+  flex-direction: column;
   align-items:center;
-  margin:0 auto;
   min-height:100vh;
   font-family: 'Play', sans-serif;
   background-image: url("../../IMAGES/computer_7.jpg");
@@ -13,4 +12,11 @@
   background-repeat:no-repeat;
   background-attachment:fixed;
   z-index: 0;
+}
+
+.leftPanel {
+  display:flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
