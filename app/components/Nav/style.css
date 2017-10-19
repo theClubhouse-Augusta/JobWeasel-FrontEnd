@@ -8,6 +8,7 @@
   justify-content: space-between;;
   align-items: center;
   color: white;
+  z-index: 13;
 }
 
 .navButtons {

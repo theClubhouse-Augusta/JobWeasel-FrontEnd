@@ -12,21 +12,6 @@
   margin: 0 auto;
 }
 
-.siteTitle {
-  display: flex;
-  flex-direction: row;
-  background: #404040;
-  width: calc(100% - 15px);
-  height: 50px;
-  justify-content: space-between;;
-  align-items: center;
-  color: white;
-  font-size: 2em;
-  padding-left: 15px;
-  font-family: 'Open-Sans', sans-serif;
-  z-index: 11;
-}
-
 .homeFullOverlay {
   position: fixed;
   height: 100vh;

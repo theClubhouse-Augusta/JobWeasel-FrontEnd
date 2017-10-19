@@ -16,6 +16,7 @@ import '../../global.css';
 import ShowProfile from 'components/ShowProfile';
 import ShowUserApplications from 'components/ShowUserApplications';
 import EditUser from "components/EditUser";
+import Nav from 'components/Nav';
 
 export default class Profile extends React.PureComponent {
   constructor (props) {
@@ -180,9 +181,11 @@ export default class Profile extends React.PureComponent {
     return (
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
-
+        <Nav/>
+        <div className="leftPannelUser">
           {leftPanel}
           {user}
+        </div>
           {applications}
           {edit}
           {notification}
