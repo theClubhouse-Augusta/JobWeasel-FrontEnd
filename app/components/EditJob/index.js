@@ -282,7 +282,7 @@ export default class EditJob extends React.PureComponent {
 
   renderLinks = () => {
     return (
-      <div className="linksSection">
+      <div className="jobSectionLinksSection">
         <div className="addLink panel">
           <input placeholder="url" onChange={this.handleLinkUrl}/>
           <input placeholder="text" onChange={this.handleLinkText}/>

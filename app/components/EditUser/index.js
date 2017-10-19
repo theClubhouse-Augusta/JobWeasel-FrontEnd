@@ -247,7 +247,7 @@ export default class EditUser extends React.PureComponent {
         {this.renderBio(this.state.bio, this.handleBio)}
 
         <input type="submit" value="Update Profile"
-         className="updateProfile" onClick={this.handleUpdateProfile}/>
+         className="updateProfile button" onClick={this.handleUpdateProfile}/>
 
       </div>
     );

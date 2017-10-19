@@ -120,9 +120,9 @@ export default class Jobs extends React.PureComponent {
     if (i % 2 == 0){
       return (
         <div key={i} className="resultBox">
-          <div className="companyDiv">{t.name}</div>
-          <div className="descriptionDiv"><p>{t.location}</p></div>
-          <div className="budgetDiv"><p>{t.budget}</p></div>
+          <div className="companyDiv label">{t.name}</div>
+          <div className="descriptionDiv label"><p>{t.location}</p></div>
+          <div className="budgetDiv label"><p>{t.budget}</p></div>
         </div>
       )
     }
@@ -151,7 +151,7 @@ export default class Jobs extends React.PureComponent {
         <div className="searchHolder">
           <input type="text" className="searchContentInput" placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
 
-          <input type="submit" className="submitButton" onClick={this.searchContent}/>
+          <input type="submit" className="submitButton button" onClick={this.searchContent}/>
         </div>
 
         <div className="jobsList">
