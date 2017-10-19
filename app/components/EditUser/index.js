@@ -366,7 +366,6 @@ export default class EditUser extends React.PureComponent {
           <div className="fullOverlay" onClick={this.props.onClose}>
           </div>
           <div className="renuiDialogOverlay">
-
             <div className="renuiDialog">
               <h1>Update Profile</h1>
               {user}
