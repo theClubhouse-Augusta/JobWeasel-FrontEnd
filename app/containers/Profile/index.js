@@ -26,6 +26,7 @@ export default class Profile extends React.PureComponent {
       notification: "",
       openUpdateProfile: false,
       user: "",
+      admin: false
     };
   }
 
@@ -63,12 +64,34 @@ export default class Profile extends React.PureComponent {
         if (!json.error) {
           _this.setState({
             user: json.user
-          })
+          });
+          _this.getAdmin(json.user);
         }
 
         _this.getNotification(json);
-        //alert(_this.state.user.bio);
-      }.bind(this)
+      }
+    );
+  }
+
+  getAdmin = (user) => {
+    let url = "http://localhost:8000/api/checkAdmin/" + user.id;
+    let _this = this;
+
+    fetch(url, {method: 'GET'}).then(
+      function(response) {
+        return response.json();
+      }
+    ).then(
+      function(json) {
+        if (!json.error) {
+          _this.setState({
+            admin: true
+          });
+        }
+
+        console.log(url);
+        console.log(json);
+      }
     );
   }
 
@@ -99,6 +122,11 @@ export default class Profile extends React.PureComponent {
       editProfile = this.renderPanelButton("Update Profile", this.openUpdateProfilePanel)
     }
 
+    let curateUsers = "";
+    if (this.state.admin) {
+      curateUsers = this.renderPanelLink("/Admin", "Curate Users")
+    }
+
     let addJob = "";
     if (role == 1) {addJob = this.renderPanelLink("/AddJob", "Add Job")}
 
@@ -110,6 +138,7 @@ export default class Profile extends React.PureComponent {
       return (
         <div className="sidePanel">
           {editProfile}
+          {curateUsers}
           {addJob}
           {viewJobs}
           {viewProfiles}

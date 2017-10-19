@@ -52,7 +52,7 @@ export default class Jobs extends React.PureComponent {
       }
       else
       {
-        console.log(JSON.stringify(json.jobs));
+        console.log(json.jobs);
         if(json.jobs.current_page != json.jobs.last_page)
         {
           nextPage = nextPage + 1;
@@ -147,7 +147,8 @@ export default class Jobs extends React.PureComponent {
         </div>
 
         <div className="searchHolder">
-          <input type="text" className="searchContentInput" placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
+          <input type="text" className="searchContentInput"
+           placeholder="Search Job List" onKeyDown={this.handleEnter} value={this.state.taskContent} onChange={this.handleContent}/>
 
           <input type="submit" className="submitButton button" onClick={this.searchContent}/>
         </div>

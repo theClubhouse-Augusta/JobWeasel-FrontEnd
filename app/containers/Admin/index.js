@@ -158,7 +158,7 @@ export default class Admin extends React.PureComponent {
         <Helmet title="Admin" meta={[ { name: 'description', content: 'Description of Admin' }]}/>
         <Nav/>
 
-        <input type="submit" className="editAdminsButton" value="EditAdmins" onClick={this.handleEditAdmins}/>
+        <input type="submit" className="editAdminsButton button" value="EditAdmins" onClick={this.handleEditAdmins}/>
         <EditAdmins open={this.state.editAdmins} onClose={this.handleEditAdmins}/>
 
         <div className="usersPanel_pending">

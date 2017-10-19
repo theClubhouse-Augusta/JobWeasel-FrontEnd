@@ -39,6 +39,7 @@ export default class ShowProfile extends React.PureComponent {
         _this.setState({
           skills: json.skills
         });
+        
         console.log("getUserSKills");
         console.log(json.skills);
       }.bind(this)
