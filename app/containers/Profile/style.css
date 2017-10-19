@@ -14,61 +14,28 @@
   z-index: 0;
 }
 
-.leftPannelUser {
+.body {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-top: 25px;
+  width: 80%;
+  justify-content: space-between;
 }
 
 .sidePanel {
-  z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 25px;
+  z-index: 2;
   margin-right: 50px;
   margin-left: 50px;
   text-align: center;
 }
 
-.sideButton {
-  background-color: #009999;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  border: none;
-  font-size: 1.1em;
-  width: 70%;
-  outline: none;
-  box-shadow:0 0 8px 0 rgba(0, 0, 0, 0.9);
-  cursor:pointer;
-  padding: 10px;
-  margin-bottom: 2vh;
-  z-index: 0;
-}
-
-.sideButton:hover {
-  background-color: #FFFFFF;
-  color: #009999;
-
-}
-
-.profilePhoto {
-  max-width: 200px;
-  max-height: 200px;
-  margin: 0 auto;
-  border-radius: 5px;
-  padding-bottom:5px;
-  padding-top:5px;
-  margin-bottom: 5px;
-}
-
-.imagePreview {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-
-
-.updateBox::-webkit-scrollbar {
-    display: none;
+.userProfilePanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

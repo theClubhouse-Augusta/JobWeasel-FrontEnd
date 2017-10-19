@@ -149,7 +149,7 @@ export default class Profile extends React.PureComponent {
 
   renderPanelButton = (text, clickFunc) => {
     return (
-      <span className="sideButton" onClick={clickFunc}>
+      <span className="sideButton button" onClick={clickFunc}>
         {text}
       </span>
     );
@@ -157,7 +157,7 @@ export default class Profile extends React.PureComponent {
 
   renderPanelLink = (url, text) => {
     return (
-      <Link to={url} className="sideButton">{text}</Link>
+      <Link to={url} className="sideButton button">{text}</Link>
     );
   }
 
@@ -211,14 +211,22 @@ export default class Profile extends React.PureComponent {
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
         <Nav/>
-        <div className="leftPannelUser">
-          {leftPanel}
-          {user}
-        </div>
-          {applications}
-          {edit}
-          {notification}
 
+        <div className="body">
+
+          {leftPanel}
+
+          <div className="userProfilePanel">
+            {user}
+            {notification}
+          </div>
+
+          <div className="applicationsPanel">
+            {applications}
+          </div>
+          
+          {edit}
+        </div>
       </div>
       );
     }
