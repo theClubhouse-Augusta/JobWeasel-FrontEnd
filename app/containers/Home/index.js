@@ -12,6 +12,7 @@ import Nav from 'components/Nav';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 export default class Home extends React.PureComponent {
   constructor() {

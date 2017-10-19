@@ -11,6 +11,7 @@ import EditAdmins from 'components/EditAdmins';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 export default class Admin extends React.PureComponent {
   constructor() {
@@ -37,7 +38,7 @@ export default class Admin extends React.PureComponent {
           });
         }
 
-      
+
       }
     );
   }
