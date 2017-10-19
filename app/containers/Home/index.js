@@ -36,6 +36,13 @@ export default class Home extends React.PureComponent {
   }
 
   render() {
+    let login = JSON.parse(sessionStorage.getItem("user"))
+
+    if (login) {
+        let url = "/Profile/" + login.id;
+        this.context.router.history.push(url);
+    }
+
     return (
       <div className="homeContainer">
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>

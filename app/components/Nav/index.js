@@ -43,6 +43,7 @@ export default class Nav extends React.PureComponent {
         )
       }
     }
+
   render() {
     return (
       <div className="navContainer">
