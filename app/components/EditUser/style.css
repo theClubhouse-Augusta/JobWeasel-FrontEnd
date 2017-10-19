@@ -23,7 +23,6 @@
   margin: 3px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 5px;
 
 }
@@ -89,7 +88,6 @@
 }
 
 .updateProfile:hover {
-  border-radius: 5px;
   text-decoration: none;
   background-color: #009999;
   color: #FFFFFF;
