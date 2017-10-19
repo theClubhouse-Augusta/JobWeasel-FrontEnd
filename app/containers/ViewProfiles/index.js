@@ -7,8 +7,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {Link} from 'react-router-dom';
+
 import './style.css';
 import './styleM.css';
+import '../../global.css';
+
 import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
 

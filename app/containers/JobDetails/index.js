@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 import Nav from 'components/Nav';
 import ShowJob from 'components/ShowJob';

@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 export default class About extends React.PureComponent {
   render() {

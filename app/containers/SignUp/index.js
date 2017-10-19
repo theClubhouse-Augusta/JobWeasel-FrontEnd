@@ -10,6 +10,7 @@ import Helmet from 'react-helmet';
 
 import './style.css';
 import './styleM.css';
+import '../../global.css';
 
 export default class SignUp extends React.PureComponent {
 
@@ -158,7 +159,7 @@ export default class SignUp extends React.PureComponent {
          <input type="text" className="name" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
          <input type="password" className="password" value={this.state.password} onChange={this.handlePassword}  placeholder="Password"/>
          <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
-         <input type="submit" className="submitButton" onClick={this.signUp}/>
+         <input type="submit" className="submitButton button" onClick={this.signUp}/>
          <p className="passValidation">{this.state.passMatch}</p>
          <p className="submitNote">{this.state.notification}</p>
          <p className="submitNote">{this.state.notificationTwo}</p>
@@ -174,7 +175,7 @@ export default class SignUp extends React.PureComponent {
         <input type="text" className="name" value={this.state.email} onChange={this.handleEmail} placeholder="Email"/>
         <input type="password" className="password" value={this.state.password} onChange={this.handlePassword} placeholder="Password"/>
         <input type="password" className="passwordValidation" value={this.state.passwordValidation} onChange={this.handlePasswordValidation} placeholder="Password-Validation"/>
-        <input type="submit" className="submitButton" onClick={this.signUp}/>
+        <input type="submit" className="submitButton button" onClick={this.signUp}/>
         <p className="passValidation">{this.state.passMatch}</p>
         <p className="submitNote">{this.state.notification}</p>
         <p className="submitNote">{this.state.notificationTwo}</p>
