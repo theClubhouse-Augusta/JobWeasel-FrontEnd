@@ -71,6 +71,18 @@ export default class ViewProfiles extends React.PureComponent {
     }
   }
 
+  previousPageclick = () => {
+    if(this.state.nextPage > 1) {
+      let pageNum = this.state.nextPage;
+      pageNum = pageNum - 2;
+      this.setState({
+        nextPage:pageNum
+      }, function() {
+        this.getUsers();
+      })
+    }
+  }
+
   handleSearch = (event) => {
     this.setState({
       search: event.target.value
@@ -111,6 +123,15 @@ export default class ViewProfiles extends React.PureComponent {
             </Link>))}
           </div>
         </div>
+
+        <LeftIcon className="previousIcon"
+          onClick={this.previousPageclick}
+          />
+
+        <RightIcon className="nextIcon"
+          onClick={this.getUsers}
+          />
+
       </div>
     );
   }
