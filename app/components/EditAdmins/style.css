@@ -1,15 +1,17 @@
 /* EditAdmins Styles */
 .editAdminsContainer {
   background-color: white;
-  height: auto;
-  width: auto;
   border-radius: 13px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  margin-left: 30vw;
+  left: 15px;
+  top: 75px;
+  font-size: 2em;
   font-family: 'Play', sans-serif;
-  z-index: 12;
+  z-index: 13;
 }
 
 .editAdminsUnderlay {
@@ -18,37 +20,33 @@
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
 .editAdminsInput {
-  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  padding: 15px;
   color: black;
   z-index: 13;
 }
 
 .usersList {
-  width: auto;
+  width:100%;
 }
 
-.usersDisplay {
+.adminUsersDisplay {
   box-shadow: 3px 6px 2px #000000;
   background-color: #009999;
   border-width: 15px;
   user-select: none;
   cursor: pointer;
-  height:3vh;
-  width:75%;
   border-radius: 5px;
   font-family: 'Play', sans-serif;
   font-variant: small-caps;
   padding-top: .5vh;
-  margin-bottom: 2vh;
-  margin-left: .2vw;
-  margin-right: .2vw;
   font-size: 1.2em;
+  width:100%;
 }
