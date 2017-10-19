@@ -69,44 +69,6 @@
 
 }
 
-.panel {
-  display: flex;
-  margin: 5px;
-  background-color: #FFFFFF;
-  color: #009999;
-  text-align: left;
-  padding-left: .5vw;
-  padding-right: .5vw;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  border-radius: 5px;
-  align-items: center;
-}
-
-.label {
-  font-weight: bold;
-  width: 30%;
-  display: flex;
-  justify-content:flex-start;
-  margin-right: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  color: #009999;
-  font-size: 1.2em;
-}
-
-.value {
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  color: #009999;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  font-size: 1.1em;
-  margin-left: 10px;
-
-}
-
 textarea{
   width: 100%;
 }
