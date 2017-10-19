@@ -13,7 +13,8 @@ export default class EditAdmins extends React.PureComponent {
   constructor () {
     super (),
     this.state = {
-      users: []
+      users: [],
+      notification: "",
     }
   }
 
@@ -39,14 +40,16 @@ export default class EditAdmins extends React.PureComponent {
     );
   }
 
-  makeAdmin = () => {
+  makeAdmin = (id) => {
     let data = new FormData;
     let _this = this;
-    data.append('user_id', this.state.user_id);
+    data.append('user_id', id);
 
     fetch('http://localhost:8000/api/makeAdmin', {
       method: 'POST',
-      body:data
+
+      body:data,
+      headers:{"Authorization":"Bearer "+ sessionStorage.getItem('token')}
     })
     .then(function(response) {
       return response.json();
@@ -62,6 +65,11 @@ export default class EditAdmins extends React.PureComponent {
           notification: json.success
         })
       }
+      setTimeout(function(){
+        _this.setState({
+          notification: ""
+        })
+      }, 2500)
     }.bind(this));
   }
 
@@ -76,7 +84,7 @@ export default class EditAdmins extends React.PureComponent {
               <h3>Add Administrators</h3>
               <div className="usersList">
                 <div className="usersDisplay">
-                  {this.state.users.map((t,i) => (<div key={i} onClick={this.makeAdmin}>
+                  {this.state.users.map((t,i) => (<div key={i} onClick={()=>this.makeAdmin(t.id)}>
                   {t.name}
                   </div>))}
                 </div>
