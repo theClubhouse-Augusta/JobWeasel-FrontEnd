@@ -48,7 +48,8 @@
   cursor:pointer;
   padding: 10px;
   margin-left: 10px;
-  z-index: 0;
+  margin-bottom: 10px;
+  z-index: 2;
 }
 
 .button:hover {

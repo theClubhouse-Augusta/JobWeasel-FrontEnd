@@ -194,8 +194,8 @@ export default class SignUp extends React.PureComponent {
             <div className="hello-div"><h1>Sign up for Job Weasel!</h1></div>
 
               <div className="button-div">
-                <input type="button" className="choose-seeker" value="Job-Seeker" onClick={()=> this.changeTab(2)}/>
-                <input type="button" className="choose-employer" value="Employer" onClick={()=> this.changeTab(1)}/>
+                <input type="button" className="choose-seeker button" value="Job-Seeker" onClick={()=> this.changeTab(2)}/>
+                <input type="button" className="choose-employer button" value="Employer" onClick={()=> this.changeTab(1)}/>
               </div>
                 {this.renderTab()}
 

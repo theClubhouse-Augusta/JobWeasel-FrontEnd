@@ -165,7 +165,7 @@ export default class JobDetails extends React.PureComponent {
 
   renderPanelLink = (url, text) => {
     return (
-      <Link to={url} className="sideButton">{text}</Link>
+      <Link to={url} className="sideButton button">{text}</Link>
     );
   }
 
