@@ -15,6 +15,8 @@ import '../../global.css';
 import LeftIcon from 'react-icons/lib/fa/chevron-left';
 import RightIcon from 'react-icons/lib/fa/chevron-right';
 
+import Nav from 'components/Nav';
+
 
 export default class ViewProfiles extends React.PureComponent {
 
@@ -36,39 +38,30 @@ export default class ViewProfiles extends React.PureComponent {
 
   getUsers = () => {
     let nextPage = this.state.nextPage;
-    let searchResults = this.state.searchResults;
-    if(this.state.currentPage != this.state.lastPage)
-    {
-      fetch('http://localhost:8000/api/getUsers', {
-        method: 'GET'
-      })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(json) {
-        if(json.error)
+    fetch('http://localhost:8000/api/getUsers?page='+nextPage, {
+      method: 'GET'
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      if(json.error)
+      {
+        console.log(json.error)
+      }
+      else {
+        if(json.current_page != json.last_page)
         {
-          console.log(json.error)
+          nextPage = nextPage + 1;
         }
-        else {
-          if(json.current_page != json.last_page)
-          {
-            nextPage = nextPage + 1;
-          }
-          for(var i = 0; i < json.users.data.length;
-          i++)
-          {
-            searchResults.push(json.users.data[i]);
-          }
-          this.setState({
-            nextPage: nextPage,
-            lastPage: json.last_page,
-            currentPage: json.current_page,
-            searchResults: searchResults
-          })
-        }
-      }.bind(this));
-    }
+        this.setState({
+          nextPage: nextPage,
+          lastPage: json.users.last_page,
+          currentPage: json.users.current_page,
+          searchResults: json.users.data
+        })
+      }
+    }.bind(this));
   }
 
   previousPageclick = () => {
@@ -89,22 +82,15 @@ export default class ViewProfiles extends React.PureComponent {
     })
   }
 
-  renderRow = (t,i) => {
-    if (i % 2 == 0){
-      return (
-        <div key={i} className="usersResultsBox">
-          <div className="userDiv">{t.name}</div>
-          <div className="userDescriptionDiv"><p>{t.location}</p></div>
-          </div>
-      )
-    }
-    else {
-      return(
-        <div key={i} className="usersResultsBox">
-          User Listing: {t.name}
-          <p>{t.description}</p>
-        </div>
-      )
+  previousPageclick = () => {
+    if(this.state.nextPage > 1) {
+      let pageNum = this.state.nextPage;
+      pageNum = pageNum - 2;
+      this.setState({
+        nextPage:pageNum
+      }, function() {
+        this.getUsers();
+      })
     }
   }
 
@@ -112,15 +98,17 @@ export default class ViewProfiles extends React.PureComponent {
     return (
       <div className="viewProfilesContainer">
         <Helmet title="ViewProfiles" meta={[ { name: 'description', content: 'Description of ViewProfiles' }]}/>
-
+          <Nav/>
         <div className="usersFullOverlay">
         </div>
         <div className="usersList">
           <div className="usersDisplay">
-            {this.state.searchResults.map((t,i) => (<Link key={i} to={`/Profile/${t.id}`}>
-            User Listings: {t.name}
-            <p>{t.location}</p>
-            </Link>))}
+            {this.state.searchResults.map((t,i) => (
+              <Link key={i} to={`/Profile/${t.id}`} className="viewResult">
+                User Listings: {t.name}
+                <p>{t.location}</p>
+              </Link>
+            ))}
           </div>
         </div>
 
