@@ -17,8 +17,14 @@
 .body {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 60%;
   justify-content: space-between;
+}
+
+.profileTitle {
+  margin: 0 auto;
+  font-size: 4em;
+  z-index: 99;
 }
 
 .sidePanel {
@@ -28,8 +34,6 @@
   align-items: center;
   margin-top: 25px;
   z-index: 2;
-  margin-right: 50px;
-  margin-left: 50px;
   text-align: center;
 }
 

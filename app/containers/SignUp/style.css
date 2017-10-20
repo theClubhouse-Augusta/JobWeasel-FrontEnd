@@ -27,7 +27,6 @@
   font-family: 'Play', sans-serif;
   z-index: 2;
   margin: 0 auto;
-
 }
 
 .hello-div {
@@ -81,42 +80,26 @@
 
 .submitButton .button {
   padding: 5px;
-  margin-top: 10px;
-  margin-right: 10px;
   border-radius: 5px;
   z-index: 99;
   cursor: pointer;
   padding: 5px;
-  margin-top: 10px;
 }
 
-.choose-seeker {
-  border-radius: 3px;
-  outline: none;
-  border: none;
-  background-color: white;
-  width: 100px;
+.choose-seeker{
   z-index: 2;
   cursor: pointer;
-  padding:4px;
-  margin-right: 1vw;
 }
 
-.choose-employer {
-  border-radius: 3px;
-  outline: none;
-  border: none;
-  background-color: white;
-  width: 100px;
+.choose-employer{
   z-index: 2;
   cursor: pointer;
-  padding:4px;
   margin-left: 1vw;
 }
 
 .sign-up-seeker {
   background-color: white;
-  height: 300px;
+  height: auto;
   width: 300px;
   border-radius: 10px;
   justify-content: center;
@@ -130,7 +113,7 @@
 
 .sign-up-employer{
   background-color: white;
-  height: 300px;
+  height: auto;
   width: 300px;
   border-radius: 10px;
   justify-content: center;

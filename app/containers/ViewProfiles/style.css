@@ -15,10 +15,21 @@
 }
 
 .usersDisplay {
-
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  max-width:1000px;
+  width:100%;
+  margin:0 auto;
+  margin-top: 30px;
 }
+
+.usersListTitle {
+  margin: 0 auto;
+  font-size: 4em;
+  z-index: 99;
+}
+
 .viewResult {
   text-decoration:none;
   color:#009999;

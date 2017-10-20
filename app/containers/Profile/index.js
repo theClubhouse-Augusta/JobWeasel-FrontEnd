@@ -211,6 +211,8 @@ export default class Profile extends React.PureComponent {
       <div className="profileContainer">
         <Helmet title="Profile" meta={[ { name: 'description', content: 'Description of Profile' }]}/>
         <Nav/>
+        <div className="profileTitle">Profile
+        </div>
 
         <div className="body">
 
@@ -224,7 +226,7 @@ export default class Profile extends React.PureComponent {
           <div className="applicationsPanel">
             {applications}
           </div>
-          
+
           {edit}
         </div>
       </div>
